@@ -1,0 +1,7 @@
+/* Tailwind v4 source declarations for @regardio/react
+   Consumers should import this file from their global stylesheet:
+   @import "@regardio/react/tailwind.css";
+*/
+
+/* Scan all source files in this package for utility classes */
+@source "../";

@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"]
+    }
+  },
+  "extends": "@regardio/system/typescript/react.json",
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
+}
