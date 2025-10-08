@@ -1,5 +1,5 @@
 // Custom Components
-export { BackgroundSlideshow } from './background-slideshow';
+export { BackgroundSlideshow, type ImageData } from './background-slideshow';
 export { BlurryGradient } from './blurry-gradient';
 export { Box } from './box';
 export { Countdown } from './countdown';
