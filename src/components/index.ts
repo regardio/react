@@ -9,11 +9,19 @@ export { Heading } from './heading';
 export { Highlight } from './highlight';
 export { IconButton } from './icon-button';
 export { If } from './if';
+export { Iframe } from './iframe';
 export { Item } from './item';
 export { LeafletMap } from './leaflet-map';
-export { Link } from './link';
+export { Link, LinkBase, type LinkBaseProps } from './link';
 export { ListItem } from './list-item';
 export { MapTilerMap } from './maptiler-map';
+export {
+  MarkdownContainer,
+  type MarkdownContainerProps,
+  type MarkdownOverrides,
+  type MDXComponent,
+  transformLink,
+} from './markdown-container';
 export { PasswordInput } from './password-input';
 export { Picture, type PictureProps } from './picture';
 export { ProtectedEmail } from './protected-email';

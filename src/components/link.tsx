@@ -4,44 +4,12 @@ import { NavLink, useNavigate } from 'react-router';
 import { cva, type VariantProps } from '../utils/cn';
 import { lowerCaseSzett } from '../utils/text';
 
-const link = cva({
-  base: [],
-  defaultVariants: {
-    variant: 'primary',
-  },
-  variants: {
-    arrow: {
-      darr: 'darr',
-      larr: 'larr',
-      rarr: 'rarr',
-      uarr: 'uarr',
-    },
-    variant: {
-      button: [
-        'block',
-        'button',
-        'mt-s',
-        'relative',
-        'rarr',
-        'text-right',
-        'text-sm',
-        'tracking-wider',
-        'uppercase',
-      ],
-      code: ['font-monospace'],
-      link: ['rarr', '!bg-transparent', 'uppercase', '!tracking-wider'],
-      navtitle: ['block', 'uppercase', 'tracking-wider'],
-      primary: [],
-      subtitle: ['text-lg'],
-    },
-  },
-});
-
-export interface LinkProps extends Omit<NavLinkProps, 'to'>, VariantProps<typeof link> {
-  to?: string | Partial<{ pathname?: string; search?: string; hash?: string }>;
+export interface LinkBaseProps extends Omit<NavLinkProps, 'to' | 'className'> {
+  className?: string;
+  to?: string | Partial<{ pathname?: string; search?: string; hash?: string }> | undefined;
 }
 
-export const Link = ({ arrow, children, className, to, variant, ...props }: LinkProps) => {
+export const LinkBase = ({ className, to, children, ...props }: LinkBaseProps) => {
   const navigate = useNavigate();
 
   let path: string;
@@ -92,11 +60,7 @@ export const Link = ({ arrow, children, className, to, variant, ...props }: Link
     ) {
       return (
         <a
-          className={link({
-            arrow,
-            className,
-            variant,
-          })}
+          {...(className ? { className } : {})}
           href={path}
           onClick={handleClick}
         >
@@ -108,20 +72,69 @@ export const Link = ({ arrow, children, className, to, variant, ...props }: Link
     return (
       <NavLink
         {...props}
-        className={link({
-          arrow,
-          className,
-          variant,
-        })}
+        {...(className ? { className } : {})}
         onClick={handleClick}
         to={path}
       >
-        {lowerCaseSzett(children as React.ReactNode)}
+        {children}
       </NavLink>
     );
   }
 
   return <>{typeof children === 'function' ? null : children}</>;
+};
+
+const link = cva({
+  base: [],
+  defaultVariants: {
+    variant: 'primary',
+  },
+  variants: {
+    arrow: {
+      darr: 'darr',
+      larr: 'larr',
+      rarr: 'rarr',
+      uarr: 'uarr',
+    },
+    variant: {
+      button: [
+        'block',
+        'button',
+        'mt-s',
+        'relative',
+        'rarr',
+        'text-right',
+        'text-sm',
+        'tracking-wider',
+        'uppercase',
+      ],
+      code: ['font-monospace'],
+      link: ['rarr', '!bg-transparent', 'uppercase', '!tracking-wider'],
+      navtitle: ['block', 'uppercase', 'tracking-wider'],
+      primary: [],
+      subtitle: ['text-lg'],
+    },
+  },
+});
+
+export interface LinkProps extends Omit<NavLinkProps, 'to'>, VariantProps<typeof link> {
+  to?: string | Partial<{ pathname?: string; search?: string; hash?: string }>;
+}
+
+export const Link = ({ arrow, children, className, to, variant, ...props }: LinkProps) => {
+  return (
+    <LinkBase
+      {...props}
+      className={link({
+        arrow,
+        className,
+        variant,
+      })}
+      to={to}
+    >
+      {lowerCaseSzett(children as React.ReactNode)}
+    </LinkBase>
+  );
 };
 
 export interface MarkdownLinkProps extends Omit<LinkProps, 'to'> {
