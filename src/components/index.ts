@@ -9,7 +9,7 @@ export { Heading } from './heading';
 export { Highlight } from './highlight';
 export { IconButton } from './icon-button';
 export { If } from './if';
-export { Iframe } from './iframe';
+export { Iframe, type IframeProps } from './iframe';
 export { Item } from './item';
 export { LeafletMap } from './leaflet-map';
 export { Link, LinkBase, type LinkBaseProps } from './link';
