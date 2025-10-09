@@ -84,7 +84,8 @@ const truncateText = (
       if (part !== undefined) {
         if (
           (maxSentences === undefined || sentenceCount < maxSentences) &&
-          (maxCharacters === undefined || charCount + part.length + delimiter.length <= maxCharacters)
+          (maxCharacters === undefined ||
+            charCount + part.length + delimiter.length <= maxCharacters)
         ) {
           truncatedText += part + delimiter;
           charCount += part.length + delimiter.length;
@@ -138,9 +139,7 @@ export const MarkdownContainer: React.FC<MarkdownContainerProps> = (props) => {
     <MDXProvider components={props.mdxComponents}>
       <Markdown
         className={cn('markdown', props.className)}
-        {...(props.markdownOverrides
-          ? { options: { overrides: props.markdownOverrides } }
-          : {})}
+        {...(props.markdownOverrides ? { options: { overrides: props.markdownOverrides } } : {})}
       >
         {processedText}
       </Markdown>
