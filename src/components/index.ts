@@ -15,7 +15,7 @@ export { Link } from './link';
 export { ListItem } from './list-item';
 export { MapTilerMap } from './maptiler-map';
 export { PasswordInput } from './password-input';
-export { Picture } from './picture';
+export { Picture, type PictureProps } from './picture';
 export { ProtectedEmail } from './protected-email';
 export { Text } from './text';
 export { UnorderedList } from './unordered-list';
