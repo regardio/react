@@ -1,4 +1,4 @@
-import { Map as MapTiler, Marker, Popup } from '@maptiler/sdk';
+import { config, Map as MapTiler, Marker, Popup } from '@maptiler/sdk';
 import { useEffect, useRef } from 'react';
 import '@maptiler/sdk/dist/maptiler-sdk.css';
 
@@ -34,6 +34,9 @@ export const MapTilerMap = ({
 
   useEffect(() => {
     if (!mapContainerRef.current || typeof window === 'undefined') return;
+
+    // Set MapTiler API key globally
+    config.apiKey = apiKey;
 
     // Calculate center
     let calculatedCenter: [number, number];

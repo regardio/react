@@ -66,7 +66,23 @@
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
-    "./tailwind.css": "./src/styles/tailwind.css"
+    "./components/*": {
+      "import": "./dist/components/*.js",
+      "types": "./dist/components/*.d.ts"
+    },
+    "./hooks/*": {
+      "import": "./dist/hooks/*.js",
+      "types": "./dist/hooks/*.d.ts"
+    },
+    "./shadcn/*": {
+      "import": "./dist/shadcn/*.js",
+      "types": "./dist/shadcn/*.d.ts"
+    },
+    "./tailwind.css": "./src/styles/tailwind.css",
+    "./utils/*": {
+      "import": "./dist/utils/*.js",
+      "types": "./dist/utils/*.d.ts"
+    }
   },
   "license": "MIT",
   "name": "@regardio/react",

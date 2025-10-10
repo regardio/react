@@ -8,6 +8,8 @@ interface MapMarker {
   id: string;
   content?: string;
   htmlContent?: string;
+  imageUrl?: string;
+  imageAlt?: string;
   offset?: { x: number; y: number };
 }
 
@@ -22,19 +24,21 @@ interface LeafletMapProps {
     iconAnchor: [number, number];
   };
   attribution?: string;
+  showPopupsOnHover?: boolean;
 }
 
 export const LeafletMap = ({
   markers,
   mapUrl,
   center,
-  zoom = 6,
+  zoom = 12,
   icon = {
     iconAnchor: [12, 41] as [number, number],
     iconSize: [25, 41] as [number, number],
     iconUrl: '/marker-icon-2x.png',
   },
-  attribution = '&copy; <a href="https://www.maptiler.com/copyright/">MapTiler</a>',
+  attribution = '',
+  showPopupsOnHover = false,
 }: LeafletMapProps) => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<L.Map | null>(null);
@@ -132,6 +136,12 @@ export const LeafletMap = ({
         popupContent = marker.content;
       }
 
+      // Add image if provided
+      if (marker.imageUrl) {
+        const imageHtml = `<img src="${marker.imageUrl}" alt="${marker.imageAlt || ''}" style="max-width: 100%; height: auto; display: block; margin-bottom: 8px;" />`;
+        popupContent = imageHtml + popupContent;
+      }
+
       if (popupContent) {
         const popup = new L.Popup({
           className: 'custom-map-popup',
@@ -140,6 +150,16 @@ export const LeafletMap = ({
         }).setContent(popupContent);
 
         leafletMarker.bindPopup(popup);
+
+        // Show popup on hover if enabled
+        if (showPopupsOnHover) {
+          leafletMarker.on('mouseover', () => {
+            leafletMarker.openPopup();
+          });
+          leafletMarker.on('mouseout', () => {
+            leafletMarker.closePopup();
+          });
+        }
       }
 
       newMarkers.push(leafletMarker);
@@ -181,7 +201,7 @@ export const LeafletMap = ({
       }
       markersRef.current = [];
     };
-  }, [markers, mapUrl, zoom, icon, attribution, center]);
+  }, [markers, mapUrl, zoom, icon, attribution, center, showPopupsOnHover]);
 
   // Update markers when they change
   useEffect(() => {
@@ -225,6 +245,12 @@ export const LeafletMap = ({
         popupContent = marker.content;
       }
 
+      // Add image if provided
+      if (marker.imageUrl) {
+        const imageHtml = `<img src="${marker.imageUrl}" alt="${marker.imageAlt || ''}" style="max-width: 100%; height: auto; display: block; margin-bottom: 8px;" />`;
+        popupContent = imageHtml + popupContent;
+      }
+
       if (popupContent) {
         const popup = new L.Popup({
           className: 'custom-map-popup',
@@ -233,6 +259,16 @@ export const LeafletMap = ({
         }).setContent(popupContent);
 
         leafletMarker.bindPopup(popup);
+
+        // Show popup on hover if enabled
+        if (showPopupsOnHover) {
+          leafletMarker.on('mouseover', () => {
+            leafletMarker.openPopup();
+          });
+          leafletMarker.on('mouseout', () => {
+            leafletMarker.closePopup();
+          });
+        }
       }
 
       newMarkers.push(leafletMarker);
@@ -245,7 +281,7 @@ export const LeafletMap = ({
       const bounds = new L.LatLngBounds(markers.map((m) => new L.LatLng(m.lat, m.lng)));
       map.fitBounds(bounds, { padding: [20, 20] });
     }
-  }, [markers, icon]);
+  }, [markers, icon, showPopupsOnHover]);
 
   return (
     <div
