@@ -61,6 +61,7 @@
     "@types/leaflet": "1.9.21",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.1",
+    "@vitest/ui": "3.2.4",
     "vite": "7.1.9",
     "vitest": "3.2.4"
   },
@@ -98,7 +99,10 @@
     "lint:biome": "lint-biome check --write --unsafe .",
     "lint:md": "lint-md --fix \"**/*.md\" \"!**/node_modules/**\" \"!**/dist/**\"",
     "prepare": "exec-husky",
-    "test": "vitest run",
+    "report": "exec-s report:*",
+    "report:unit": "vitest run --reporter html",
+    "test": "exec-s test:*",
+    "test:unit": "vitest run",
     "typecheck": "exec-tsc --noEmit"
   },
   "sideEffects": [
