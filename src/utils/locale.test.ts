@@ -1,5 +1,5 @@
-import { beforeEach, describe, expect, test } from 'bun:test';
 import { LanguageDetectorLingui } from '@regardio/js';
+import { beforeEach, describe, expect, test } from 'vitest';
 import { createLocaleConfig, getClientLocales } from './locale';
 
 describe('getClientLocales', () => {
