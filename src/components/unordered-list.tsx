@@ -7,8 +7,7 @@ const ul = cva({
   },
   variants: {
     variant: {
-      indented: ['list-none', 'p-0', 'pl-2'],
-      inline: ['flex', 'flex-wrap', 'gap-2', 'list-none', 'p-0'],
+      inline: ['flex', 'flex-wrap', 'list-none'],
       primary: [],
       unstyled: ['list-none', 'p-0'],
     },
