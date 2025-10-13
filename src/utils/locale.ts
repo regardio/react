@@ -1,4 +1,4 @@
-import { LanguageDetectorLingui } from '@regardio/js';
+import { LanguageDetectorLingui } from '@regardio/js/intl/language-detector';
 import { parseAcceptLanguage } from 'intl-parse-accept-language';
 import { createCookie } from 'react-router';
 

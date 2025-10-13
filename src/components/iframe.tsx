@@ -1,5 +1,5 @@
-import { cn } from '@regardio/react';
 import type React from 'react';
+import { cn } from '../utils/cn';
 
 export type IframeProps = {
   src: string;

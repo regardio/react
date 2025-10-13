@@ -1,4 +1,4 @@
-import { LanguageDetectorLingui } from '@regardio/js';
+import { LanguageDetectorLingui } from '@regardio/js/intl/language-detector';
 import { beforeEach, describe, expect, test } from 'vitest';
 import { createLocaleConfig, getClientLocales } from './locale';
 

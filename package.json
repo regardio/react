@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/package.json",
   "authors": [
     "Bernd Matzner <bernd.matzner@regard.io>"
   ],
