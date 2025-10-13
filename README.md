@@ -7,9 +7,7 @@
 ### Installation
 
 ```bash
-npm install @regardio/react
-# or
-bun add @regardio/react
+pnpm add @regardio/react
 ```
 
 ## License
