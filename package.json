@@ -1,8 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "authors": [
-    "Bernd Matzner <bernd.matzner@regard.io>"
-  ],
+  "authors": ["Bernd Matzner <bernd.matzner@regard.io>"],
   "dependencies": {
     "@maptiler/leaflet-maptilersdk": "4.1.1",
     "@maptiler/sdk": "3.8.0",
@@ -41,8 +39,8 @@
     "input-otp": "1.4.2",
     "intl-parse-accept-language": "1.0.0",
     "leaflet": "alpha",
-    "lucide-react": "0.546.0",
-    "markdown-to-jsx": "7.7.16",
+    "lucide-react": "0.547.0",
+    "markdown-to-jsx": "7.7.17",
     "next-themes": "0.4.6",
     "react": "19.2.0",
     "react-day-picker": "9.11.1",
@@ -64,10 +62,10 @@
     "@types/node": "24.9.1",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
-    "@vitest/ui": "4.0.1",
+    "@vitest/ui": "4.0.2",
     "typescript": "5.9.3",
     "vite": "7.1.12",
-    "vitest": "4.0.1"
+    "vitest": "4.0.2"
   },
   "exports": {
     ".": {
@@ -109,8 +107,6 @@
     "test:unit": "vitest run",
     "typecheck": "exec-tsc --noEmit"
   },
-  "sideEffects": [
-    "./src/styles/tailwind.css"
-  ],
+  "sideEffects": ["./src/styles/tailwind.css"],
   "type": "module"
 }
