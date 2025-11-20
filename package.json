@@ -33,7 +33,7 @@
     "@radix-ui/react-tooltip": "1.2.8",
     "@radix-ui/themes": "3.2.1",
     "@regardio/js": "workspace:*",
-    "@supabase/supabase-js": "2.81.1",
+    "@supabase/supabase-js": "2.83.0",
     "cmdk": "1.1.1",
     "cva": "beta",
     "embla-carousel-react": "8.6.0",
@@ -61,11 +61,11 @@
     "@total-typescript/ts-reset": "0.6.1",
     "@types/leaflet": "1.9.21",
     "@types/node": "24.10.1",
-    "@types/react": "19.2.5",
+    "@types/react": "19.2.6",
     "@types/react-dom": "19.2.3",
     "@vitest/ui": "4.0.10",
     "typescript": "5.9.3",
-    "vite": "7.2.2",
+    "vite": "7.2.4",
     "vitest": "4.0.10"
   },
   "exports": {
