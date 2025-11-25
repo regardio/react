@@ -3,7 +3,7 @@
   "authors": ["Bernd Matzner <bernd.matzner@regard.io>"],
   "dependencies": {
     "@maptiler/leaflet-maptilersdk": "4.1.1",
-    "@maptiler/sdk": "3.8.0",
+    "@maptiler/sdk": "3.9.0",
     "@mdx-js/react": "3.1.1",
     "@radix-ui/react-accordion": "1.2.12",
     "@radix-ui/react-alert-dialog": "1.1.15",
@@ -63,10 +63,10 @@
     "@types/node": "24.10.1",
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
-    "@vitest/ui": "4.0.13",
+    "@vitest/ui": "4.0.14",
     "typescript": "5.9.3",
     "vite": "7.2.4",
-    "vitest": "4.0.13"
+    "vitest": "4.0.14"
   },
   "exports": {
     ".": {
