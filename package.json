@@ -33,7 +33,7 @@
     "@radix-ui/react-tooltip": "1.2.8",
     "@radix-ui/themes": "3.2.1",
     "@regardio/js": "workspace:*",
-    "@supabase/supabase-js": "2.84.0",
+    "@supabase/supabase-js": "2.86.0",
     "cmdk": "1.1.1",
     "cva": "beta",
     "embla-carousel-react": "8.6.0",
