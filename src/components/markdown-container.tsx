@@ -139,7 +139,10 @@ export const MarkdownContainer: React.FC<MarkdownContainerProps> = (props) => {
     <MDXProvider components={props.mdxComponents}>
       <Markdown
         className={cn('markdown', props.className)}
-        {...(props.markdownOverrides ? { options: { overrides: props.markdownOverrides } } : {})}
+        options={{
+          forceWrapper: true,
+          ...(props.markdownOverrides ? { overrides: props.markdownOverrides } : {}),
+        }}
       >
         {processedText}
       </Markdown>
