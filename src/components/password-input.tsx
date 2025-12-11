@@ -1,8 +1,9 @@
+import { Button } from '@base-ui/react/button';
+import { Input } from '@base-ui/react/input';
 import { useState } from 'react';
-import { Button } from '../shadcn/button';
-import type { InputProps } from '../shadcn/input';
-import { Input } from '../shadcn/input';
 import { cn } from '../utils/cn';
+
+export interface InputProps extends React.ComponentPropsWithoutRef<typeof Input> {}
 
 export interface PasswordInputProps extends InputProps {
   className?: string;
