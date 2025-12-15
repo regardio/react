@@ -7,7 +7,7 @@
     "@maptiler/sdk": "3.9.0",
     "@mdx-js/react": "3.1.1",
     "@regardio/js": "workspace:*",
-    "@supabase/supabase-js": "2.87.1",
+    "@supabase/supabase-js": "2.87.2",
     "cmdk": "1.1.1",
     "cva": "beta",
     "embla-carousel": "8.6.0",
