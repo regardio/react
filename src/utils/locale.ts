@@ -1,5 +1,4 @@
 import { LanguageDetectorLingui } from '@regardio/js/intl/language-detector';
-import { parseAcceptLanguage } from 'intl-parse-accept-language';
 import { createCookie } from 'react-router';
 
 /**
@@ -137,22 +136,24 @@ export type Locales = string | string[] | undefined;
  *
  * @example
  * export let loader: LoaderFunction = async ({ request }) => {
- *   let locales = getClientLocales(request)
+ *   let locales = await getClientLocales(request)
  *   let date = new Date().toLocaleDateString(locales, {
  *     "day": "numeric",
  *   });
  *   return json({ date })
  * }
  */
-export function getClientLocales(headers: Headers): Locales;
-export function getClientLocales(request: Request): Locales;
-export function getClientLocales(requestOrHeaders: Request | Headers): Locales {
+export function getClientLocales(headers: Headers): Promise<Locales>;
+export function getClientLocales(request: Request): Promise<Locales>;
+export async function getClientLocales(requestOrHeaders: Request | Headers): Promise<Locales> {
   const headers = getHeaders(requestOrHeaders);
 
   const acceptLanguage = headers.get('Accept-Language');
 
   // if the header is not defined, return undefined
   if (!acceptLanguage) return undefined;
+
+  const { parseAcceptLanguage } = await import('intl-parse-accept-language');
 
   const locales = parseAcceptLanguage(acceptLanguage, {
     ignoreWildcard: true,

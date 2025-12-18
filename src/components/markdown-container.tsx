@@ -140,7 +140,9 @@ export const MarkdownContainer: React.FC<MarkdownContainerProps> = (props) => {
       <Markdown
         className={cn('markdown', props.className)}
         options={{
+          disableParsingRawHTML: false,
           forceWrapper: true,
+          tagfilter: false,
           ...(props.markdownOverrides ? { overrides: props.markdownOverrides } : {}),
         }}
       >

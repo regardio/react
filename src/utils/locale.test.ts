@@ -3,50 +3,50 @@ import { beforeEach, describe, expect, test } from 'vitest';
 import { createLocaleConfig, getClientLocales } from './locale';
 
 describe('getClientLocales', () => {
-  test('returns undefined when Accept-Language header is not present', () => {
+  test('returns undefined when Accept-Language header is not present', async () => {
     const headers = new Headers();
-    expect(getClientLocales(headers)).toBeUndefined();
+    expect(await getClientLocales(headers)).toBeUndefined();
   });
 
-  test('returns single locale when only one valid locale is present', () => {
+  test('returns single locale when only one valid locale is present', async () => {
     const headers = new Headers({
       'Accept-Language': 'en-US',
     });
-    expect(getClientLocales(headers)).toBe('en-US');
+    expect(await getClientLocales(headers)).toBe('en-US');
   });
 
-  test('returns array of locales when multiple valid locales are present', () => {
+  test('returns array of locales when multiple valid locales are present', async () => {
     const headers = new Headers({
       'Accept-Language': 'en-US,fr-FR;q=0.9,de-DE;q=0.8',
     });
-    const locales = getClientLocales(headers);
+    const locales = await getClientLocales(headers);
     expect(Array.isArray(locales)).toBe(true);
     expect(locales).toContain('en-US');
     expect(locales).toContain('fr-FR');
     expect(locales).toContain('de-DE');
   });
 
-  test('handles Request object correctly', () => {
+  test('handles Request object correctly', async () => {
     const request = new Request('https://example.com', {
       headers: {
         'Accept-Language': 'en-US',
       },
     });
-    expect(getClientLocales(request)).toBe('en-US');
+    expect(await getClientLocales(request)).toBe('en-US');
   });
 
-  test('returns undefined for invalid locales', () => {
+  test('returns undefined for invalid locales', async () => {
     const headers = new Headers({
       'Accept-Language': 'invalid-locale',
     });
-    expect(getClientLocales(headers)).toBeUndefined();
+    expect(await getClientLocales(headers)).toBeUndefined();
   });
 
-  test('ignores wildcards in Accept-Language header', () => {
+  test('ignores wildcards in Accept-Language header', async () => {
     const headers = new Headers({
       'Accept-Language': '*',
     });
-    expect(getClientLocales(headers)).toBeUndefined();
+    expect(await getClientLocales(headers)).toBeUndefined();
   });
 });
 

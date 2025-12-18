@@ -61,6 +61,21 @@ const Picture: React.FC<PictureProps> = ({
     return null;
   }
 
+  // Check if this is a simple image without size variations
+  // (single format with empty size string, or no placeholder in URL)
+  const isSimpleImage =
+    (imageFormats.length === 1 && imageFormats[0]?.size === '') || !baseUrl.includes(placeholder);
+
+  if (isSimpleImage) {
+    return (
+      <img
+        alt={alt}
+        className={cn(className, imgClassName)}
+        src={baseUrl}
+      />
+    );
+  }
+
   // Generate srcset by replacing placeholder in baseUrl
   const srcSet = imageFormats
     .map(({ size, width }) => {

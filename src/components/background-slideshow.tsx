@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Picture } from './picture';
 
 export type ImageData = {
@@ -35,29 +35,9 @@ export function BackgroundSlideshow({
   transitionDuration = 6000,
   filter,
 }: BackgroundSlideshowProps): ReactElement {
-  // Track if component is mounted (client-side only)
-  const [isMounted, setIsMounted] = useState(false);
-  const [showSlideshow, setShowSlideshow] = useState(false);
-
-  // State for managing the slideshow
-  const [frontImage, setFrontImage] = useState<ImageData | null>(null);
-  const [backImage, setBackImage] = useState<ImageData | null>(null);
-  const [activeFront, setActiveFront] = useState(true);
-  const [validatedImages, setValidatedImages] = useState<ImageData[]>([]);
-  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const isTransitioning = useRef(false);
-
-  // Set mounted state after component mounts (client-side only)
-  useEffect(() => {
-    setIsMounted(true);
-    // Defer slideshow until after FCP
-    const timeout = setTimeout(() => setShowSlideshow(true), 100);
-    return () => clearTimeout(timeout);
-  }, []);
-
-  // Validate images array using Zod
-  useEffect(() => {
-    const validatedImages = images
+  // Validate images synchronously for immediate first image render
+  const validatedImages = useMemo(() => {
+    return images
       .map((img) => {
         if (typeof img !== 'object' || img === null) return null;
         return {
@@ -69,149 +49,124 @@ export function BackgroundSlideshow({
         };
       })
       .filter((img): img is ImageData => img !== null);
-
-    setValidatedImages(validatedImages);
   }, [images]);
 
-  // Initialize images once we have validated data
+  // Get filtered images for slideshow
+  const availableImages = useMemo(() => {
+    const filtered = filter ? validatedImages.filter(filter) : validatedImages;
+    return filtered.length > 0 ? filtered : validatedImages;
+  }, [validatedImages, filter]);
+
+  // First image is shown immediately (no animation needed)
+  const firstImage = availableImages[0] || null;
+
+  // Track if slideshow has started (client-side only)
+  const [slideshowStarted, setSlideshowStarted] = useState(false);
+
+  // The overlay image that fades in over the first image
+  const [overlayImage, setOverlayImage] = useState<ImageData | null>(null);
+  const [overlayVisible, setOverlayVisible] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const timerRef = useRef<number | undefined>(undefined);
+  const isTransitioning = useRef(false);
+
+  // Start slideshow after mount
   useEffect(() => {
-    if (validatedImages.length === 0) return;
+    if (!slideshow || availableImages.length <= 1) return;
 
-    // Apply custom filter if provided
-    const filteredImages = filter ? validatedImages.filter(filter) : validatedImages;
+    // Delay slideshow start to allow first image to be LCP
+    const timeout = window.setTimeout(() => {
+      setSlideshowStarted(true);
+    }, slideshowInterval);
 
-    // If no images match the filter, use all valid images
-    const imagesToUse = filteredImages.length > 0 ? filteredImages : validatedImages;
+    return () => window.clearTimeout(timeout);
+  }, [slideshow, availableImages.length, slideshowInterval]);
 
-    // Use the first image as the initial image
-    const imageToUse = imagesToUse[0];
-
-    // Only if we have a valid image
-    if (imageToUse) {
-      // Set initial images if not already set
-      if (!frontImage) {
-        setFrontImage(imageToUse);
-      }
-      if (!backImage) {
-        setBackImage(imageToUse);
-      }
-    }
-  }, [validatedImages, filter, frontImage, backImage]);
-
-  // Set up slideshow if enabled
+  // Run the slideshow cycle
   useEffect(() => {
-    // Don't proceed if we don't have images or slideshow isn't enabled
-    if (!slideshow || !isMounted || !showSlideshow || !frontImage || !backImage) {
-      return;
-    }
+    if (!slideshowStarted || availableImages.length <= 1) return;
 
     // Clear any existing timers
-    if (timerRef.current) clearTimeout(timerRef.current);
+    if (timerRef.current) window.clearTimeout(timerRef.current);
 
     const cycleImages = () => {
-      // Don't start a new transition if one is already in progress
       if (isTransitioning.current) return;
 
-      // Apply custom filter if provided
-      const availableImages = filter ? validatedImages.filter(filter) : validatedImages;
-
-      if (availableImages.length <= 1) return; // No need to cycle if only one image
-
-      // Get current image index
-      const currentImage = activeFront ? frontImage : backImage;
-      if (!currentImage) return; // Safety check
-
-      const currentIndex = availableImages.findIndex((img) => img.id === currentImage.id);
-
-      // Get next image (or loop back to first)
-      const nextIndex = (currentIndex + 1) % availableImages.length;
-      const nextImage = availableImages[nextIndex];
-
-      // Safety check - shouldn't happen but TypeScript needs this
-      if (!nextImage) return;
-
-      // Mark that we're starting a transition
       isTransitioning.current = true;
 
-      // 1. Load the new image into the inactive container
-      if (activeFront) {
-        // Front is active, so update the back image
-        setBackImage(nextImage);
-      } else {
-        // Back is active, so update the front image
-        setFrontImage(nextImage);
+      // Get next image index
+      const nextIdx = (currentIndex + 1) % availableImages.length;
+      const nextImage = availableImages[nextIdx];
+
+      if (!nextImage) {
+        isTransitioning.current = false;
+        return;
       }
 
-      // 2. Wait for a longer delay to ensure the new image is fully loaded
-      setTimeout(() => {
-        // Toggle which container is active (this triggers the animation via CSS classes)
-        setActiveFront(!activeFront);
+      // Load next image into overlay (hidden)
+      setOverlayImage(nextImage);
 
-        // 3. After the animation completes, reset the transition flag
-        setTimeout(() => {
+      // Short delay to ensure image starts loading, then fade in
+      window.setTimeout(() => {
+        setOverlayVisible(true);
+
+        // After transition completes, update state
+        window.setTimeout(() => {
+          setCurrentIndex(nextIdx);
+          setOverlayVisible(false);
           isTransitioning.current = false;
 
-          // 4. Schedule the next transition
-          timerRef.current = setTimeout(cycleImages, slideshowInterval);
-        }, transitionDuration); // Use the configurable transition duration
-      }, 100); // Short delay to ensure the new image is loaded
+          // Schedule next transition
+          timerRef.current = window.setTimeout(cycleImages, slideshowInterval);
+        }, transitionDuration);
+      }, 100);
     };
 
-    // Start the cycle after the initial interval
-    timerRef.current = setTimeout(cycleImages, slideshowInterval);
+    // Start first transition
+    cycleImages();
 
-    // Clean up on unmount
     return () => {
-      if (timerRef.current) clearTimeout(timerRef.current);
+      if (timerRef.current) window.clearTimeout(timerRef.current);
     };
-  }, [
-    slideshow,
-    isMounted,
-    showSlideshow,
-    frontImage,
-    backImage,
-    slideshowInterval,
-    transitionDuration,
-    validatedImages,
-    filter,
-    activeFront,
-  ]);
+  }, [slideshowStarted, availableImages, currentIndex, slideshowInterval, transitionDuration]);
 
   // If no valid images, return empty div
-  if (validatedImages.length === 0) {
+  if (validatedImages.length === 0 || !firstImage) {
     return <div className={className} />;
   }
 
-  // Show loading state before slideshow starts
-  if (!showSlideshow || !frontImage || !backImage) {
-    return <div className={`relative ${className}`} />;
-  }
+  // Get current base image (first image initially, then cycles)
+  const baseImage = availableImages[currentIndex] || firstImage;
 
   return (
     <div className={className}>
-      {/* Front image container */}
-      <div
-        className={`absolute inset-0 w-full h-full transition-opacity ${activeFront ? 'opacity-100' : 'opacity-0'} ${transitionDuration <= 3000 ? 'duration-3000' : transitionDuration <= 4000 ? 'duration-4000' : transitionDuration <= 5000 ? 'duration-5000' : 'duration-6000'}`}
-      >
+      {/* Base image - always visible, no fade-in animation */}
+      <div className="absolute inset-0 w-full h-full">
         <Picture
-          alt={frontImage.at[locale] || ''}
-          baseUrl={baseUrl.replace('{id}', frontImage.id)}
+          alt={baseImage.at[locale] || ''}
+          baseUrl={baseUrl.replace('{id}', baseImage.id).replace('{fn}', baseImage.fn)}
           className={pictureClassName}
+          formats={[{ size: '', width: 1080 }]}
           imgClassName={imgClassName}
+          placeholder=""
         />
       </div>
 
-      {/* Back container */}
-      <div
-        className={`absolute inset-0 w-full h-full transition-opacity ${!activeFront ? 'opacity-100' : 'opacity-0'} ${transitionDuration <= 3000 ? 'duration-3000' : transitionDuration <= 4000 ? 'duration-4000' : transitionDuration <= 5000 ? 'duration-5000' : 'duration-6000'}`}
-      >
-        <Picture
-          alt={backImage.at[locale] || ''}
-          baseUrl={baseUrl.replace('{id}', backImage.id)}
-          className={pictureClassName}
-          imgClassName={imgClassName}
-        />
-      </div>
+      {/* Overlay image - fades in over base image during transitions */}
+      {overlayImage && (
+        <div
+          className={`absolute inset-0 w-full h-full transition-opacity ${overlayVisible ? 'opacity-100' : 'opacity-0'} ${transitionDuration <= 3000 ? 'duration-3000' : transitionDuration <= 4000 ? 'duration-4000' : transitionDuration <= 5000 ? 'duration-5000' : 'duration-6000'}`}
+        >
+          <Picture
+            alt={overlayImage.at[locale] || ''}
+            baseUrl={baseUrl.replace('{id}', overlayImage.id).replace('{fn}', overlayImage.fn)}
+            className={pictureClassName}
+            formats={[{ size: '', width: 1080 }]}
+            imgClassName={imgClassName}
+            placeholder=""
+          />
+        </div>
+      )}
     </div>
   );
 }
