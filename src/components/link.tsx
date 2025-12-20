@@ -1,20 +1,45 @@
-import { useCallback } from 'react';
-import type { NavLinkProps } from 'react-router';
-import { NavLink, useNavigate } from 'react-router';
+import { createContext, useCallback, useContext } from 'react';
+import type { NavLinkProps, NavLinkRenderProps } from 'react-router';
+import { NavLink } from 'react-router';
 import { cva, type VariantProps } from '../utils/cn';
 import { lowerCaseSzett } from '../utils/text';
 
-export interface LinkBaseProps extends Omit<NavLinkProps, 'to' | 'className'> {
-  className?: string;
-  to?: string | Partial<{ pathname?: string; search?: string; hash?: string }> | undefined;
+/**
+ * Context for providing a path resolver function.
+ * This allows projects to inject their own localization logic.
+ */
+export type PathResolver = (routeKey: string) => string;
+
+const PathResolverContext = createContext<PathResolver | null>(null);
+
+export const PathResolverProvider = PathResolverContext.Provider;
+
+export function usePathResolver(): PathResolver | null {
+  return useContext(PathResolverContext);
 }
 
-export const LinkBase = ({ className, to, children, ...props }: LinkBaseProps) => {
-  const navigate = useNavigate();
+export interface LinkBaseProps extends Omit<NavLinkProps, 'to'> {
+  to?: string | Partial<{ pathname?: string; search?: string; hash?: string }> | undefined;
+  routeKey?: string;
+  viewTransition?: boolean;
+}
+
+export const LinkBase = ({
+  className,
+  to,
+  routeKey,
+  children,
+  onClick,
+  viewTransition = true,
+  ...props
+}: LinkBaseProps) => {
+  const pathResolver = usePathResolver();
 
   let path: string;
 
-  if (typeof to === 'string') {
+  if (routeKey && pathResolver) {
+    path = pathResolver(routeKey);
+  } else if (typeof to === 'string') {
     path = to;
   } else {
     path = to?.pathname ?? '';
@@ -22,11 +47,18 @@ export const LinkBase = ({ className, to, children, ...props }: LinkBaseProps) =
     if (to?.hash) path += to.hash;
   }
 
+  const isExternal =
+    path.startsWith('tel:') ||
+    path.startsWith('mailto:') ||
+    path.startsWith('#') ||
+    path.startsWith('http');
+
   const handleClick = useCallback(
     (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+      onClick?.(event);
+      if (event.defaultPrevented) return;
+
       if (path.startsWith('tel:') || path.startsWith('mailto:')) {
-        event.preventDefault();
-        window.location.href = path;
         return;
       }
 
@@ -44,44 +76,48 @@ export const LinkBase = ({ className, to, children, ...props }: LinkBaseProps) =
         window.open(path, '_blank', 'noopener,noreferrer');
         return;
       }
-
-      navigate(path || '', { replace: false });
     },
-    [navigate, path],
+    [onClick, path],
   );
 
-  if (path) {
-    if (
-      typeof children !== 'function' &&
-      (path.startsWith('tel:') ||
-        path.startsWith('mailto:') ||
-        path.startsWith('#') ||
-        path.startsWith('http'))
-    ) {
-      return (
-        <a
-          {...(className ? { className } : {})}
-          href={path}
-          onClick={handleClick}
-        >
-          {children}
-        </a>
-      );
-    }
+  if (!path) {
+    return <>{typeof children === 'function' ? null : children}</>;
+  }
+
+  if (isExternal) {
+    const externalState: NavLinkRenderProps = {
+      isActive: false,
+      isPending: false,
+      isTransitioning: false,
+    };
+    const resolvedClassName =
+      typeof className === 'function' ? className(externalState) : className;
+    const resolvedStyle =
+      typeof props.style === 'function' ? props.style(externalState) : props.style;
 
     return (
-      <NavLink
-        {...props}
-        {...(className ? { className } : {})}
+      <a
+        className={resolvedClassName}
+        href={path}
         onClick={handleClick}
-        to={path}
+        style={resolvedStyle}
       >
-        {children}
-      </NavLink>
+        {typeof children === 'function' ? children(externalState) : children}
+      </a>
     );
   }
 
-  return <>{typeof children === 'function' ? null : children}</>;
+  return (
+    <NavLink
+      {...props}
+      className={className}
+      onClick={handleClick}
+      to={path}
+      viewTransition={viewTransition}
+    >
+      {children}
+    </NavLink>
+  );
 };
 
 const link = cva({
@@ -119,9 +155,20 @@ const link = cva({
 
 export interface LinkProps extends Omit<NavLinkProps, 'to'>, VariantProps<typeof link> {
   to?: string | Partial<{ pathname?: string; search?: string; hash?: string }>;
+  routeKey?: string;
+  viewTransition?: boolean;
 }
 
-export const Link = ({ arrow, children, className, to, variant, ...props }: LinkProps) => {
+export const Link = ({
+  arrow,
+  children,
+  className,
+  routeKey,
+  to,
+  variant,
+  viewTransition,
+  ...props
+}: LinkProps) => {
   return (
     <LinkBase
       {...props}
@@ -130,7 +177,9 @@ export const Link = ({ arrow, children, className, to, variant, ...props }: Link
         className,
         variant,
       })}
+      routeKey={routeKey}
       to={to}
+      viewTransition={viewTransition}
     >
       {lowerCaseSzett(children as React.ReactNode)}
     </LinkBase>
