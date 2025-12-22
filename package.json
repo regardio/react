@@ -1,6 +1,9 @@
 {
   "$schema": "https://www.schemastore.org/package.json",
-  "authors": ["Bernd Matzner <bernd.matzner@regard.io>"],
+  "author": "Bernd Matzner <bernd.matzner@regard.io>",
+  "bugs": {
+    "url": "https://github.com/regardio/react/issues"
+  },
   "dependencies": {
     "@base-ui/react": "1.0.0",
     "@maptiler/leaflet-maptilersdk": "4.1.1",
@@ -33,6 +36,8 @@
   },
   "description": "Regardio React UI components",
   "devDependencies": {
+    "@changesets/changelog-github": "0.5.2",
+    "@changesets/cli": "2.29.8",
     "@regardio/dev": "1.0.1",
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "16.3.1",
@@ -47,11 +52,10 @@
     "vite": "7.3.0",
     "vitest": "4.0.16"
   },
+  "engines": {
+    "node": ">=18"
+  },
   "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    },
     "./components/*": {
       "import": "./dist/components/*.js",
       "types": "./dist/components/*.d.ts"
@@ -66,9 +70,20 @@
       "types": "./dist/utils/*.d.ts"
     }
   },
+  "files": ["dist", "src"],
+  "homepage": "https://github.com/regardio/react/blob/main/README.md",
+  "keywords": ["react", "components", "ui", "regardio", "tailwindcss"],
   "license": "MIT",
   "name": "@regardio/react",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "directory": "packages/react",
+    "type": "git",
+    "url": "https://github.com/regardio/react.git"
+  },
   "scripts": {
     "build": "exec-tsc --project tsconfig.build.json",
     "clean": "exec-clean .turbo dist",
@@ -80,12 +95,15 @@
     "lint:biome": "lint-biome check .",
     "lint:md": "lint-md \"**/*.md\" \"**/*.mdx\" \"!**/node_modules/**\" \"!**/dist/**\"",
     "prepare": "exec-husky",
+    "release": "pnpm changeset publish",
     "report": "exec-s report:*",
     "report:unit": "vitest run --reporter html",
     "test": "exec-s test:*",
     "test:unit": "vitest run",
-    "typecheck": "exec-tsc --noEmit"
+    "typecheck": "exec-tsc --noEmit",
+    "version": "pnpm changeset version"
   },
   "sideEffects": ["./src/styles/tailwind.css"],
-  "type": "module"
+  "type": "module",
+  "version": "0.0.0"
 }
