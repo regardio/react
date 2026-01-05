@@ -21,8 +21,8 @@ importers:
         specifier: 3.1.1
         version: 3.1.1(@types/react@19.2.7)(react@19.2.3)
       '@regardio/js':
-        specifier: 0.4.1
-        version: 0.4.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: 0.4.2
+        version: 0.4.2(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@supabase/supabase-js':
         specifier: 2.89.0
         version: 2.89.0
@@ -85,8 +85,8 @@ importers:
         version: 4.3.5
     devDependencies:
       '@regardio/dev':
-        specifier: 1.9.4
-        version: 1.9.4(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(@vitest/browser-playwright@4.0.16)(jiti@2.6.1)(lightningcss@1.30.2)(postcss@8.5.6)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: 1.10.1
+        version: 1.10.1(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(@vitest/browser-playwright@4.0.16)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@storybook/addon-a11y':
         specifier: 10.1.11
         version: 10.1.11(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@2.8.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))
@@ -139,7 +139,7 @@ importers:
         specifier: 27.4.0
         version: 27.4.0
       playwright:
-        specifier: ^1.57.0
+        specifier: 1.57.0
         version: 1.57.0
       storybook:
         specifier: 10.1.11
@@ -149,7 +149,7 @@ importers:
         version: 4.1.18
       tsup:
         specifier: 8.5.1
-        version: 8.5.1(jiti@2.6.1)(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.3)
+        version: 8.5.1(jiti@2.6.1)(tsx@4.21.0)(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -998,18 +998,18 @@ packages:
       '@types/react':
         optional: true
 
-  '@regardio/dev@1.9.4':
-    resolution: {integrity: sha512-2u5COju7AaCcOj711otpzp2oyMcDOipDxNLYlCgZpR9GWcHZQYs0E9MVCE87KLPA6mrDuJ/HEzdl1Jh9l97Diw==}
+  '@regardio/dev@1.10.1':
+    resolution: {integrity: sha512-LMbaU825nFtN+2b7Nr4Lb45+vxrsno6isWGpzYuGriwCfA9QRBs8+aCNZpoMswj8FAo8Ho7p1wbGqI8FEztbjQ==}
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
-      postcss: ^8.4
+      postcss: '8.4'
     peerDependenciesMeta:
       postcss:
         optional: true
 
-  '@regardio/js@0.4.1':
-    resolution: {integrity: sha512-4edpkaBMisIhTBKvudDALuBEd1rLodEI/rlBlzp778OCnWoUJqPFLt1zmJJEZTo5X1qT3ALgbSqavCXdsQVpLA==}
+  '@regardio/js@0.4.2':
+    resolution: {integrity: sha512-oLIftrUFHqMP63F4sLBw+3QInw4edThHx9YOyRhwcOErxSGjVc6078T3m1wkvo27Wf42uG63NF6QTZ24oPR37w==}
 
   '@rolldown/pluginutils@1.0.0-beta.53':
     resolution: {integrity: sha512-vENRlFU4YbrwVqNDZ7fLvy+JR1CRkyr01jhSiDpE1u6py3OMzQfztQU2jxykW3ALNxO4kSlqIDeYyD0Y9RcQeQ==}
@@ -4928,7 +4928,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.2.7
 
-  '@regardio/dev@1.9.4(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(@vitest/browser-playwright@4.0.16)(jiti@2.6.1)(lightningcss@1.30.2)(postcss@8.5.6)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@regardio/dev@1.10.1(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(@vitest/browser-playwright@4.0.16)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
       '@biomejs/biome': 2.3.11
       '@changesets/changelog-github': 0.5.2
@@ -4950,8 +4950,6 @@ snapshots:
       typescript: 5.9.3
       vite: 7.3.0(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0)
       vitest: 4.0.16(@types/node@25.0.3)(@vitest/browser-playwright@4.0.16)(@vitest/ui@4.0.16)(jiti@2.6.1)(jsdom@27.4.0)(lightningcss@1.30.2)(tsx@4.21.0)
-    optionalDependencies:
-      postcss: 8.5.6
     transitivePeerDependencies:
       - '@edge-runtime/vm'
       - '@exodus/crypto'
@@ -4981,7 +4979,7 @@ snapshots:
       - utf-8-validate
       - yaml
 
-  '@regardio/js@0.4.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@regardio/js@0.4.2(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
       intl-parse-accept-language: 1.0.0
       react-router: 7.11.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -7260,12 +7258,11 @@ snapshots:
 
   possible-typed-array-names@1.1.0: {}
 
-  postcss-load-config@6.0.1(jiti@2.6.1)(postcss@8.5.6)(tsx@4.21.0):
+  postcss-load-config@6.0.1(jiti@2.6.1)(tsx@4.21.0):
     dependencies:
       lilconfig: 3.1.3
     optionalDependencies:
       jiti: 2.6.1
-      postcss: 8.5.6
       tsx: 4.21.0
 
   postcss@8.5.6:
@@ -7837,7 +7834,7 @@ snapshots:
 
   tslib@2.8.1: {}
 
-  tsup@8.5.1(jiti@2.6.1)(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.3):
+  tsup@8.5.1(jiti@2.6.1)(tsx@4.21.0)(typescript@5.9.3):
     dependencies:
       bundle-require: 5.1.0(esbuild@0.27.2)
       cac: 6.7.14
@@ -7848,7 +7845,7 @@ snapshots:
       fix-dts-default-cjs-exports: 1.0.1
       joycon: 3.1.1
       picocolors: 1.1.1
-      postcss-load-config: 6.0.1(jiti@2.6.1)(postcss@8.5.6)(tsx@4.21.0)
+      postcss-load-config: 6.0.1(jiti@2.6.1)(tsx@4.21.0)
       resolve-from: 5.0.0
       rollup: 4.55.1
       source-map: 0.7.6
@@ -7857,7 +7854,6 @@ snapshots:
       tinyglobby: 0.2.15
       tree-kill: 1.2.2
     optionalDependencies:
-      postcss: 8.5.6
       typescript: 5.9.3
     transitivePeerDependencies:
       - jiti
