@@ -14,7 +14,7 @@ This folder contains detailed documentation for all components, hooks, and utili
 
 - [BackgroundSlideshow](./components/background-slideshow.md) — Animated background image carousel
 - [BlurryGradient](./components/blurry-gradient.md) — SVG decorative gradients
-- [Box](./components/box.md) — Flexible container component
+- [Box component](./components/box.md) — Flexible container component
 - [Carousel](./components/carousel.md) — Embla-powered carousel
 - [Countdown](./components/countdown.md) — Countdown timer display
 - [DefinitionList](./components/definition-list.md) — Semantic definition lists
@@ -26,14 +26,14 @@ This folder contains detailed documentation for all components, hooks, and utili
 - [Iframe](./components/iframe.md) — Responsive iframes
 - [Item](./components/item.md) — Grid items with theming
 - [LeafletMap](./components/leaflet-map.md) — Leaflet map integration
-- [Link](./components/link.md) — Smart routing links
+- [Link component](./components/link.md) — Smart routing links
 - [ListItem](./components/list-item.md) — Styled list items
 - [MaptilerMap](./components/maptiler-map.md) — MapTiler SDK integration
 - [MarkdownContainer](./components/markdown-container.md) — Markdown/MDX rendering
 - [PasswordInput](./components/password-input.md) — Password with visibility toggle
 - [Picture](./components/picture.md) — Responsive images
 - [ProtectedEmail](./components/protected-email.md) — Email obfuscation
-- [Text](./components/text.md) — Typography component
+- [Text component](./components/text.md) — Typography component
 - [UnorderedList](./components/unordered-list.md) — Styled lists
 
 ### Hooks

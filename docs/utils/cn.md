@@ -127,5 +127,5 @@ type ButtonProps = VariantProps<typeof button>;
 
 ## Related
 
-- [Box](../components/box.md) — Uses cva for variants
-- [Link](../components/link.md) — Uses cva for variants
+- [Box component](../components/box.md) — Uses cva for variants
+- [Link component](../components/link.md) — Uses cva for variants

@@ -116,5 +116,5 @@ import { MDXProvider } from '@mdx-js/react';
 
 ## Related
 
-- [Text](./text.md) — Typography component
-- [Link](./link.md) — Link component
+- [Text component](./text.md) — Typography component
+- [Link component](./link.md) — Link component

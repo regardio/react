@@ -105,5 +105,5 @@ Responsive column spans:
 
 ## Related
 
-- [Box](./box.md) — Basic container
-- [Link](./link.md) — Link component
+- [Box component](./box.md) — Basic container
+- [Link component](./link.md) — Link component

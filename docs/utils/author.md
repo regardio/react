@@ -77,5 +77,5 @@ Renders author information with optional link and avatar.
 
 ## Related
 
-- [Text](../components/text.md) — Typography component
-- [Link](../components/link.md) — Link component
+- [Text component](../components/text.md) — Typography component
+- [Link component](../components/link.md) — Link component

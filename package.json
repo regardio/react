@@ -9,7 +9,7 @@
     "@maptiler/leaflet-maptilersdk": "4.1.1",
     "@maptiler/sdk": "3.9.0",
     "@mdx-js/react": "3.1.1",
-    "@regardio/js": "0.2.4",
+    "@regardio/js": "0.3.0",
     "@supabase/supabase-js": "2.89.0",
     "cmdk": "1.1.1",
     "cva": "beta",
@@ -76,18 +76,9 @@
       "types": "./dist/utils/*.d.ts"
     }
   },
-  "files": [
-    "dist",
-    "src"
-  ],
+  "files": ["dist", "src"],
   "homepage": "https://github.com/regardio/react/blob/main/README.md",
-  "keywords": [
-    "react",
-    "components",
-    "ui",
-    "regardio",
-    "tailwindcss"
-  ],
+  "keywords": ["react", "components", "ui", "regardio", "tailwindcss"],
   "license": "MIT",
   "name": "@regardio/react",
   "private": false,
@@ -120,9 +111,7 @@
     "typecheck": "exec-tsc --noEmit",
     "version": "flow-changeset version"
   },
-  "sideEffects": [
-    "./src/styles/tailwind.css"
-  ],
+  "sideEffects": ["./src/styles/tailwind.css"],
   "type": "module",
-  "version": "0.3.0"
+  "version": "0.3.2"
 }

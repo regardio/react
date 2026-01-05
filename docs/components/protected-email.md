@@ -95,4 +95,4 @@ Users without JavaScript see the obfuscated format (`user(at)domain.com`) and ca
 
 ## Related
 
-- [Link](./link.md) — General link component
+- [Link component](./link.md) — General link component

@@ -112,5 +112,5 @@ function Navigation() {
 
 ## Related
 
-- [Link](../components/link.md) — Link component with active states
+- [Link component](../components/link.md) — Link component with active states
 - [useCurrentRouteData](../hooks/use-current-route-data.md) — Route data access

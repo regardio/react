@@ -87,4 +87,4 @@ import { Heart } from 'lucide-react';
 
 ## Related
 
-- [Link](./link.md) — Link component with variants
+- [Link component](./link.md) — Link component with variants
