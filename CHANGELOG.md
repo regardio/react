@@ -1,5 +1,11 @@
 # @regardio/react
 
+## 0.3.3
+
+### Patch Changes
+
+- list item story with unordered list
+
 ## 0.3.2
 
 ### Patch Changes

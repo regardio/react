@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ListItem } from '../components/list-item';
+import { UnorderedList } from '../components/unordered-list';
 
 const meta: Meta<typeof ListItem> = {
   component: ListItem,
@@ -21,11 +22,11 @@ export const Default: Story = {
 
 export const InList: Story = {
   render: () => (
-    <ul>
+    <UnorderedList>
       <ListItem>First item</ListItem>
       <ListItem>Second item</ListItem>
       <ListItem>Third item</ListItem>
-    </ul>
+    </UnorderedList>
   ),
 };
 
