@@ -54,6 +54,7 @@
     "playwright": "^1.57.0",
     "storybook": "10.1.11",
     "tailwindcss": "4.1.18",
+    "tsup": "8.5.0",
     "typescript": "5.9.3",
     "vite": "7.3.0",
     "vitest": "4.0.16"
@@ -91,9 +92,9 @@
     "url": "https://github.com/regardio/react.git"
   },
   "scripts": {
-    "build": "exec-tsc --project tsconfig.build.json",
+    "build": "tsup",
     "clean": "exec-clean .turbo dist",
-    "dev": "exec-tsc --project tsconfig.build.json --watch",
+    "dev": "tsup --watch",
     "fix": "exec-p fix:*",
     "fix:biome": "lint-biome check --write --unsafe .",
     "fix:md": "lint-md --fix",
@@ -113,5 +114,5 @@
   },
   "sideEffects": ["./src/styles/tailwind.css"],
   "type": "module",
-  "version": "0.3.3"
+  "version": "0.4.0"
 }

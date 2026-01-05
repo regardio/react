@@ -1,5 +1,11 @@
 # @regardio/react
 
+## 0.4.0
+
+### Minor Changes
+
+- fix: switch to tsup build
+
 ## 0.3.3
 
 ### Patch Changes
