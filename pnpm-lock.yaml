@@ -21,8 +21,8 @@ importers:
         specifier: 3.1.1
         version: 3.1.1(@types/react@19.2.7)(react@19.2.3)
       '@regardio/js':
-        specifier: 0.2.2
-        version: 0.2.2(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: 0.2.4
+        version: 0.2.4(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@supabase/supabase-js':
         specifier: 2.89.0
         version: 2.89.0
@@ -867,8 +867,8 @@ packages:
       postcss:
         optional: true
 
-  '@regardio/js@0.2.2':
-    resolution: {integrity: sha512-miR9iNbStSzZ/HDgh5zyBp6D6T8vReEta1PyMdblLjSNJqdnj6EZETePsJnIYH49hayCBSQcIjoYlmSVBAdQsQ==}
+  '@regardio/js@0.2.4':
+    resolution: {integrity: sha512-joYlWhjZUFn80X6OzSTyrKHw+PeF9fMbC7PLcIURXY3EcROl7o0IsnAU+Cov9/PSmtPFxWQispICp8zEN/pzRA==}
 
   '@rollup/rollup-android-arm-eabi@4.55.1':
     resolution: {integrity: sha512-9R0DM/ykwfGIlNu6+2U09ga0WXeZ9MRC2Ter8jnz8415VbuIykVuc6bhdrbORFZANDmTDvq26mJrEVTl8TdnDg==}
@@ -3947,7 +3947,7 @@ snapshots:
       - utf-8-validate
       - yaml
 
-  '@regardio/js@0.2.2(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@regardio/js@0.2.4(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
       intl-parse-accept-language: 1.0.0
       react-router: 7.11.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)

@@ -1,5 +1,25 @@
 # @regardio/react
 
+## 0.1.3
+
+### Patch Changes
+
+- Release update
+
+## 0.1.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @regardio/js@0.2.4
+
+## 0.1.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @regardio/js@0.2.3
+
 ## 0.1.0
 
 ### Minor Changes
