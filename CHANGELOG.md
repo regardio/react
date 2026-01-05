@@ -1,5 +1,18 @@
 # @regardio/react
 
+## 0.4.5
+
+### Patch Changes
+
+- chore: deps
+
+## 0.4.4
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @regardio/js@0.4.1
+
 ## 0.4.3
 
 ### Patch Changes
