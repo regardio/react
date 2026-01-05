@@ -33,7 +33,7 @@
   },
   "description": "Regardio React UI components",
   "devDependencies": {
-    "@regardio/dev": "1.9.4",
+    "@regardio/dev": "1.10.0",
     "@storybook/addon-a11y": "10.1.11",
     "@storybook/addon-docs": "10.1.11",
     "@storybook/addon-vitest": "10.1.11",
@@ -51,7 +51,7 @@
     "@vitest/coverage-v8": "4.0.16",
     "@vitest/ui": "4.0.16",
     "jsdom": "27.4.0",
-    "playwright": "^1.57.0",
+    "playwright": "1.57.0",
     "storybook": "10.1.11",
     "tailwindcss": "4.1.18",
     "tsup": "8.5.1",
@@ -63,18 +63,146 @@
     "node": ">=18"
   },
   "exports": {
-    "./components/*": {
-      "import": "./dist/components/*.js",
-      "types": "./dist/components/*.d.ts"
+    "./components/background-slideshow": {
+      "import": "./dist/components/background-slideshow.js",
+      "types": "./dist/components/background-slideshow.d.ts"
     },
-    "./hooks/*": {
-      "import": "./dist/hooks/*.js",
-      "types": "./dist/hooks/*.d.ts"
+    "./components/blurry-gradient": {
+      "import": "./dist/components/blurry-gradient.js",
+      "types": "./dist/components/blurry-gradient.d.ts"
+    },
+    "./components/box": {
+      "import": "./dist/components/box.js",
+      "types": "./dist/components/box.d.ts"
+    },
+    "./components/carousel": {
+      "import": "./dist/components/carousel.js",
+      "types": "./dist/components/carousel.d.ts"
+    },
+    "./components/countdown": {
+      "import": "./dist/components/countdown.js",
+      "types": "./dist/components/countdown.d.ts"
+    },
+    "./components/definition-list": {
+      "import": "./dist/components/definition-list.js",
+      "types": "./dist/components/definition-list.d.ts"
+    },
+    "./components/generic-error": {
+      "import": "./dist/components/generic-error.js",
+      "types": "./dist/components/generic-error.d.ts"
+    },
+    "./components/heading": {
+      "import": "./dist/components/heading.js",
+      "types": "./dist/components/heading.d.ts"
+    },
+    "./components/highlight": {
+      "import": "./dist/components/highlight.js",
+      "types": "./dist/components/highlight.d.ts"
+    },
+    "./components/icon-button": {
+      "import": "./dist/components/icon-button.js",
+      "types": "./dist/components/icon-button.d.ts"
+    },
+    "./components/if": {
+      "import": "./dist/components/if.js",
+      "types": "./dist/components/if.d.ts"
+    },
+    "./components/iframe": {
+      "import": "./dist/components/iframe.js",
+      "types": "./dist/components/iframe.d.ts"
+    },
+    "./components/item": {
+      "import": "./dist/components/item.js",
+      "types": "./dist/components/item.d.ts"
+    },
+    "./components/leaflet-map": {
+      "import": "./dist/components/leaflet-map.js",
+      "types": "./dist/components/leaflet-map.d.ts"
+    },
+    "./components/link": {
+      "import": "./dist/components/link.js",
+      "types": "./dist/components/link.d.ts"
+    },
+    "./components/list-item": {
+      "import": "./dist/components/list-item.js",
+      "types": "./dist/components/list-item.d.ts"
+    },
+    "./components/maptiler-map": {
+      "import": "./dist/components/maptiler-map.js",
+      "types": "./dist/components/maptiler-map.d.ts"
+    },
+    "./components/markdown-container": {
+      "import": "./dist/components/markdown-container.js",
+      "types": "./dist/components/markdown-container.d.ts"
+    },
+    "./components/password-input": {
+      "import": "./dist/components/password-input.js",
+      "types": "./dist/components/password-input.d.ts"
+    },
+    "./components/picture": {
+      "import": "./dist/components/picture.js",
+      "types": "./dist/components/picture.d.ts"
+    },
+    "./components/protected-email": {
+      "import": "./dist/components/protected-email.js",
+      "types": "./dist/components/protected-email.d.ts"
+    },
+    "./components/text": {
+      "import": "./dist/components/text.js",
+      "types": "./dist/components/text.d.ts"
+    },
+    "./components/unordered-list": {
+      "import": "./dist/components/unordered-list.js",
+      "types": "./dist/components/unordered-list.d.ts"
+    },
+    "./hooks/use-current-route-data": {
+      "import": "./dist/hooks/use-current-route-data.js",
+      "types": "./dist/hooks/use-current-route-data.d.ts"
+    },
+    "./hooks/use-focus-search": {
+      "import": "./dist/hooks/use-focus-search.js",
+      "types": "./dist/hooks/use-focus-search.d.ts"
+    },
+    "./hooks/use-matches-data": {
+      "import": "./dist/hooks/use-matches-data.js",
+      "types": "./dist/hooks/use-matches-data.d.ts"
+    },
+    "./hooks/use-media-query": {
+      "import": "./dist/hooks/use-media-query.js",
+      "types": "./dist/hooks/use-media-query.d.ts"
+    },
+    "./hooks/use-mobile": {
+      "import": "./dist/hooks/use-mobile.js",
+      "types": "./dist/hooks/use-mobile.d.ts"
+    },
+    "./hooks/use-nonce": {
+      "import": "./dist/hooks/use-nonce.js",
+      "types": "./dist/hooks/use-nonce.d.ts"
+    },
+    "./hooks/use-orientation": {
+      "import": "./dist/hooks/use-orientation.js",
+      "types": "./dist/hooks/use-orientation.d.ts"
+    },
+    "./hooks/use-user": {
+      "import": "./dist/hooks/use-user.js",
+      "types": "./dist/hooks/use-user.d.ts"
     },
     "./tailwind.css": "./src/styles/tailwind.css",
-    "./utils/*": {
-      "import": "./dist/utils/*.js",
-      "types": "./dist/utils/*.d.ts"
+    "./utils/author": {
+      "import": "./dist/utils/author.js",
+      "types": "./dist/utils/author.d.ts"
+    },
+    "./utils/cn": {
+      "import": "./dist/utils/cn.js",
+      "types": "./dist/utils/cn.d.ts"
+    },
+    "./utils/is-route-active": {
+      "import": "./dist/utils/is-route-active.js",
+      "types": "./dist/utils/is-route-active.d.ts"
+    },
+    "./utils/text": {
+      "import": "./dist/utils/text.js",
+      "types": "./dist/utils/text.d.ts"
     }
   },
   "files": ["dist", "src"],
@@ -87,12 +215,11 @@
     "access": "public"
   },
   "repository": {
-    "directory": "packages/react",
     "type": "git",
     "url": "https://github.com/regardio/react.git"
   },
   "scripts": {
-    "build": "tsup",
+    "build": "tsup && exec-ts ../../packages/dev/src/bin/post-build-exports.ts --preserve \"./tailwind.css\" && pnpm fix",
     "clean": "exec-clean .turbo dist",
     "dev": "tsup --watch",
     "fix": "exec-p fix:*",
