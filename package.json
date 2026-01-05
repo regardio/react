@@ -9,7 +9,7 @@
     "@maptiler/leaflet-maptilersdk": "4.1.1",
     "@maptiler/sdk": "3.9.0",
     "@mdx-js/react": "3.1.1",
-    "@regardio/js": "workspace:*",
+    "@regardio/js": "0.2.2",
     "@supabase/supabase-js": "2.89.0",
     "cmdk": "1.1.1",
     "cva": "beta",
@@ -33,9 +33,7 @@
   },
   "description": "Regardio React UI components",
   "devDependencies": {
-    "@changesets/changelog-github": "0.5.2",
-    "@changesets/cli": "2.29.8",
-    "@regardio/dev": "1.7.0",
+    "@regardio/dev": "1.9.4",
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "16.3.1",
     "@total-typescript/ts-reset": "0.6.1",
@@ -87,20 +85,20 @@
     "dev": "exec-tsc --project tsconfig.build.json --watch",
     "fix": "exec-p fix:*",
     "fix:biome": "lint-biome check --write --unsafe .",
-    "fix:md": "lint-md --fix \"**/*.md\" \"**/*.mdx\" \"!**/node_modules/**\" \"!**/dist/**\"",
+    "fix:md": "lint-md --fix",
     "lint": "exec-p lint:*",
     "lint:biome": "lint-biome check .",
-    "lint:md": "lint-md \"**/*.md\" \"**/*.mdx\" \"!**/node_modules/**\" \"!**/dist/**\"",
+    "lint:md": "lint-md",
     "prepare": "exec-husky",
-    "release": "pnpm changeset publish",
+    "release": "flow-release",
     "report": "exec-s report:*",
     "report:unit": "vitest run --reporter html",
     "test": "exec-s test:*",
     "test:unit": "vitest run",
     "typecheck": "exec-tsc --noEmit",
-    "version": "pnpm changeset version"
+    "version": "flow-changeset version"
   },
   "sideEffects": ["./src/styles/tailwind.css"],
   "type": "module",
-  "version": "0.0.0"
+  "version": "0.1.0"
 }
