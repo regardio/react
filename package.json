@@ -54,7 +54,7 @@
     "playwright": "^1.57.0",
     "storybook": "10.1.11",
     "tailwindcss": "4.1.18",
-    "tsup": "8.5.0",
+    "tsup": "8.5.1",
     "typescript": "5.9.3",
     "vite": "7.3.0",
     "vitest": "4.0.16"
@@ -114,5 +114,5 @@
   },
   "sideEffects": ["./src/styles/tailwind.css"],
   "type": "module",
-  "version": "0.4.2"
+  "version": "0.4.3"
 }

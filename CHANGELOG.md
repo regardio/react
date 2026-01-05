@@ -1,5 +1,11 @@
 # @regardio/react
 
+## 0.4.3
+
+### Patch Changes
+
+- fix: remove locale utility (use @regardio/js directly)
+
 ## 0.4.2
 
 ### Patch Changes
