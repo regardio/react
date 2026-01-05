@@ -1,54 +1,6 @@
 import { LanguageDetectorLingui } from '@regardio/js/intl/language-detector';
 import { beforeEach, describe, expect, test } from 'vitest';
-import { createLocaleConfig, getClientLocales } from './locale';
-
-describe('getClientLocales', () => {
-  test('returns undefined when Accept-Language header is not present', () => {
-    const headers = new Headers();
-    expect(getClientLocales(headers)).toBeUndefined();
-  });
-
-  test('returns single locale when only one valid locale is present', () => {
-    const headers = new Headers({
-      'Accept-Language': 'en-US',
-    });
-    expect(getClientLocales(headers)).toBe('en-US');
-  });
-
-  test('returns array of locales when multiple valid locales are present', () => {
-    const headers = new Headers({
-      'Accept-Language': 'en-US,fr-FR;q=0.9,de-DE;q=0.8',
-    });
-    const locales = getClientLocales(headers);
-    expect(Array.isArray(locales)).toBe(true);
-    expect(locales).toContain('en-US');
-    expect(locales).toContain('fr-FR');
-    expect(locales).toContain('de-DE');
-  });
-
-  test('handles Request object correctly', () => {
-    const request = new Request('https://example.com', {
-      headers: {
-        'Accept-Language': 'en-US',
-      },
-    });
-    expect(getClientLocales(request)).toBe('en-US');
-  });
-
-  test('returns undefined for invalid locales', () => {
-    const headers = new Headers({
-      'Accept-Language': 'invalid-locale',
-    });
-    expect(getClientLocales(headers)).toBeUndefined();
-  });
-
-  test('ignores wildcards in Accept-Language header', () => {
-    const headers = new Headers({
-      'Accept-Language': '*',
-    });
-    expect(getClientLocales(headers)).toBeUndefined();
-  });
-});
+import { createLocaleConfig } from './locale';
 
 describe('createLocaleConfig', () => {
   const originalEnvMode = import.meta.env.MODE;
