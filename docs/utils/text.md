@@ -5,11 +5,11 @@ Utilities for typography processing including typographic quotes and special cha
 ## Import
 
 ```tsx
-import {
-  replaceSpecialChars,
-  typographicQuotes,
-  lowerCaseSzett,
-} from '@regardio/react/utils/text';
+// React-specific utilities (handle ReactNode trees)
+import { lowerCaseSzett, replaceSpecialChars, shy, wrapSentences } from '@regardio/react/utils/text';
+
+// Pure JS utilities (for string-only operations)
+import { typographicQuotes, splitIntoSentences, splitIntoWords, truncateText, toBoolean } from '@regardio/js/text';
 ```
 
 ## Usage
@@ -60,6 +60,8 @@ Returns: `string`
 ### typographicQuotes
 
 Converts straight quotes to locale-appropriate curly quotes.
+
+> **Note:** This is a pure JS function. Import from `@regardio/js/text`.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|

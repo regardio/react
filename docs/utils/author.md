@@ -5,68 +5,64 @@ Utilities for formatting author and contributor data.
 ## Import
 
 ```tsx
-import { formatAuthor, AuthorDisplay } from '@regardio/react/utils/author';
+// React-specific (generates React elements)
+import { generateLinkFromAuthorString } from '@regardio/react/utils/author';
+
+// Pure JS utilities (for parsing author strings)
+import { type AuthorInfo, parseAuthorString } from '@regardio/js/text';
 ```
 
 ## Usage
 
-### Format Author Name
+### Parse Author String
 
 ```tsx
-const author = formatAuthor({
-  name: 'John Doe',
-  email: 'john@example.com',
-});
-// Result: 'John Doe'
+const author = parseAuthorString('John Doe <john@example.com> (https://example.com)');
+// Result: { name: 'John Doe', email: 'john@example.com', url: 'https://example.com' }
 ```
 
-### AuthorDisplay Component
+### Generate Link from Author String
 
 ```tsx
-<AuthorDisplay
-  author={{
-    name: 'Jane Smith',
-    email: 'jane@example.com',
-    url: 'https://janesmith.com',
-  }}
-/>
+const link = generateLinkFromAuthorString('Jane Smith <jane@example.com>');
+// Returns: <a className="u-email p-name" href="mailto:jane@example.com">Jane Smith</a>
 ```
 
-## Author Type
+## AuthorInfo Type
 
 ```tsx
-type Author = {
-  name: string;
+type AuthorInfo = {
+  name?: string;
   email?: string;
   url?: string;
-  avatar?: string;
 };
 ```
 
+> **Note:** Import `AuthorInfo` from `@regardio/js/text`.
+
 ## Functions
 
-### formatAuthor
+### parseAuthorString
 
-Formats an author object into a display string.
+Parses an author string in the format "Name \<email\> (url)".
+
+> **Note:** This is a pure JS function. Import from `@regardio/js/text`.
 
 | Parameter | Type | Description |
-|-----------|------|-------------|
-| `author` | `Author` | Author data object |
+|-----------|------|--------------|
+| `input` | `string` | Author string to parse |
 
-Returns: `string`
+Returns: `AuthorInfo`
 
-## Components
+### generateLinkFromAuthorString
 
-### AuthorDisplay
+Generates a React link element from an author string.
 
-Renders author information with optional link and avatar.
+| Parameter | Type | Description |
+|-----------|------|--------------|
+| `input` | `string` | Author string to parse |
 
-| Prop | Type | Description |
-|------|------|-------------|
-| `author` | `Author` | Author data |
-| `showEmail` | `boolean` | Show email address |
-| `showAvatar` | `boolean` | Show avatar image |
-| `className` | `string` | Additional CSS classes |
+Returns: `React.ReactNode` — An anchor element with microformat classes
 
 ## Use Cases
 

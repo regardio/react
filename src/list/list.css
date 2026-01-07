@@ -1,0 +1,32 @@
+/**
+ * CSS custom properties for List component styling.
+ * These can be overridden at any level to customize the appearance.
+ *
+ * Usage with CSS Modules or plain CSS:
+ * .my-list {
+ *   --list-gap: 1rem;
+ *   --list-padding: 0;
+ * }
+ *
+ * Usage with Tailwind (via arbitrary properties):
+ * <List.Root className="[--list-gap:1rem]">
+ */
+
+:root {
+  /* List Root */
+  --list-gap: 0;
+  --list-padding: 0;
+  --list-margin: 0;
+  --list-style: none;
+
+  /* List Item */
+  --list-item-padding: 0;
+  --list-item-margin: 0;
+
+  /* Definition List specific */
+  --list-dl-grid-columns: auto 1fr;
+  --list-dl-gap-x: 0.5rem;
+  --list-dl-gap-y: 0.25rem;
+  --list-dt-font-weight: 600;
+  --list-dd-margin: 0;
+}

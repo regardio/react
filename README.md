@@ -41,10 +41,9 @@ This package requires:
 Import components, hooks, and utilities directly from their paths for optimal tree-shaking:
 
 ```tsx
-import { Box } from '@regardio/react/components/box';
-import { Link } from '@regardio/react/components/link';
+import { Box } from '@regardio/react/box';
+import { Link } from '@regardio/react/link';
 import { useNonce } from '@regardio/react/hooks/use-nonce';
-import { cn } from '@regardio/react/utils/cn';
 ```
 
 ### TailwindCSS Integration
@@ -52,7 +51,7 @@ import { cn } from '@regardio/react/utils/cn';
 Components use TailwindCSS for styling. Import the base styles in your app:
 
 ```tsx
-import '@regardio/react/styles/tailwind.css';
+import '@regardio/react/tailwind.css';
 ```
 
 ## What's Included
@@ -102,11 +101,12 @@ import '@regardio/react/styles/tailwind.css';
 
 | Utility | Description |
 |---------|-------------|
-| `cn` | TailwindCSS class name merging (tailwind-merge + cva) |
 | `author` | Author/contributor data formatting |
 | `isRouteActive` | Route matching utilities |
 | `locale` | Locale detection and formatting |
 | `text` | Typography processing (quotes, special chars) |
+
+> **Note:** For Tailwind utilities like `cn`, `tv`, and `twMerge`, use `@regardio/tailwind/utils` instead.
 
 ## Documentation
 

@@ -6,5 +6,5 @@
     }
   },
   "extends": "@regardio/dev/typescript/react.json",
-  "include": ["src/**/*.ts", "src/**/*.tsx"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "vite-env.d.ts"]
 }

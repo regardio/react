@@ -5,7 +5,7 @@ A text highlighting component for emphasizing content with customizable styles.
 ## Import
 
 ```tsx
-import { Highlight } from '@regardio/react/components/highlight';
+import { Highlight } from '@regardio/react/highlight';
 ```
 
 ## Usage

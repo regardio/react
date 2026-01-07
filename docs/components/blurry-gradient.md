@@ -5,7 +5,7 @@ An SVG-based decorative gradient component with blurred overlapping circles, per
 ## Import
 
 ```tsx
-import { BlurryGradient } from '@regardio/react/components/blurry-gradient';
+import { BlurryGradient } from '@regardio/react/blurry-gradient';
 ```
 
 ## Usage

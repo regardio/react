@@ -5,7 +5,7 @@ A reusable error boundary component for React Router applications with i18n supp
 ## Import
 
 ```tsx
-import { GenericError, getErrorDescriptor } from '@regardio/react/components/generic-error';
+import { GenericError, getErrorDescriptor } from '@regardio/react/generic-error';
 ```
 
 ## Usage

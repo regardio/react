@@ -5,7 +5,7 @@ A MapTiler SDK integration component for displaying vector maps with customizabl
 ## Import
 
 ```tsx
-import { MaptilerMap } from '@regardio/react/components/maptiler-map';
+import { MaptilerMap } from '@regardio/react/maptiler-map';
 ```
 
 ## Usage

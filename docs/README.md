@@ -27,14 +27,13 @@ This folder contains detailed documentation for all components, hooks, and utili
 - [Item](./components/item.md) — Grid items with theming
 - [LeafletMap](./components/leaflet-map.md) — Leaflet map integration
 - [Link component](./components/link.md) — Smart routing links
-- [ListItem](./components/list-item.md) — Styled list items
+- [List](./components/list.md) — Compound list component
 - [MaptilerMap](./components/maptiler-map.md) — MapTiler SDK integration
 - [MarkdownContainer](./components/markdown-container.md) — Markdown/MDX rendering
 - [PasswordInput](./components/password-input.md) — Password with visibility toggle
 - [Picture](./components/picture.md) — Responsive images
 - [ProtectedEmail](./components/protected-email.md) — Email obfuscation
 - [Text component](./components/text.md) — Typography component
-- [UnorderedList](./components/unordered-list.md) — Styled lists
 
 ### Hooks
 
@@ -49,7 +48,6 @@ This folder contains detailed documentation for all components, hooks, and utili
 
 ### Utilities
 
-- [cn](./utils/cn.md) — Class name merging
 - [author](./utils/author.md) — Author data formatting
 - [isRouteActive](./utils/is-route-active.md) — Route matching
 - [locale](./utils/locale.md) — Locale utilities

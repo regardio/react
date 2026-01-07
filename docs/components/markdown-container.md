@@ -5,7 +5,7 @@ A Markdown/MDX rendering component with typography processing and content trunca
 ## Import
 
 ```tsx
-import { MarkdownContainer } from '@regardio/react/components/markdown-container';
+import { MarkdownContainer } from '@regardio/react/markdown-container';
 ```
 
 ## Usage

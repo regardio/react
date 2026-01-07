@@ -11,7 +11,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@regardio/react/components/carousel';
+} from '@regardio/react/carousel';
 ```
 
 ## Usage

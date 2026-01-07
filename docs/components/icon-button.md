@@ -5,7 +5,7 @@ A button component optimized for icon-only content with minimal default styling.
 ## Import
 
 ```tsx
-import { IconButton } from '@regardio/react/components/icon-button';
+import { IconButton } from '@regardio/react/icon-button';
 ```
 
 ## Usage

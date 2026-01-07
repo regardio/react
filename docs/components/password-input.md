@@ -5,7 +5,7 @@ A password input field with a visibility toggle button.
 ## Import
 
 ```tsx
-import { PasswordInput } from '@regardio/react/components/password-input';
+import { PasswordInput } from '@regardio/react/password-input';
 ```
 
 ## Usage

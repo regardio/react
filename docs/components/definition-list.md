@@ -5,7 +5,7 @@ Semantic definition list components (`<dl>`, `<dt>`, `<dd>`) with consistent sty
 ## Import
 
 ```tsx
-import { DefinitionList, Dt, Dd } from '@regardio/react/components/definition-list';
+import { DefinitionList, Dt, Dd } from '@regardio/react/definition-list';
 ```
 
 ## Usage

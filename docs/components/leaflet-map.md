@@ -5,7 +5,7 @@ A Leaflet map integration component for displaying interactive maps.
 ## Import
 
 ```tsx
-import { LeafletMap } from '@regardio/react/components/leaflet-map';
+import { LeafletMap } from '@regardio/react/leaflet-map';
 ```
 
 ## Usage

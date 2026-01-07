@@ -5,7 +5,7 @@ An email obfuscation component that protects email addresses from scrapers while
 ## Import
 
 ```tsx
-import { ProtectedEmail } from '@regardio/react/components/protected-email';
+import { ProtectedEmail } from '@regardio/react/protected-email';
 ```
 
 ## Usage

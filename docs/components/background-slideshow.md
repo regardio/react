@@ -5,7 +5,7 @@ An animated background image carousel with crossfade transitions, designed for h
 ## Import
 
 ```tsx
-import { BackgroundSlideshow } from '@regardio/react/components/background-slideshow';
+import { BackgroundSlideshow } from '@regardio/react/background-slideshow';
 ```
 
 ## Usage

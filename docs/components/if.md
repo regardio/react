@@ -5,7 +5,7 @@ A conditional rendering utility component that provides a declarative way to han
 ## Import
 
 ```tsx
-import { If } from '@regardio/react/components/if';
+import { If } from '@regardio/react/if';
 ```
 
 ## Usage

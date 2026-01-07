@@ -5,7 +5,7 @@ A dynamic countdown timer display component that shows remaining time until a ta
 ## Import
 
 ```tsx
-import { Countdown } from '@regardio/react/components/countdown';
+import { Countdown } from '@regardio/react/countdown';
 ```
 
 ## Usage

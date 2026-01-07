@@ -1,0 +1,10 @@
+/**
+ * Tailwind CSS Source Scanning for @regardio/react
+ *
+ * This file enables Tailwind to detect utility classes used in @regardio/react components.
+ * Import this in your app's main CSS file to ensure component styles are included:
+ *
+ * @import "@regardio/react/tailwind.css";
+ */
+
+@source "../";

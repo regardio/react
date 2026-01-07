@@ -5,7 +5,7 @@ A smart link component that handles internal navigation, external URLs, hash lin
 ## Import
 
 ```tsx
-import { Link, LinkBase, PathResolverProvider } from '@regardio/react/components/link';
+import { Link, LinkBase, PathResolverProvider } from '@regardio/react/link';
 ```
 
 ## Usage

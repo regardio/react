@@ -1,5 +1,32 @@
 # @regardio/react
 
+## 0.5.0
+
+### Minor Changes
+
+- grid and list components, overhaul docs, tests
+
+## 0.4.10
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @regardio/tailwind@0.1.2
+
+## 0.4.9
+
+### Patch Changes
+
+- Updated dependencies
+  - @regardio/tailwind@0.1.1
+
+## 0.4.8
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @regardio/js@0.5.0
+
 ## 0.4.7
 
 ### Patch Changes

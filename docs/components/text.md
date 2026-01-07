@@ -5,7 +5,7 @@ A typography component for body text with variant-based styling.
 ## Import
 
 ```tsx
-import { Text } from '@regardio/react/components/text';
+import { Text } from '@regardio/react/text';
 ```
 
 ## Usage

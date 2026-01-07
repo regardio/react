@@ -5,7 +5,7 @@ A responsive image component with automatic srcset generation for optimal loadin
 ## Import
 
 ```tsx
-import { Picture } from '@regardio/react/components/picture';
+import { Picture } from '@regardio/react/picture';
 ```
 
 ## Usage

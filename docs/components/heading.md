@@ -5,7 +5,7 @@ Semantic heading component (h1-h6) with consistent styling and variant support.
 ## Import
 
 ```tsx
-import { Heading } from '@regardio/react/components/heading';
+import { Heading } from '@regardio/react/heading';
 ```
 
 ## Usage

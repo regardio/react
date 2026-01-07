@@ -5,7 +5,7 @@ A responsive iframe component with sensible defaults for embedded content like v
 ## Import
 
 ```tsx
-import { Iframe } from '@regardio/react/components/iframe';
+import { Iframe } from '@regardio/react/iframe';
 ```
 
 ## Usage
