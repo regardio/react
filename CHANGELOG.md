@@ -1,5 +1,11 @@
 # @regardio/react
 
+## 0.5.1
+
+### Patch Changes
+
+- add missing dependency, remove lock file
+
 ## 0.5.0
 
 ### Minor Changes
