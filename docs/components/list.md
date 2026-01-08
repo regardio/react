@@ -99,27 +99,6 @@ Renders standard list elements:
 - Content lists
 - Definition-style lists (with custom render props)
 
-## Migration from UnorderedList/ListItem
-
-If you were using the old `UnorderedList` and `ListItem` components:
-
-```tsx
-// Old
-import { UnorderedList } from '@regardio/react/unordered-list';
-import { ListItem } from '@regardio/react/list-item';
-
-<UnorderedList variant="unstyled">
-  <ListItem>Item</ListItem>
-</UnorderedList>
-
-// New
-import { List } from '@regardio/react/list';
-
-<List.Root className="list-none">
-  <List.Item>Item</List.Item>
-</List.Root>
-```
-
 ## Related
 
 - [DefinitionList](./definition-list.md) — For term/definition pairs

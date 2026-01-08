@@ -5,7 +5,8 @@ export default defineConfig({
   dts: true,
   entry: [
     'src/*/index.ts',
-    'src/hooks/*/index.ts',
+    'src/hooks/*.ts',
+    'src/hooks/*.tsx',
     'src/utils/*/index.ts',
     '!src/**/*.test.ts',
     '!src/**/*.test.tsx',

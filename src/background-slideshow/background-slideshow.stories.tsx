@@ -66,3 +66,72 @@ export const FastTransition: Story = {
     transitionDuration: 1000,
   },
 };
+
+export const SingleImage: Story = {
+  args: {
+    baseUrl: 'https://via.placeholder.com/{format}?text=Single',
+    className: 'h-[400px] w-full',
+    images: [sampleImages[0] as ImageData],
+    locale: 'en',
+    slideshow: true,
+  },
+};
+
+export const EmptyImages: Story = {
+  args: {
+    baseUrl: 'https://via.placeholder.com/{format}',
+    className: 'h-[400px] w-full bg-gray-200',
+    images: [],
+    locale: 'en',
+  },
+};
+
+export const WithFilter: Story = {
+  args: {
+    baseUrl: 'https://via.placeholder.com/{format}?text=Filtered',
+    className: 'h-[400px] w-full',
+    filter: (img: ImageData) => img.hu > 100,
+    images: sampleImages,
+    locale: 'en',
+  },
+};
+
+export const GermanLocale: Story = {
+  args: {
+    baseUrl: 'https://via.placeholder.com/{format}?text=German',
+    className: 'h-[400px] w-full',
+    images: sampleImages,
+    locale: 'de',
+  },
+};
+
+export const ShortTransition: Story = {
+  args: {
+    baseUrl: 'https://via.placeholder.com/{format}?text=Short',
+    className: 'h-[400px] w-full',
+    images: sampleImages,
+    locale: 'en',
+    slideshowInterval: 1000,
+    transitionDuration: 2000,
+  },
+};
+
+export const MediumTransition: Story = {
+  args: {
+    baseUrl: 'https://via.placeholder.com/{format}?text=Medium',
+    className: 'h-[400px] w-full',
+    images: sampleImages,
+    locale: 'en',
+    transitionDuration: 4000,
+  },
+};
+
+export const LongTransition: Story = {
+  args: {
+    baseUrl: 'https://via.placeholder.com/{format}?text=Long',
+    className: 'h-[400px] w-full',
+    images: sampleImages,
+    locale: 'en',
+    transitionDuration: 5000,
+  },
+};

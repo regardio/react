@@ -87,3 +87,49 @@ export const ManySlides: Story = {
     </Carousel.Root>
   ),
 };
+
+export const VerticalOrientation: Story = {
+  render: () => (
+    <Carousel.Root
+      className="w-full max-w-md h-[400px]"
+      orientation="vertical"
+    >
+      <Carousel.Content className="flex-col gap-4">
+        <Carousel.Item>
+          <SlideCard>Vertical Slide 1</SlideCard>
+        </Carousel.Item>
+        <Carousel.Item>
+          <SlideCard>Vertical Slide 2</SlideCard>
+        </Carousel.Item>
+        <Carousel.Item>
+          <SlideCard>Vertical Slide 3</SlideCard>
+        </Carousel.Item>
+      </Carousel.Content>
+    </Carousel.Root>
+  ),
+};
+
+export const WithOptions: Story = {
+  render: () => (
+    <Carousel.Root
+      className="w-full max-w-md"
+      opts={{ align: 'start', loop: true }}
+    >
+      <Carousel.Content className="gap-4">
+        <Carousel.Item>
+          <SlideCard>Loop Slide 1</SlideCard>
+        </Carousel.Item>
+        <Carousel.Item>
+          <SlideCard>Loop Slide 2</SlideCard>
+        </Carousel.Item>
+        <Carousel.Item>
+          <SlideCard>Loop Slide 3</SlideCard>
+        </Carousel.Item>
+      </Carousel.Content>
+      <div className="flex justify-center gap-4 mt-4">
+        <Carousel.Previous className="px-4 py-2 bg-gray-200 rounded">←</Carousel.Previous>
+        <Carousel.Next className="px-4 py-2 bg-gray-200 rounded">→</Carousel.Next>
+      </div>
+    </Carousel.Root>
+  ),
+};

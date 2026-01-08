@@ -1,5 +1,31 @@
 # @regardio/react
 
+## 0.5.5
+
+### Patch Changes
+
+- consistent QA tools across our packages
+
+## 0.5.4
+
+### Patch Changes
+
+- consistent QA tools across our packages
+
+## 0.5.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @regardio/tailwind@0.1.3
+
+## 0.5.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @regardio/js@0.6.0
+
 ## 0.5.1
 
 ### Patch Changes

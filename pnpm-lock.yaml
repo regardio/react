@@ -21,11 +21,11 @@ importers:
         specifier: 3.1.1
         version: 3.1.1(@types/react@19.2.7)(react@19.2.3)
       '@regardio/js':
-        specifier: 0.5.0
-        version: 0.5.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: 0.6.0
+        version: 0.6.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@regardio/tailwind':
-        specifier: 0.1.2
-        version: 0.1.2(tailwindcss@4.1.18)
+        specifier: 0.1.3
+        version: 0.1.3(tailwindcss@4.1.18)
       '@supabase/supabase-js':
         specifier: 2.90.0
         version: 2.90.0
@@ -51,8 +51,8 @@ importers:
         specifier: 0.562.0
         version: 0.562.0(react@19.2.3)
       markdown-to-jsx:
-        specifier: 9.5.0
-        version: 9.5.0(react@19.2.3)
+        specifier: 9.5.1
+        version: 9.5.1(react@19.2.3)
       react:
         specifier: 19.2.3
         version: 19.2.3
@@ -66,11 +66,11 @@ importers:
         specifier: 7.70.0
         version: 7.70.0(react@19.2.3)
       react-resizable-panels:
-        specifier: 4.3.0
-        version: 4.3.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: 4.3.1
+        version: 4.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       react-router:
-        specifier: 7.11.0
-        version: 7.11.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: 7.12.0
+        version: 7.12.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       tailwind-variants:
         specifier: 3.2.2
         version: 3.2.2(tailwind-merge@3.4.0)(tailwindcss@4.1.18)
@@ -82,8 +82,8 @@ importers:
         version: 4.3.5
     devDependencies:
       '@regardio/dev':
-        specifier: 1.10.3
-        version: 1.10.3(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(@vitest/browser-playwright@4.0.16)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: 1.11.1
+        version: 1.11.1(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(@vitest/browser-playwright@4.0.16)(@vitest/browser@4.0.16(vite@7.3.1(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0))(vitest@4.0.16))(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@storybook/addon-a11y':
         specifier: 10.1.11
         version: 10.1.11(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@2.8.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))
@@ -995,8 +995,8 @@ packages:
       '@types/react':
         optional: true
 
-  '@regardio/dev@1.10.3':
-    resolution: {integrity: sha512-8j6pVUu+0AKzRWT3y+Gd71RsqSbEHwq8zf2We88gpH1k/J6AfCHgeaemsWl42pr2r53AMgpJ8Z8+IuU+38ZmuQ==}
+  '@regardio/dev@1.11.1':
+    resolution: {integrity: sha512-JHajkzz+1LTHau0+J4wVj53dDp+aeD1qYBtHPaFy7+pNigxJ7eRA4muPY52/EJxE/0crn7LBAXKsl1215F49hQ==}
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
@@ -1005,11 +1005,11 @@ packages:
       postcss:
         optional: true
 
-  '@regardio/js@0.5.0':
-    resolution: {integrity: sha512-z7ovFjVt+7Cgv75yCJm2Qt1/oE/PDBGlGpvk+YLfO5TIxWeTXVSm/rZXbKUVR3kXPuHCLm8xp3ym0YO7jjreGQ==}
+  '@regardio/js@0.6.0':
+    resolution: {integrity: sha512-v41XpL4EC9/1DMtlsCMKLQ+hf7VtDrp+Z9ALr37G9VzJ4ANDFqo0Wj+/HRjPE39Y7ajGWkIiQzue+RcMeVRygA==}
 
-  '@regardio/tailwind@0.1.2':
-    resolution: {integrity: sha512-7JGZ4RgsP3P9iA1ZVhbtG6qeTbGZItUeQD6Bj9YyRjpSDGRVEmABaE/LvAfHQDPO2cmXMtfYxx3dc0VVVvb4XA==}
+  '@regardio/tailwind@0.1.3':
+    resolution: {integrity: sha512-H9s05+w6WovS0TEaPjbllhjb40H1v2ysg6jFanAd+uWoOICjDtxpwEMkGli1t7UlaUG9LVSQJWwVG4XY3gPDbQ==}
     engines: {node: '>=18'}
     peerDependencies:
       tailwindcss: '>=4.0.0'
@@ -1934,9 +1934,17 @@ packages:
     resolution: {integrity: sha512-reYkTUJAZb9gUuZ2RvVCNhVHdg62RHnJ7WJl8ftMi4diZ6NWlciOzQN88pUhSELEwflJht4oQDv0F0BMlwaYtA==}
     engines: {node: '>=8'}
 
+  detect-indent@7.0.2:
+    resolution: {integrity: sha512-y+8xyqdGLL+6sh0tVeHcfP/QDd8gUgbasolJJpY7NgeQGSZ739bDtSiaiDgtoicy+mtYB81dKLxO9xRhCyIB3A==}
+    engines: {node: '>=12.20'}
+
   detect-libc@2.1.2:
     resolution: {integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==}
     engines: {node: '>=8'}
+
+  detect-newline@4.0.1:
+    resolution: {integrity: sha512-qE3Veg1YXzGHQhlA6jzebZN2qVf6NX+A7m7qlhCGG30dJixrAQhYOsJjsnBjJkCSmuOPpCk30145fr8FV0bzog==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
   detect-node-es@1.1.0:
     resolution: {integrity: sha512-ypdmJU/TbBby2Dxibuv7ZLW3Bs1QEmM7nHjEANfohJLvE0XVujisn1qPJcZxg+qDucsr+bP6fLD1rPS3AhJ7EQ==}
@@ -2217,6 +2225,9 @@ packages:
   get-tsconfig@4.13.0:
     resolution: {integrity: sha512-1VKTZJCwBrvbd+Wn3AOgQP/2Av+TfTCOlE4AcRJE72W1ksZXbAx8PPBR9RzgTeSPzlPMHrbANMH3LbltH73wxQ==}
 
+  git-hooks-list@4.1.1:
+    resolution: {integrity: sha512-cmP497iLq54AZnv4YRAEMnEyQ1eIn4tGKbmswqwmFV4GBnAqE8NLtWxxdXa++AalfgL5EBH4IxTPyquEuGY/jA==}
+
   git-raw-commits@4.0.0:
     resolution: {integrity: sha512-ICsMM1Wk8xSGMowkOmPrzo2Fgmfo4bMHLNX6ytHjajRJUqvHOw/TFapQ+QG75c3X/tTDDhOSRPGC52dDbNM8FQ==}
     engines: {node: '>=16'}
@@ -2460,6 +2471,10 @@ packages:
   is-obj@2.0.0:
     resolution: {integrity: sha512-drqDG3cbczxxEJRoOXcOjtdp1J/lyp1mNn0xaznRs8+muBhgQcrnbspox5X5fOw0HnMnbfDzvnEMEtqDEJEo8w==}
     engines: {node: '>=8'}
+
+  is-plain-obj@4.1.0:
+    resolution: {integrity: sha512-+Pgi+vMuUNkJyExiMBt5IlFoMyKnr5zhJ4Uspz58WOhBF5QoIZkFyNHIbBAtHwzVAgk5RtndVNsDRN61/mmDqg==}
+    engines: {node: '>=12'}
 
   is-potential-custom-element-name@1.0.1:
     resolution: {integrity: sha512-bCYeRA2rVibKZd+s2625gGnGF/t7DSqDs4dP7CrLA1m7jKWz6pps0LpYLJN8Q64HtmPKJ1hrN3nzPNKFEKOUiQ==}
@@ -2781,8 +2796,8 @@ packages:
     resolution: {integrity: sha512-a54IwgWPaeBCAAsv13YgmALOF1elABB08FxO9i+r4VFk5Vl4pKokRPeX8u5TCgSsPi6ec1otfLjdOpVcgbpshg==}
     hasBin: true
 
-  markdown-to-jsx@9.5.0:
-    resolution: {integrity: sha512-6PhWz9md8btrE52LDM4KHSzXf2HKCG+2oGNVw/eQhMP6h51dfZVHb9mt1zWYvQ7wM+xOK8WWaijzEhjB0qIpUg==}
+  markdown-to-jsx@9.5.1:
+    resolution: {integrity: sha512-VAlQIdZYrxRvLQnmPDG3OTpuaF2nhV0qyk95klhmPD8HfEzSHiV+VRWx5KHksfiZThAk8nByDj3ZDgSzU70nMQ==}
     engines: {node: '>= 18'}
     peerDependencies:
       react: '>= 16.0.0'
@@ -3272,14 +3287,14 @@ packages:
       '@types/react':
         optional: true
 
-  react-resizable-panels@4.3.0:
-    resolution: {integrity: sha512-F8LGxzK3tq5N4m1oSvTZSDTH+QUhr5qPLuFhPyxVrOPqCFGZ1j2KOSx2K96aiKC4UI4kGR3/NKHczCumTgxVxA==}
+  react-resizable-panels@4.3.1:
+    resolution: {integrity: sha512-Y+kWgV80snvOvSmWf5ivndOaaxRjaEz/b1snYJaPASqnFzYdfRd6eAXwPPKWtOm/96DNeDGdFssYR8pA8U/zRg==}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
       react-dom: ^18.0.0 || ^19.0.0
 
-  react-router@7.11.0:
-    resolution: {integrity: sha512-uI4JkMmjbWCZc01WVP2cH7ZfSzH91JAZUDd7/nIprDgWxBV1TkkmLToFh7EbMTcMak8URFRa2YoBL/W8GWnCTQ==}
+  react-router@7.12.0:
+    resolution: {integrity: sha512-kTPDYPFzDVGIIGNLS5VJykK0HfHLY5MF3b+xj0/tTyNYL1gF1qs7u67Z9jEhQk2sQ98SUaHxlG31g1JtF7IfVw==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       react: '>=18'
@@ -3488,6 +3503,14 @@ packages:
   slash@5.1.0:
     resolution: {integrity: sha512-ZA6oR3T/pEyuqwMgAKT0/hAv8oAXckzbkmR0UkUosQ+Mc4RxGoJkRmwHgHufaenlyAgE1Mxgpdcrf75y6XcnDg==}
     engines: {node: '>=14.16'}
+
+  sort-object-keys@2.0.1:
+    resolution: {integrity: sha512-R89fO+z3x7hiKPXX5P0qim+ge6Y60AjtlW+QQpRozrrNcR1lw9Pkpm5MLB56HoNvdcLHL4wbpq16OcvGpEDJIg==}
+
+  sort-package-json@3.6.0:
+    resolution: {integrity: sha512-fyJsPLhWvY7u2KsKPZn1PixbXp+1m7V8NWqU8CvgFRbMEX41Ffw1kD8n0CfJiGoaSfoAvbrqRRl/DcHO8omQOQ==}
+    engines: {node: '>=20'}
+    hasBin: true
 
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
@@ -4932,7 +4955,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.2.7
 
-  '@regardio/dev@1.10.3(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(@vitest/browser-playwright@4.0.16)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@regardio/dev@1.11.1(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(@vitest/browser-playwright@4.0.16)(@vitest/browser@4.0.16(vite@7.3.1(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0))(vitest@4.0.16))(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
       '@biomejs/biome': 2.3.11
       '@changesets/changelog-github': 0.5.2
@@ -4944,12 +4967,14 @@ snapshots:
       '@testing-library/react': 16.3.1(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@total-typescript/ts-reset': 0.6.1
       '@types/node': 25.0.3
+      '@vitest/coverage-v8': 4.0.16(@vitest/browser@4.0.16(vite@7.3.1(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0))(vitest@4.0.16))(vitest@4.0.16)
       '@vitest/ui': 4.0.16(vitest@4.0.16)
       husky: 9.1.7
       jsdom: 27.4.0
       markdownlint-cli2: 0.20.0
       npm-run-all: 4.1.5
       rimraf: 6.1.2
+      sort-package-json: 3.6.0
       tsx: 4.21.0
       typescript: 5.9.3
       vite: 7.3.1(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0)
@@ -4961,6 +4986,7 @@ snapshots:
       - '@testing-library/dom'
       - '@types/react'
       - '@types/react-dom'
+      - '@vitest/browser'
       - '@vitest/browser-playwright'
       - '@vitest/browser-preview'
       - '@vitest/browser-webdriverio'
@@ -4983,15 +5009,15 @@ snapshots:
       - utf-8-validate
       - yaml
 
-  '@regardio/js@0.5.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@regardio/js@0.6.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
       intl-parse-accept-language: 1.0.0
-      react-router: 7.11.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      react-router: 7.12.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
     transitivePeerDependencies:
       - react
       - react-dom
 
-  '@regardio/tailwind@0.1.2(tailwindcss@4.1.18)':
+  '@regardio/tailwind@0.1.3(tailwindcss@4.1.18)':
     dependencies:
       fluid-tailwindcss: 1.0.5(tailwindcss@4.1.18)
       tailwind-merge: 3.4.0
@@ -5929,7 +5955,11 @@ snapshots:
 
   detect-indent@6.1.0: {}
 
+  detect-indent@7.0.2: {}
+
   detect-libc@2.1.2: {}
+
+  detect-newline@4.0.1: {}
 
   detect-node-es@1.1.0: {}
 
@@ -6265,6 +6295,8 @@ snapshots:
     dependencies:
       resolve-pkg-maps: 1.0.0
 
+  git-hooks-list@4.1.1: {}
+
   git-raw-commits@4.0.0:
     dependencies:
       dargs: 8.1.0
@@ -6500,6 +6532,8 @@ snapshots:
   is-number@7.0.0: {}
 
   is-obj@2.0.0: {}
+
+  is-plain-obj@4.1.0: {}
 
   is-potential-custom-element-name@1.0.1: {}
 
@@ -6816,7 +6850,7 @@ snapshots:
       punycode.js: 2.3.1
       uc.micro: 2.1.0
 
-  markdown-to-jsx@9.5.0(react@19.2.3):
+  markdown-to-jsx@9.5.1(react@19.2.3):
     optionalDependencies:
       react: 19.2.3
 
@@ -7357,12 +7391,12 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.2.7
 
-  react-resizable-panels@4.3.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
+  react-resizable-panels@4.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
     dependencies:
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
 
-  react-router@7.11.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
+  react-router@7.12.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
     dependencies:
       cookie: 1.1.1
       react: 19.2.3
@@ -7608,6 +7642,18 @@ snapshots:
   slash@3.0.0: {}
 
   slash@5.1.0: {}
+
+  sort-object-keys@2.0.1: {}
+
+  sort-package-json@3.6.0:
+    dependencies:
+      detect-indent: 7.0.2
+      detect-newline: 4.0.1
+      git-hooks-list: 4.1.1
+      is-plain-obj: 4.1.0
+      semver: 7.7.3
+      sort-object-keys: 2.0.1
+      tinyglobby: 0.2.15
 
   source-map-js@1.2.1: {}
 

@@ -65,7 +65,6 @@ import '@regardio/react/tailwind.css';
 | `Box` | Flexible container with variant-based styling |
 | `Carousel` | Embla-powered carousel with navigation controls |
 | `Countdown` | Dynamic countdown timer display |
-| `DefinitionList` | Semantic `<dl>` with `Dt` and `Dd` sub-components |
 | `GenericError` | React Router error boundary with i18n support |
 | `Heading` | Semantic headings (h1-h6) with consistent styling |
 | `Highlight` | Text highlighting with customizable styles |
@@ -75,14 +74,13 @@ import '@regardio/react/tailwind.css';
 | `Item` | Grid item with theme colors and link support |
 | `LeafletMap` | Leaflet map integration |
 | `Link` | React Router link with external URL detection |
-| `ListItem` | Styled list item component |
+| `List` | Compound list component with Root and Item |
 | `MaptilerMap` | MapTiler SDK integration |
 | `MarkdownContainer` | MDX/Markdown renderer with typography processing |
 | `PasswordInput` | Password field with visibility toggle |
 | `Picture` | Responsive images with srcset generation |
 | `ProtectedEmail` | Email obfuscation for spam protection |
 | `Text` | Typography component with variants |
-| `UnorderedList` | Styled unordered list with variants |
 
 ### Hooks
 

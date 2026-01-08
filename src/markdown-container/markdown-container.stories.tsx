@@ -74,3 +74,58 @@ export const WithCharacterLimit: Story = {
     locale: 'en',
   },
 };
+
+export const WithMDXComponents: Story = {
+  args: {
+    children: `# Custom Components
+
+This text uses custom MDX components.`,
+    locale: 'en',
+    mdxComponents: {},
+  },
+};
+
+export const WithMarkdownOverrides: Story = {
+  args: {
+    children: `# Overridden Heading
+
+This paragraph has custom styling applied.`,
+    locale: 'en',
+    markdownOverrides: {
+      h1: {
+        props: {
+          className: 'text-4xl font-bold text-blue-600',
+        },
+      },
+    },
+  },
+};
+
+export const WithInternalLink: Story = {
+  args: {
+    children: 'Check out [our page](https://regardio.com/about) for more info.',
+    locale: 'en',
+  },
+};
+
+export const WithExternalLink: Story = {
+  args: {
+    children: 'Visit [external site](https://example.com) for details.',
+    locale: 'en',
+  },
+};
+
+export const EmptyContent: Story = {
+  args: {
+    children: '',
+    locale: 'en',
+  },
+};
+
+export const WithClassName: Story = {
+  args: {
+    children: '**Bold text** in a styled container.',
+    className: 'bg-gray-100 p-4 rounded',
+    locale: 'en',
+  },
+};

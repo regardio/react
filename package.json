@@ -1,16 +1,178 @@
 {
   "$schema": "https://www.schemastore.org/package.json",
-  "author": "Bernd Matzner <bernd.matzner@regard.io>",
+  "name": "@regardio/react",
+  "version": "0.5.5",
+  "private": false,
+  "description": "Regardio React UI components",
+  "keywords": [
+    "react",
+    "components",
+    "ui",
+    "regardio",
+    "tailwindcss"
+  ],
+  "homepage": "https://github.com/regardio/react/blob/main/README.md",
   "bugs": {
     "url": "https://github.com/regardio/react/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/regardio/react.git"
+  },
+  "license": "MIT",
+  "author": "Bernd Matzner <bernd.matzner@regard.io>",
+  "sideEffects": [
+    "./src/tailwind.css"
+  ],
+  "type": "module",
+  "exports": {
+    "./background-slideshow": {
+      "types": "./dist/background-slideshow/index.d.ts",
+      "import": "./dist/background-slideshow/index.js"
+    },
+    "./blurry-gradient": {
+      "types": "./dist/blurry-gradient/index.d.ts",
+      "import": "./dist/blurry-gradient/index.js"
+    },
+    "./carousel": {
+      "types": "./dist/carousel/index.d.ts",
+      "import": "./dist/carousel/index.js"
+    },
+    "./countdown": {
+      "types": "./dist/countdown/index.d.ts",
+      "import": "./dist/countdown/index.js"
+    },
+    "./generic-error": {
+      "types": "./dist/generic-error/index.d.ts",
+      "import": "./dist/generic-error/index.js"
+    },
+    "./grid": {
+      "types": "./dist/grid/index.d.ts",
+      "import": "./dist/grid/index.js"
+    },
+    "./heading": {
+      "types": "./dist/heading/index.d.ts",
+      "import": "./dist/heading/index.js"
+    },
+    "./highlight": {
+      "types": "./dist/highlight/index.d.ts",
+      "import": "./dist/highlight/index.js"
+    },
+    "./hooks/use-current-route-data": {
+      "types": "./dist/hooks/use-current-route-data.d.ts",
+      "import": "./dist/hooks/use-current-route-data.js"
+    },
+    "./hooks/use-focus-search": {
+      "types": "./dist/hooks/use-focus-search.d.ts",
+      "import": "./dist/hooks/use-focus-search.js"
+    },
+    "./hooks/use-matches-data": {
+      "types": "./dist/hooks/use-matches-data.d.ts",
+      "import": "./dist/hooks/use-matches-data.js"
+    },
+    "./hooks/use-media-query": {
+      "types": "./dist/hooks/use-media-query.d.ts",
+      "import": "./dist/hooks/use-media-query.js"
+    },
+    "./hooks/use-mobile": {
+      "types": "./dist/hooks/use-mobile.d.ts",
+      "import": "./dist/hooks/use-mobile.js"
+    },
+    "./hooks/use-nonce": {
+      "types": "./dist/hooks/use-nonce.d.ts",
+      "import": "./dist/hooks/use-nonce.js"
+    },
+    "./hooks/use-orientation": {
+      "types": "./dist/hooks/use-orientation.d.ts",
+      "import": "./dist/hooks/use-orientation.js"
+    },
+    "./hooks/use-user": {
+      "types": "./dist/hooks/use-user.d.ts",
+      "import": "./dist/hooks/use-user.js"
+    },
+    "./icon-button": {
+      "types": "./dist/icon-button/index.d.ts",
+      "import": "./dist/icon-button/index.js"
+    },
+    "./if": {
+      "types": "./dist/if/index.d.ts",
+      "import": "./dist/if/index.js"
+    },
+    "./iframe": {
+      "types": "./dist/iframe/index.d.ts",
+      "import": "./dist/iframe/index.js"
+    },
+    "./link": {
+      "types": "./dist/link/index.d.ts",
+      "import": "./dist/link/index.js"
+    },
+    "./list": {
+      "types": "./dist/list/index.d.ts",
+      "import": "./dist/list/index.js"
+    },
+    "./markdown-container": {
+      "types": "./dist/markdown-container/index.d.ts",
+      "import": "./dist/markdown-container/index.js"
+    },
+    "./password-input": {
+      "types": "./dist/password-input/index.d.ts",
+      "import": "./dist/password-input/index.js"
+    },
+    "./picture": {
+      "types": "./dist/picture/index.d.ts",
+      "import": "./dist/picture/index.js"
+    },
+    "./protected-email": {
+      "types": "./dist/protected-email/index.d.ts",
+      "import": "./dist/protected-email/index.js"
+    },
+    "./tailwind.css": "./src/tailwind.css",
+    "./text": {
+      "types": "./dist/text/index.d.ts",
+      "import": "./dist/text/index.js"
+    },
+    "./utils/author": {
+      "types": "./dist/utils/author/index.d.ts",
+      "import": "./dist/utils/author/index.js"
+    },
+    "./utils/text": {
+      "types": "./dist/utils/text/index.d.ts",
+      "import": "./dist/utils/text/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsup && post-build-exports --preserve \"./tailwind.css\" && pnpm fix",
+    "clean": "exec-clean .turbo dist",
+    "dev": "tsup --watch",
+    "fix": "exec-p fix:*",
+    "fix:biome": "lint-biome check --write --unsafe .",
+    "fix:md": "lint-md --fix",
+    "fix:pkg": "lint-package --fix",
+    "lint": "exec-p lint:*",
+    "lint:biome": "lint-biome check .",
+    "lint:md": "lint-md",
+    "lint:pkg": "lint-package",
+    "prepare": "exec-husky",
+    "release": "flow-release",
+    "report": "vitest run --coverage",
+    "storybook": "storybook dev -p 6006",
+    "storybook:build": "storybook build -o storybook-static",
+    "test": "exec-s test:*",
+    "test:unit": "vitest run",
+    "typecheck": "exec-tsc --noEmit",
+    "version": "flow-changeset version"
   },
   "dependencies": {
     "@base-ui/react": "1.0.0",
     "@maptiler/leaflet-maptilersdk": "4.1.1",
     "@maptiler/sdk": "3.9.0",
     "@mdx-js/react": "3.1.1",
-    "@regardio/js": "0.5.0",
-    "@regardio/tailwind": "0.1.2",
+    "@regardio/js": "0.6.0",
+    "@regardio/tailwind": "0.1.3",
     "@supabase/supabase-js": "2.90.0",
     "cmdk": "1.1.1",
     "embla-carousel": "8.6.0",
@@ -19,20 +181,19 @@
     "intl-parse-accept-language": "1.0.0",
     "leaflet": "alpha",
     "lucide-react": "0.562.0",
-    "markdown-to-jsx": "9.5.0",
+    "markdown-to-jsx": "9.5.1",
     "react": "19.2.3",
     "react-day-picker": "9.13.0",
     "react-dom": "19.2.3",
     "react-hook-form": "7.70.0",
-    "react-resizable-panels": "4.3.0",
-    "react-router": "7.11.0",
+    "react-resizable-panels": "4.3.1",
+    "react-router": "7.12.0",
     "tailwind-variants": "3.2.2",
     "vaul": "1.1.2",
     "zod": "4.3.5"
   },
-  "description": "Regardio React UI components",
   "devDependencies": {
-    "@regardio/dev": "1.10.3",
+    "@regardio/dev": "1.11.1",
     "@storybook/addon-a11y": "10.1.11",
     "@storybook/addon-docs": "10.1.11",
     "@storybook/addon-vitest": "10.1.11",
@@ -61,156 +222,7 @@
   "engines": {
     "node": ">=18"
   },
-  "exports": {
-    "./background-slideshow": {
-      "import": "./dist/background-slideshow/index.js",
-      "types": "./dist/background-slideshow/index.d.ts"
-    },
-    "./blurry-gradient": {
-      "import": "./dist/blurry-gradient/index.js",
-      "types": "./dist/blurry-gradient/index.d.ts"
-    },
-    "./carousel": {
-      "import": "./dist/carousel/index.js",
-      "types": "./dist/carousel/index.d.ts"
-    },
-    "./countdown": {
-      "import": "./dist/countdown/index.js",
-      "types": "./dist/countdown/index.d.ts"
-    },
-    "./generic-error": {
-      "import": "./dist/generic-error/index.js",
-      "types": "./dist/generic-error/index.d.ts"
-    },
-    "./grid": {
-      "import": "./dist/grid/index.js",
-      "types": "./dist/grid/index.d.ts"
-    },
-    "./heading": {
-      "import": "./dist/heading/index.js",
-      "types": "./dist/heading/index.d.ts"
-    },
-    "./highlight": {
-      "import": "./dist/highlight/index.js",
-      "types": "./dist/highlight/index.d.ts"
-    },
-    "./hooks/use-current-route-data": {
-      "import": "./dist/hooks/use-current-route-data/index.js",
-      "types": "./dist/hooks/use-current-route-data/index.d.ts"
-    },
-    "./hooks/use-focus-search": {
-      "import": "./dist/hooks/use-focus-search/index.js",
-      "types": "./dist/hooks/use-focus-search/index.d.ts"
-    },
-    "./hooks/use-matches-data": {
-      "import": "./dist/hooks/use-matches-data/index.js",
-      "types": "./dist/hooks/use-matches-data/index.d.ts"
-    },
-    "./hooks/use-media-query": {
-      "import": "./dist/hooks/use-media-query/index.js",
-      "types": "./dist/hooks/use-media-query/index.d.ts"
-    },
-    "./hooks/use-mobile": {
-      "import": "./dist/hooks/use-mobile/index.js",
-      "types": "./dist/hooks/use-mobile/index.d.ts"
-    },
-    "./hooks/use-nonce": {
-      "import": "./dist/hooks/use-nonce/index.js",
-      "types": "./dist/hooks/use-nonce/index.d.ts"
-    },
-    "./hooks/use-orientation": {
-      "import": "./dist/hooks/use-orientation/index.js",
-      "types": "./dist/hooks/use-orientation/index.d.ts"
-    },
-    "./hooks/use-user": {
-      "import": "./dist/hooks/use-user/index.js",
-      "types": "./dist/hooks/use-user/index.d.ts"
-    },
-    "./icon-button": {
-      "import": "./dist/icon-button/index.js",
-      "types": "./dist/icon-button/index.d.ts"
-    },
-    "./if": {
-      "import": "./dist/if/index.js",
-      "types": "./dist/if/index.d.ts"
-    },
-    "./iframe": {
-      "import": "./dist/iframe/index.js",
-      "types": "./dist/iframe/index.d.ts"
-    },
-    "./link": {
-      "import": "./dist/link/index.js",
-      "types": "./dist/link/index.d.ts"
-    },
-    "./list": {
-      "import": "./dist/list/index.js",
-      "types": "./dist/list/index.d.ts"
-    },
-    "./markdown-container": {
-      "import": "./dist/markdown-container/index.js",
-      "types": "./dist/markdown-container/index.d.ts"
-    },
-    "./password-input": {
-      "import": "./dist/password-input/index.js",
-      "types": "./dist/password-input/index.d.ts"
-    },
-    "./picture": {
-      "import": "./dist/picture/index.js",
-      "types": "./dist/picture/index.d.ts"
-    },
-    "./protected-email": {
-      "import": "./dist/protected-email/index.js",
-      "types": "./dist/protected-email/index.d.ts"
-    },
-    "./tailwind.css": "./src/tailwind.css",
-    "./text": {
-      "import": "./dist/text/index.js",
-      "types": "./dist/text/index.d.ts"
-    },
-    "./utils/author": {
-      "import": "./dist/utils/author/index.js",
-      "types": "./dist/utils/author/index.d.ts"
-    },
-    "./utils/text": {
-      "import": "./dist/utils/text/index.js",
-      "types": "./dist/utils/text/index.d.ts"
-    }
-  },
-  "files": ["dist", "src"],
-  "homepage": "https://github.com/regardio/react/blob/main/README.md",
-  "keywords": ["react", "components", "ui", "regardio", "tailwindcss"],
-  "license": "MIT",
-  "name": "@regardio/react",
-  "private": false,
   "publishConfig": {
     "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/regardio/react.git"
-  },
-  "scripts": {
-    "build": "tsup && post-build-exports --preserve \"./tailwind.css\" && pnpm fix",
-    "clean": "exec-clean .turbo dist",
-    "dev": "tsup --watch",
-    "fix": "exec-p fix:*",
-    "fix:biome": "lint-biome check --write --unsafe .",
-    "fix:md": "lint-md --fix",
-    "lint": "exec-p lint:*",
-    "lint:biome": "lint-biome check .",
-    "lint:md": "lint-md",
-    "prepare": "exec-husky",
-    "release": "flow-release",
-    "report": "exec-s report:*",
-    "report:unit": "vitest run --reporter html",
-    "storybook": "storybook dev -p 6006",
-    "storybook:build": "storybook build -o storybook-static",
-    "test": "exec-s test:*",
-    "test:unit": "vitest run",
-    "typecheck": "exec-tsc --noEmit",
-    "version": "flow-changeset version"
-  },
-  "sideEffects": ["./src/tailwind.css"],
-  "type": "module",
-  "version": "0.5.1"
+  }
 }
