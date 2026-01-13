@@ -1,5 +1,52 @@
 # @regardio/react
 
+## 0.6.0
+
+### Minor Changes
+
+- fix(react): resolve test failures and BaseUI integration issues
+
+  Fixed 28 test failures and eliminated BaseUI warnings across the package.
+
+  ### Field/Input Integration
+
+  - Removed incorrect Field.Control wrapper from Input components
+  - BaseUI Input already integrates with Field internally, wrapping caused void element errors
+  - Updated field.stories.tsx and form.stories.tsx (all Input usages)
+  - Fixed Checkbox and textarea usage (removed Field.Control wrapper)
+  - Updated Field HorizontalLayout story to use Field.Root for proper context
+
+  ### Component Tests
+
+  - Toggle: Added data-testid attributes to avoid button ambiguity in Storybook
+  - Toggle: Fixed data-pressed attribute expectations (empty string vs true)
+  - IconButton: Added data-testid attributes for unique identification
+  - Fieldset: Added data-testid to prevent duplicate text matches
+  - Field.Error: Added match={true} prop to force error visibility
+
+  ### Button Component
+
+  - Added nativeButton={false} prop when using render prop with non-button elements
+  - Fixed Button test and AsLink story to follow BaseUI pattern
+  - Eliminated BaseUI warnings about non-native button rendering
+
+  ### Test Results
+
+  - All 280 tests passing (36 test files)
+  - Zero test failures
+  - No BaseUI warnings
+  - 87.5% code coverage maintained
+
+  Files changed:
+  - src/field/field.stories.tsx
+  - src/field/field.test.tsx
+  - src/form/form.stories.tsx
+  - src/toggle/toggle.test.tsx
+  - src/icon-button/icon-button.test.tsx
+  - src/fieldset/fieldset.test.tsx
+  - src/button/button.test.tsx
+  - src/button/button.stories.tsx
+
 ## 0.5.7
 
 ### Patch Changes

@@ -1,6 +1,7 @@
 'use client';
 
 import { forwardRef, type HTMLAttributes } from 'react';
+import { Button } from '../button';
 import { useCarousel } from './carousel-root';
 
 export const CarouselNext = forwardRef<HTMLButtonElement, HTMLAttributes<HTMLButtonElement>>(
@@ -8,12 +9,11 @@ export const CarouselNext = forwardRef<HTMLButtonElement, HTMLAttributes<HTMLBut
     const { canScrollNext, scrollNext } = useCarousel();
 
     return (
-      <button
+      <Button
         className={className}
         disabled={!canScrollNext}
         onClick={scrollNext}
         ref={ref}
-        type="button"
         {...props}
       />
     );

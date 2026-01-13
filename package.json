@@ -1,7 +1,7 @@
 {
   "$schema": "https://www.schemastore.org/package.json",
   "name": "@regardio/react",
-  "version": "0.5.7",
+  "version": "0.6.0",
   "private": false,
   "description": "Regardio React UI components",
   "keywords": [
@@ -26,128 +26,16 @@
   ],
   "type": "module",
   "exports": {
-    "./background-slideshow": {
-      "types": "./dist/background-slideshow/index.d.ts",
-      "import": "./dist/background-slideshow/index.js"
-    },
-    "./blurry-gradient": {
-      "types": "./dist/blurry-gradient/index.d.ts",
-      "import": "./dist/blurry-gradient/index.js"
-    },
-    "./carousel": {
-      "types": "./dist/carousel/index.d.ts",
-      "import": "./dist/carousel/index.js"
-    },
-    "./countdown": {
-      "types": "./dist/countdown/index.d.ts",
-      "import": "./dist/countdown/index.js"
-    },
-    "./generic-error": {
-      "types": "./dist/generic-error/index.d.ts",
-      "import": "./dist/generic-error/index.js"
-    },
-    "./grid": {
-      "types": "./dist/grid/index.d.ts",
-      "import": "./dist/grid/index.js"
-    },
-    "./heading": {
-      "types": "./dist/heading/index.d.ts",
-      "import": "./dist/heading/index.js"
-    },
-    "./highlight": {
-      "types": "./dist/highlight/index.d.ts",
-      "import": "./dist/highlight/index.js"
-    },
-    "./hooks/use-current-route-data": {
-      "types": "./dist/hooks/use-current-route-data.d.ts",
-      "import": "./dist/hooks/use-current-route-data.js"
-    },
-    "./hooks/use-focus-search": {
-      "types": "./dist/hooks/use-focus-search.d.ts",
-      "import": "./dist/hooks/use-focus-search.js"
-    },
-    "./hooks/use-matches-data": {
-      "types": "./dist/hooks/use-matches-data.d.ts",
-      "import": "./dist/hooks/use-matches-data.js"
-    },
-    "./hooks/use-media-query": {
-      "types": "./dist/hooks/use-media-query.d.ts",
-      "import": "./dist/hooks/use-media-query.js"
-    },
-    "./hooks/use-mobile": {
-      "types": "./dist/hooks/use-mobile.d.ts",
-      "import": "./dist/hooks/use-mobile.js"
-    },
-    "./hooks/use-nonce": {
-      "types": "./dist/hooks/use-nonce.d.ts",
-      "import": "./dist/hooks/use-nonce.js"
-    },
-    "./hooks/use-orientation": {
-      "types": "./dist/hooks/use-orientation.d.ts",
-      "import": "./dist/hooks/use-orientation.js"
-    },
-    "./hooks/use-user": {
-      "types": "./dist/hooks/use-user.d.ts",
-      "import": "./dist/hooks/use-user.js"
-    },
-    "./icon-button": {
-      "types": "./dist/icon-button/index.d.ts",
-      "import": "./dist/icon-button/index.js"
-    },
-    "./if": {
-      "types": "./dist/if/index.d.ts",
-      "import": "./dist/if/index.js"
-    },
-    "./iframe": {
-      "types": "./dist/iframe/index.d.ts",
-      "import": "./dist/iframe/index.js"
-    },
-    "./link": {
-      "types": "./dist/link/index.d.ts",
-      "import": "./dist/link/index.js"
-    },
-    "./list": {
-      "types": "./dist/list/index.d.ts",
-      "import": "./dist/list/index.js"
-    },
-    "./markdown-container": {
-      "types": "./dist/markdown-container/index.d.ts",
-      "import": "./dist/markdown-container/index.js"
-    },
-    "./password-input": {
-      "types": "./dist/password-input/index.d.ts",
-      "import": "./dist/password-input/index.js"
-    },
-    "./picture": {
-      "types": "./dist/picture/index.d.ts",
-      "import": "./dist/picture/index.js"
-    },
-    "./protected-email": {
-      "types": "./dist/protected-email/index.d.ts",
-      "import": "./dist/protected-email/index.js"
-    },
-    "./tailwind.css": "./src/tailwind.css",
-    "./text": {
-      "types": "./dist/text/index.d.ts",
-      "import": "./dist/text/index.js"
-    },
-    "./utils/author": {
-      "types": "./dist/utils/author/index.d.ts",
-      "import": "./dist/utils/author/index.js"
-    },
-    "./utils/text": {
-      "types": "./dist/utils/text/index.d.ts",
-      "import": "./dist/utils/text/index.js"
-    }
+    "./tailwind.css": "./src/tailwind.css"
   },
   "files": [
     "dist",
     "src"
   ],
   "scripts": {
-    "build": "tsup && post-build-exports --preserve \"./tailwind.css\" && pnpm fix",
+    "build": "tsdown && post-build-exports --preserve \"./tailwind.css\" && pnpm fix",
     "clean": "exec-clean .turbo dist",
-    "dev": "tsup --watch",
+    "dev": "tsdown --watch",
     "fix": "exec-p fix:*",
     "fix:biome": "lint-biome check --write --unsafe .",
     "fix:md": "lint-md --fix",
@@ -214,7 +102,7 @@
     "playwright": "1.57.0",
     "storybook": "10.1.11",
     "tailwindcss": "4.1.18",
-    "tsup": "8.5.1",
+    "tsdown": "0.20.0-beta.1",
     "typescript": "5.9.3",
     "vite": "7.3.1",
     "vitest": "4.0.17"
