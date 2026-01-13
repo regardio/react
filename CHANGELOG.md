@@ -1,5 +1,18 @@
 # @regardio/react
 
+## 0.5.7
+
+### Patch Changes
+
+- lint and deps
+
+## 0.5.6
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @regardio/tailwind@0.2.0
+
 ## 0.5.5
 
 ### Patch Changes

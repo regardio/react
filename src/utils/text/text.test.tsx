@@ -82,11 +82,7 @@ describe('shy', () => {
   });
 
   it('handles arrays in React nodes', () => {
-    const element = (
-      <div>
-        {['Weihnachts­spende', ' ', 'Test­wort']}
-      </div>
-    );
+    const element = <div>{['Weihnachts­spende', ' ', 'Test­wort']}</div>;
     const result = shy(element);
     expect(isValidElement(result)).toBe(true);
   });
