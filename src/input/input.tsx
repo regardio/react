@@ -99,7 +99,7 @@ export interface InputProps extends Omit<ComponentProps<typeof BaseUIInput>, 'cl
   size?: InputSize;
 }
 
-export const Input = ({ className, variant, size, ...props }: InputProps) => {
+export const Input = ({ className, variant, size, ...props }: InputProps): React.JSX.Element => {
   return (
     <BaseUIInput
       className={input({

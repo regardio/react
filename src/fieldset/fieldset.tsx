@@ -45,7 +45,11 @@ export interface FieldsetLegendProps
   size?: FieldsetLegendSize;
 }
 
-export const FieldsetRoot = ({ className, variant, ...props }: FieldsetRootProps) => {
+export const FieldsetRoot = ({
+  className,
+  variant,
+  ...props
+}: FieldsetRootProps): React.JSX.Element => {
   return (
     <BaseUIFieldset.Root
       className={fieldsetRoot({
@@ -57,7 +61,11 @@ export const FieldsetRoot = ({ className, variant, ...props }: FieldsetRootProps
   );
 };
 
-export const FieldsetLegend = ({ className, size, ...props }: FieldsetLegendProps) => {
+export const FieldsetLegend = ({
+  className,
+  size,
+  ...props
+}: FieldsetLegendProps): React.JSX.Element => {
   return (
     <BaseUIFieldset.Legend
       className={fieldsetLegend({
@@ -69,7 +77,10 @@ export const FieldsetLegend = ({ className, size, ...props }: FieldsetLegendProp
   );
 };
 
-export const Fieldset = {
+export const Fieldset: {
+  Legend: typeof FieldsetLegend;
+  Root: typeof FieldsetRoot;
+} = {
   Legend: FieldsetLegend,
   Root: FieldsetRoot,
 };

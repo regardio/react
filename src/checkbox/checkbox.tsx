@@ -51,7 +51,11 @@ export interface CheckboxIndicatorProps
   className?: string;
 }
 
-export const CheckboxRoot = ({ className, size = 'md', ...props }: CheckboxRootProps) => {
+export const CheckboxRoot = ({
+  className,
+  size = 'md',
+  ...props
+}: CheckboxRootProps): React.JSX.Element => {
   return (
     <BaseUICheckbox.Root
       className={checkboxRoot({
@@ -63,7 +67,11 @@ export const CheckboxRoot = ({ className, size = 'md', ...props }: CheckboxRootP
   );
 };
 
-export const CheckboxIndicator = ({ className, children, ...props }: CheckboxIndicatorProps) => {
+export const CheckboxIndicator = ({
+  className,
+  children,
+  ...props
+}: CheckboxIndicatorProps): React.JSX.Element => {
   return (
     <BaseUICheckbox.Indicator
       className={checkboxIndicator({ className })}
@@ -85,7 +93,10 @@ export const CheckboxIndicator = ({ className, children, ...props }: CheckboxInd
   );
 };
 
-export const Checkbox = {
+export const Checkbox: {
+  Indicator: typeof CheckboxIndicator;
+  Root: typeof CheckboxRoot;
+} = {
   Indicator: CheckboxIndicator,
   Root: CheckboxRoot,
 };

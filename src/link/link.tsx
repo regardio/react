@@ -14,7 +14,8 @@ export type PathResolver = (routeKey: string) => string;
 
 const PathResolverContext = createContext<PathResolver | null>(null);
 
-export const PathResolverProvider = PathResolverContext.Provider;
+export const PathResolverProvider: React.Provider<PathResolver | null> =
+  PathResolverContext.Provider;
 
 export function usePathResolver(): PathResolver | null {
   return useContext(PathResolverContext);
@@ -34,7 +35,7 @@ export const LinkBase = ({
   onClick,
   viewTransition = true,
   ...props
-}: LinkBaseProps) => {
+}: LinkBaseProps): React.JSX.Element => {
   const pathResolver = usePathResolver();
 
   let path: string;
@@ -179,7 +180,7 @@ export const Link = ({
   variant,
   viewTransition,
   ...props
-}: LinkProps) => {
+}: LinkProps): React.JSX.Element => {
   return (
     <LinkBase
       {...props}

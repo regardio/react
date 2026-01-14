@@ -27,7 +27,7 @@ export const CheckboxGroup = ({
   className,
   orientation = 'vertical',
   ...props
-}: CheckboxGroupProps) => {
+}: CheckboxGroupProps): React.JSX.Element => {
   return (
     <BaseUICheckboxGroup
       className={checkboxGroup({

@@ -96,7 +96,13 @@ export interface ButtonProps extends Omit<ComponentProps<typeof BaseUIButton>, '
   type?: 'button' | 'submit' | 'reset';
 }
 
-export const Button = ({ children, className, variant, size, ...props }: ButtonProps) => {
+export const Button = ({
+  children,
+  className,
+  variant,
+  size,
+  ...props
+}: ButtonProps): React.JSX.Element => {
   return (
     <BaseUIButton
       className={button({

@@ -1,5 +1,26 @@
-import { tv, type VariantProps } from '@regardio/tailwind/utils';
-import { createContext, forwardRef, type HTMLAttributes, useContext } from 'react';
+import { tv } from '@regardio/tailwind/utils';
+import { createContext, type HTMLAttributes, useContext } from 'react';
+
+const GRID_VARIANTS = {
+  align: ['center', 'end', 'start', 'stretch'] as const,
+  flow: ['column', 'dense', 'row'] as const,
+} as const;
+
+interface GridVariantProps {
+  align?: (typeof GRID_VARIANTS.align)[number];
+  flow?: (typeof GRID_VARIANTS.flow)[number];
+}
+
+interface GridSlotProps {
+  class?: string;
+  className?: string;
+}
+
+interface GridSlots {
+  root: (props?: GridSlotProps) => string;
+}
+
+type GridStyleFn = (props?: GridVariantProps) => GridSlots;
 
 const grid = tv({
   defaultVariants: {
@@ -28,9 +49,9 @@ const grid = tv({
       row: { root: 'grid-auto-flow-row' },
     },
   },
-});
+}) as GridStyleFn;
 
-type GridVariants = VariantProps<typeof grid>;
+type GridVariants = GridVariantProps;
 
 interface GridContextValue {
   styles: ReturnType<typeof grid>;
@@ -38,7 +59,7 @@ interface GridContextValue {
 
 const GridContext = createContext<GridContextValue | null>(null);
 
-export function useGrid() {
+export function useGrid(): GridContextValue {
   const context = useContext(GridContext);
   if (!context) {
     throw new Error('useGrid must be used within a <Grid.Root />');
@@ -50,23 +71,29 @@ export interface GridRootProps extends HTMLAttributes<HTMLDivElement>, GridVaria
   classNames?: {
     root?: string;
   };
+  ref?: React.Ref<HTMLDivElement>;
 }
 
-export const GridRoot = forwardRef<HTMLDivElement, GridRootProps>(
-  ({ children, className, classNames, flow, align, ...props }, ref) => {
-    const styles = grid({ align, flow });
+export const GridRoot = function GridRoot({
+  children,
+  className,
+  classNames,
+  flow,
+  align,
+  ref,
+  ...props
+}: GridRootProps): React.JSX.Element {
+  const styles = grid({ align, flow });
 
-    return (
-      <GridContext.Provider value={{ styles }}>
-        <div
-          className={styles.root({ className: classNames?.root ?? className })}
-          ref={ref}
-          {...props}
-        >
-          {children}
-        </div>
-      </GridContext.Provider>
-    );
-  },
-);
-GridRoot.displayName = 'GridRoot';
+  return (
+    <GridContext.Provider value={{ styles }}>
+      <div
+        className={styles.root({ className: classNames?.root ?? className })}
+        ref={ref}
+        {...props}
+      >
+        {children}
+      </div>
+    </GridContext.Provider>
+  );
+};

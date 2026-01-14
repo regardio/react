@@ -4,7 +4,7 @@ import { Field } from '../field';
 import { Input } from '../input';
 import { Form } from './form';
 
-const meta = {
+const meta: Meta<typeof Form> = {
   argTypes: {
     variant: {
       control: 'select',

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button } from '../button';
 import { Fieldset } from './fieldset';
 
-const meta = {
+const meta: Meta<typeof Fieldset.Root> = {
   argTypes: {
     variant: {
       control: 'select',

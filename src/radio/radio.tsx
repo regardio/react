@@ -50,7 +50,11 @@ export interface RadioIndicatorProps
   className?: string;
 }
 
-export const RadioRoot = ({ className, size = 'md', ...props }: RadioRootProps) => {
+export const RadioRoot = ({
+  className,
+  size = 'md',
+  ...props
+}: RadioRootProps): React.JSX.Element => {
   return (
     <BaseUIRadio.Root
       className={radioRoot({
@@ -62,7 +66,11 @@ export const RadioRoot = ({ className, size = 'md', ...props }: RadioRootProps) 
   );
 };
 
-export const RadioIndicator = ({ className, children, ...props }: RadioIndicatorProps) => {
+export const RadioIndicator = ({
+  className,
+  children,
+  ...props
+}: RadioIndicatorProps): React.JSX.Element => {
   return (
     <BaseUIRadio.Indicator
       className={radioIndicator({ className })}
@@ -86,7 +94,10 @@ export const RadioIndicator = ({ className, children, ...props }: RadioIndicator
   );
 };
 
-export const Radio = {
+export const Radio: {
+  Indicator: typeof RadioIndicator;
+  Root: typeof RadioRoot;
+} = {
   Indicator: RadioIndicator,
   Root: RadioRoot,
 };

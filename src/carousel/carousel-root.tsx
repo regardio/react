@@ -4,7 +4,6 @@ import type { EmblaCarouselType, EmblaOptionsType } from 'embla-carousel';
 import useEmblaCarousel from 'embla-carousel-react';
 import {
   createContext,
-  forwardRef,
   type HTMLAttributes,
   type KeyboardEvent,
   useCallback,
@@ -25,7 +24,7 @@ interface CarouselContextValue {
 
 const CarouselContext = createContext<CarouselContextValue | null>(null);
 
-export function useCarousel() {
+export function useCarousel(): CarouselContextValue {
   const context = useContext(CarouselContext);
   if (!context) {
     throw new Error('useCarousel must be used within a <Carousel.Root />');
@@ -37,91 +36,97 @@ export interface CarouselRootProps extends HTMLAttributes<HTMLDivElement> {
   opts?: EmblaOptionsType;
   setApi?: (api: CarouselApi) => void;
   orientation?: 'horizontal' | 'vertical';
+  ref?: React.Ref<HTMLDivElement>;
 }
 
-export const CarouselRoot = forwardRef<HTMLDivElement, CarouselRootProps>(
-  ({ children, className, opts, orientation = 'horizontal', setApi, ...props }, ref) => {
-    const [emblaRef, emblaApi] = useEmblaCarousel({
-      ...opts,
-      axis: orientation === 'horizontal' ? 'x' : 'y',
-    });
-    const [canScrollPrev, setCanScrollPrev] = useState(false);
-    const [canScrollNext, setCanScrollNext] = useState(false);
+export const CarouselRoot = function CarouselRoot({
+  children,
+  className,
+  opts,
+  orientation = 'horizontal',
+  setApi,
+  ref,
+  ...props
+}: CarouselRootProps): React.JSX.Element {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    ...opts,
+    axis: orientation === 'horizontal' ? 'x' : 'y',
+  });
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
 
-    const onSelect = useCallback((api: CarouselApi) => {
-      if (!api) {
-        return;
+  const onSelect = useCallback((api: CarouselApi) => {
+    if (!api) {
+      return;
+    }
+    setCanScrollPrev(api.canScrollPrev());
+    setCanScrollNext(api.canScrollNext());
+  }, []);
+
+  const scrollPrev = useCallback(() => {
+    emblaApi?.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    emblaApi?.scrollNext();
+  }, [emblaApi]);
+
+  const handleKeyDown = useCallback(
+    (event: KeyboardEvent<HTMLDivElement>) => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        scrollPrev();
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        scrollNext();
       }
-      setCanScrollPrev(api.canScrollPrev());
-      setCanScrollNext(api.canScrollNext());
-    }, []);
+    },
+    [scrollPrev, scrollNext],
+  );
 
-    const scrollPrev = useCallback(() => {
-      emblaApi?.scrollPrev();
-    }, [emblaApi]);
+  useEffect(() => {
+    if (!emblaApi || !setApi) {
+      return;
+    }
+    setApi(emblaApi);
+  }, [emblaApi, setApi]);
 
-    const scrollNext = useCallback(() => {
-      emblaApi?.scrollNext();
-    }, [emblaApi]);
+  useEffect(() => {
+    if (!emblaApi) {
+      return;
+    }
 
-    const handleKeyDown = useCallback(
-      (event: KeyboardEvent<HTMLDivElement>) => {
-        if (event.key === 'ArrowLeft') {
-          event.preventDefault();
-          scrollPrev();
-        } else if (event.key === 'ArrowRight') {
-          event.preventDefault();
-          scrollNext();
-        }
-      },
-      [scrollPrev, scrollNext],
-    );
+    onSelect(emblaApi);
+    emblaApi.on('reInit', onSelect);
+    emblaApi.on('select', onSelect);
 
-    useEffect(() => {
-      if (!emblaApi || !setApi) {
-        return;
-      }
-      setApi(emblaApi);
-    }, [emblaApi, setApi]);
+    return () => {
+      emblaApi?.off('select', onSelect);
+    };
+  }, [emblaApi, onSelect]);
 
-    useEffect(() => {
-      if (!emblaApi) {
-        return;
-      }
-
-      onSelect(emblaApi);
-      emblaApi.on('reInit', onSelect);
-      emblaApi.on('select', onSelect);
-
-      return () => {
-        emblaApi?.off('select', onSelect);
-      };
-    }, [emblaApi, onSelect]);
-
-    return (
-      <CarouselContext.Provider
-        value={{
-          api: emblaApi,
-          canScrollNext,
-          canScrollPrev,
-          scrollNext,
-          scrollPrev,
-        }}
+  return (
+    <CarouselContext.Provider
+      value={{
+        api: emblaApi,
+        canScrollNext,
+        canScrollPrev,
+        scrollNext,
+        scrollPrev,
+      }}
+    >
+      <section
+        aria-label="Carousel"
+        aria-roledescription="carousel"
+        className={className}
+        onKeyDownCapture={handleKeyDown}
+        ref={ref}
+        {...props}
       >
-        <section
-          aria-label="Carousel"
-          aria-roledescription="carousel"
-          className={className}
-          onKeyDownCapture={handleKeyDown}
-          ref={ref}
-          {...props}
-        >
-          <div ref={emblaRef}>
-            <div>{children}</div>
-          </div>
-        </section>
-      </CarouselContext.Provider>
-    );
-  },
-);
-CarouselRoot.displayName = 'CarouselRoot';
+        <div ref={emblaRef}>
+          <div>{children}</div>
+        </div>
+      </section>
+    </CarouselContext.Provider>
+  );
+};

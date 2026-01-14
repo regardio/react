@@ -3,7 +3,7 @@
 import { cn } from '@regardio/tailwind/utils';
 import { useEffect, useState } from 'react';
 
-export function Countdown() {
+export function Countdown(): React.JSX.Element {
   const [timerValue, setTimerValue] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
 

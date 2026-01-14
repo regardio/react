@@ -18,7 +18,12 @@ export interface ProtectedEmailProps {
  * @param text - Optional display text (defaults to username(at)domain)
  * @param className - Optional CSS class name
  */
-export function ProtectedEmail({ username, domain, text, className }: ProtectedEmailProps) {
+export function ProtectedEmail({
+  username,
+  domain,
+  text,
+  className,
+}: ProtectedEmailProps): React.JSX.Element {
   const [mounted, setMounted] = useState(false);
 
   // Only assemble the email on the client side

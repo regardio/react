@@ -23,7 +23,11 @@ export interface RadioGroupProps
   orientation?: RadioGroupOrientation;
 }
 
-export const RadioGroup = ({ className, orientation = 'vertical', ...props }: RadioGroupProps) => {
+export const RadioGroup = ({
+  className,
+  orientation = 'vertical',
+  ...props
+}: RadioGroupProps): React.JSX.Element => {
   return (
     <BaseUIRadioGroup
       className={radioGroup({

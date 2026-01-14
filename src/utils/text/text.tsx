@@ -1,5 +1,5 @@
 import { replaceShyInString, splitIntoSentences, typographicQuotes } from '@regardio/js/text';
-import React, { cloneElement, isValidElement, type ReactElement, type ReactNode } from 'react';
+import { cloneElement, Fragment, isValidElement, type ReactElement, type ReactNode } from 'react';
 
 export const lowerCaseSzett = (text: ReactNode | string, _returnType?: 'string'): ReactNode => {
   // Helper function to process strings
@@ -24,21 +24,18 @@ export const lowerCaseSzett = (text: ReactNode | string, _returnType?: 'string')
     return processString(text);
   }
 
-  // Handle valid React elements with correct type assertion
+  // Handle valid React elements
   if (isValidElement(text)) {
     const element = text as ReactElement<{ children?: ReactNode }>;
-    const { children, ...props } = element.props;
+    const { children } = element.props;
 
-    return cloneElement(element, {
-      ...props,
-      children: lowerCaseSzett(children),
-    });
+    return cloneElement(element, element.props, lowerCaseSzett(children));
   }
 
   // Handle arrays
   if (Array.isArray(text)) {
     return text.map((child, index) => (
-      <React.Fragment key={index.toString()}>{lowerCaseSzett(child as ReactNode)}</React.Fragment>
+      <Fragment key={index.toString()}>{lowerCaseSzett(child as ReactNode)}</Fragment>
     ));
   }
 
@@ -55,19 +52,14 @@ function replaceShyInReactNode(node: ReactNode): ReactNode {
 
   if (isValidElement(node)) {
     const element = node as ReactElement<{ children?: ReactNode }>;
-    const { children, ...props } = element.props;
+    const { children } = element.props;
 
-    return cloneElement(element, {
-      ...props,
-      children: replaceShyInReactNode(children),
-    });
+    return cloneElement(element, element.props, replaceShyInReactNode(children));
   }
 
   if (Array.isArray(node)) {
     return node.map((child, index) => (
-      <React.Fragment key={index.toString()}>
-        {replaceShyInReactNode(child as ReactNode)}
-      </React.Fragment>
+      <Fragment key={index.toString()}>{replaceShyInReactNode(child as ReactNode)}</Fragment>
     ));
   }
 

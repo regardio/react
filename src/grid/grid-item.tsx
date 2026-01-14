@@ -1,5 +1,40 @@
-import { tv, type VariantProps } from '@regardio/tailwind/utils';
-import { forwardRef, type HTMLAttributes } from 'react';
+import { tv } from '@regardio/tailwind/utils';
+import type { HTMLAttributes } from 'react';
+
+const GRID_ITEM_VARIANTS = {
+  end: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 'auto'] as const,
+  rowSpan: [1, 2, 3, 4, 5, 6, 'full'] as const,
+  span: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 'full'] as const,
+  spanLg: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 'full'] as const,
+  spanMd: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 'full'] as const,
+  spanSm: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 'full'] as const,
+  spanXl: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 'full'] as const,
+  spanXs: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 'full'] as const,
+  start: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 'auto'] as const,
+} as const;
+
+interface GridItemVariantProps {
+  end?: (typeof GRID_ITEM_VARIANTS.end)[number];
+  rowSpan?: (typeof GRID_ITEM_VARIANTS.rowSpan)[number];
+  span?: (typeof GRID_ITEM_VARIANTS.span)[number];
+  spanLg?: (typeof GRID_ITEM_VARIANTS.spanLg)[number];
+  spanMd?: (typeof GRID_ITEM_VARIANTS.spanMd)[number];
+  spanSm?: (typeof GRID_ITEM_VARIANTS.spanSm)[number];
+  spanXl?: (typeof GRID_ITEM_VARIANTS.spanXl)[number];
+  spanXs?: (typeof GRID_ITEM_VARIANTS.spanXs)[number];
+  start?: (typeof GRID_ITEM_VARIANTS.start)[number];
+}
+
+interface GridItemSlotProps {
+  class?: string;
+  className?: string;
+}
+
+interface GridItemSlots {
+  root: (props?: GridItemSlotProps) => string;
+}
+
+type GridItemStyleFn = (props?: GridItemVariantProps) => GridItemSlots;
 
 const gridItem = tv({
   defaultVariants: {
@@ -141,48 +176,54 @@ const gridItem = tv({
       auto: { root: 'col-start-auto' },
     },
   },
-});
+}) as GridItemStyleFn;
 
-export type GridItemVariants = VariantProps<typeof gridItem>;
+export type GridItemVariants = GridItemVariantProps;
 
 export interface GridItemProps extends HTMLAttributes<HTMLDivElement>, GridItemVariants {
   classNames?: {
     root?: string;
   };
+  ref?: React.Ref<HTMLDivElement>;
 }
 
-export const GridItem = forwardRef<HTMLDivElement, GridItemProps>(
-  (
-    {
-      children,
-      className,
-      classNames,
-      span,
-      spanXs,
-      spanSm,
-      spanMd,
-      spanLg,
-      spanXl,
-      start,
-      end,
-      rowSpan,
-      ...props
-    },
-    ref,
-  ) => {
-    const styles = gridItem({ end, rowSpan, span, spanLg, spanMd, spanSm, spanXl, spanXs, start });
+export const GridItem = function GridItem({
+  children,
+  className,
+  classNames,
+  span,
+  spanXs,
+  spanSm,
+  spanMd,
+  spanLg,
+  spanXl,
+  start,
+  end,
+  rowSpan,
+  ref,
+  ...props
+}: GridItemProps): React.JSX.Element {
+  const styles = gridItem({
+    end,
+    rowSpan,
+    span,
+    spanLg,
+    spanMd,
+    spanSm,
+    spanXl,
+    spanXs,
+    start,
+  });
 
-    return (
-      <div
-        className={styles.root({ className: classNames?.root ?? className })}
-        ref={ref}
-        {...props}
-      >
-        {children}
-      </div>
-    );
-  },
-);
-GridItem.displayName = 'GridItem';
+  return (
+    <div
+      className={styles.root({ className: classNames?.root ?? className })}
+      ref={ref}
+      {...props}
+    >
+      {children}
+    </div>
+  );
+};
 
 export { gridItem };

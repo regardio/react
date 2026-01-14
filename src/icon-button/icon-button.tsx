@@ -36,7 +36,7 @@ export const IconButton = ({
   'aria-label': ariaLabel,
   className,
   ...props
-}: IconButtonProps) => {
+}: IconButtonProps): React.JSX.Element => {
   // Use title for both title and aria-label if aria-label not provided
   const finalAriaLabel = ariaLabel || title;
   const finalTitle = title || ariaLabel;

@@ -1,6 +1,5 @@
 'use client';
 
-import type { ReactElement } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Picture } from '../picture';
 
@@ -36,7 +35,7 @@ export function BackgroundSlideshow({
   slideshowInterval = 6000,
   transitionDuration = 6000,
   filter,
-}: BackgroundSlideshowProps): ReactElement {
+}: BackgroundSlideshowProps): React.JSX.Element {
   // Validate images synchronously for immediate first image render
   const validatedImages = useMemo(() => {
     return images

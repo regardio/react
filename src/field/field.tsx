@@ -93,7 +93,7 @@ export interface FieldItemProps extends ComponentProps<'div'> {
   children: ReactNode;
 }
 
-export const FieldRoot = ({ className, variant, ...props }: FieldRootProps) => {
+export const FieldRoot = ({ className, variant, ...props }: FieldRootProps): React.JSX.Element => {
   return (
     <BaseUIField.Root
       className={fieldRoot({
@@ -105,7 +105,11 @@ export const FieldRoot = ({ className, variant, ...props }: FieldRootProps) => {
   );
 };
 
-export const FieldLabel = ({ className, variant, ...props }: FieldLabelProps) => {
+export const FieldLabel = ({
+  className,
+  variant,
+  ...props
+}: FieldLabelProps): React.JSX.Element => {
   return (
     <BaseUIField.Label
       className={fieldLabel({
@@ -117,7 +121,11 @@ export const FieldLabel = ({ className, variant, ...props }: FieldLabelProps) =>
   );
 };
 
-export const FieldDescription = ({ className, variant, ...props }: FieldDescriptionProps) => {
+export const FieldDescription = ({
+  className,
+  variant,
+  ...props
+}: FieldDescriptionProps): React.JSX.Element => {
   return (
     <BaseUIField.Description
       className={fieldDescription({
@@ -129,7 +137,7 @@ export const FieldDescription = ({ className, variant, ...props }: FieldDescript
   );
 };
 
-export const FieldError = ({ className, ...props }: FieldErrorProps) => {
+export const FieldError = ({ className, ...props }: FieldErrorProps): React.JSX.Element => {
   return (
     <BaseUIField.Error
       className={fieldError({
@@ -140,7 +148,12 @@ export const FieldError = ({ className, ...props }: FieldErrorProps) => {
   );
 };
 
-export const FieldItem = ({ className, layout, children, ...props }: FieldItemProps) => {
+export const FieldItem = ({
+  className,
+  layout,
+  children,
+  ...props
+}: FieldItemProps): React.JSX.Element => {
   return (
     <div
       className={fieldItem({
@@ -154,7 +167,15 @@ export const FieldItem = ({ className, layout, children, ...props }: FieldItemPr
   );
 };
 
-export const Field = {
+export const Field: {
+  Control: typeof BaseUIField.Control;
+  Description: typeof FieldDescription;
+  Error: typeof FieldError;
+  Item: typeof FieldItem;
+  Label: typeof FieldLabel;
+  Root: typeof FieldRoot;
+  Validity: typeof BaseUIField.Validity;
+} = {
   Control: BaseUIField.Control,
   Description: FieldDescription,
   Error: FieldError,

@@ -1,6 +1,5 @@
 'use client';
 
-import type { ReactElement } from 'react';
 import { isRouteErrorResponse, useRouteError } from 'react-router';
 
 /**
@@ -73,8 +72,8 @@ export function getErrorDescriptor(error: unknown): ErrorDescriptor {
 export function GenericError({
   renderMessage,
 }: {
-  renderMessage?: (descriptor: ErrorDescriptor) => ReactElement;
-} = {}): ReactElement {
+  renderMessage?: (descriptor: ErrorDescriptor) => React.JSX.Element;
+} = {}): React.JSX.Element {
   const error = useRouteError();
   const descriptor = getErrorDescriptor(error);
 

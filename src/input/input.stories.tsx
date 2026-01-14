@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Input } from './input';
 
-const meta = {
+const meta: Meta<typeof Input> = {
   argTypes: {
     disabled: {
       control: 'boolean',

@@ -25,7 +25,7 @@ export interface FormProps extends Omit<ComponentProps<typeof BaseUIForm>, 'clas
   variant?: FormVariant;
 }
 
-export const Form = ({ className, variant, ...props }: FormProps) => {
+export const Form = ({ className, variant, ...props }: FormProps): React.JSX.Element => {
   return (
     <BaseUIForm
       className={form({

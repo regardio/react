@@ -11,7 +11,7 @@ export interface BlurryGradientProps extends SVGProps<SVGSVGElement> {
   description?: string;
 }
 
-export const BlurryGradient = (props: BlurryGradientProps) => {
+export const BlurryGradient = (props: BlurryGradientProps): React.JSX.Element => {
   const {
     description = 'Decorative blurry gradient',
     neutralColor,

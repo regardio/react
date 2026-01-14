@@ -1,5 +1,25 @@
 # @regardio/react
 
+## 0.7.0
+
+### Minor Changes
+
+- refactor: typings, inconsistencies, imports
+
+## 0.6.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @regardio/tailwind@0.3.0
+
+## 0.6.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @regardio/js@0.7.0
+
 ## 0.6.0
 
 ### Minor Changes

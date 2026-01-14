@@ -31,7 +31,12 @@ export interface TextProps extends ComponentProps<'p'> {
   variant?: TextVariant;
 }
 
-export const Text = ({ children, className, variant, themeColor }: TextProps) => {
+export const Text = ({
+  children,
+  className,
+  variant,
+  themeColor,
+}: TextProps): React.JSX.Element => {
   return (
     <div
       className={text({

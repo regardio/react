@@ -20,7 +20,7 @@ export interface HighlightProps extends ComponentProps<'mark'> {
   variant?: HighlightVariant;
 }
 
-export const Highlight = ({ children, className, variant }: HighlightProps) => {
+export const Highlight = ({ children, className, variant }: HighlightProps): React.JSX.Element => {
   return (
     <mark
       className={highlight({

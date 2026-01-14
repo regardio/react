@@ -2,7 +2,7 @@ import { Toggle as BaseUIToggle } from '@base-ui/react/toggle';
 import { tv } from '@regardio/tailwind/utils';
 import type { ComponentProps, ReactNode } from 'react';
 
-const toggle = tv({
+const toggle: ReturnType<typeof tv> = tv({
   base: [
     'inline-flex',
     'items-center',
@@ -51,7 +51,7 @@ const toggle = tv({
       ],
     },
   },
-});
+} as const);
 
 export type ToggleVariant = keyof typeof toggle.variants.variant;
 export type ToggleSize = keyof typeof toggle.variants.size;
@@ -71,7 +71,7 @@ export const Toggle = ({
   title,
   children,
   ...props
-}: ToggleProps) => {
+}: ToggleProps): React.JSX.Element => {
   return (
     <BaseUIToggle
       className={toggle({

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button } from './button';
 
-const meta = {
+const meta: Meta<typeof Button> = {
   argTypes: {
     children: {
       control: 'text',

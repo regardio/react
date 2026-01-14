@@ -1,5 +1,3 @@
-'use client';
-
 import { createContext, useContext } from 'react';
 
 export interface ListRootContextValue {
@@ -14,7 +12,9 @@ export interface ListRootContextValue {
   defaultItemClassName?: string;
 }
 
-export const ListRootContext = createContext<ListRootContextValue | undefined>(undefined);
+export const ListRootContext: React.Context<ListRootContextValue | undefined> = createContext<
+  ListRootContextValue | undefined
+>(undefined);
 
 export function useListRootContext(): ListRootContextValue | undefined {
   return useContext(ListRootContext);

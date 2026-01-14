@@ -3,7 +3,7 @@ import { Checkbox } from '../checkbox';
 import { Input } from '../input';
 import { Field } from './field';
 
-const meta = {
+const meta: Meta<typeof Field.Root> = {
   argTypes: {
     variant: {
       control: 'select',

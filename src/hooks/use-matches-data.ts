@@ -1,3 +1,5 @@
+'use client';
+
 import { useMemo } from 'react';
 import { useMatches } from 'react-router';
 

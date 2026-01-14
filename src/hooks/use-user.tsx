@@ -26,7 +26,8 @@ const defaultContextValue: UserContextType = {
 /**
  * Context for storing and accessing the current authenticated user
  */
-export const UserContext = createContext<UserContextType>(defaultContextValue);
+export const UserContext: React.Context<UserContextType> =
+  createContext<UserContextType>(defaultContextValue);
 
 /**
  * Props for the UserContextProvider component
@@ -53,7 +54,7 @@ export function UserContextProvider({
   user,
   isLoading = false,
   children,
-}: UserContextProviderProps) {
+}: UserContextProviderProps): React.JSX.Element {
   return <UserContext.Provider value={{ isLoading, user }}>{children}</UserContext.Provider>;
 }
 

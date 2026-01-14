@@ -38,7 +38,7 @@ const router = createBrowserRouter([
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `renderMessage` | `(descriptor: ErrorDescriptor) => ReactElement` | — | Custom message renderer |
+| `renderMessage` | `(descriptor: ErrorDescriptor) => React.JSX.Element` | — | Custom message renderer |
 
 ## ErrorDescriptor Type
 

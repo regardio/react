@@ -1,12 +1,6 @@
 'use client';
 
-import {
-  type ComponentPropsWithoutRef,
-  type ElementType,
-  type ForwardedRef,
-  forwardRef,
-  type ReactNode,
-} from 'react';
+import type { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react';
 import { useListRootContext } from './list-root-context';
 
 type ListItemElement = 'li' | 'dd' | 'dt' | 'div' | 'span';
@@ -24,15 +18,18 @@ export type ListItemProps<T extends ListItemElement = 'li'> = Omit<
    * The content of the list item.
    */
   children?: ReactNode;
+  /**
+   * Ref to the root element.
+   */
+  ref?: React.Ref<HTMLElement>;
 };
 
 function ListItemImpl<T extends ListItemElement = 'li'>(
   props: ListItemProps<T>,
-  ref: ForwardedRef<HTMLElement>,
-) {
+): React.JSX.Element {
   const context = useListRootContext();
 
-  const { render, children, className, ...elementProps } = props;
+  const { render, children, className, ref, ...elementProps } = props;
 
   const resolvedElement = render ?? context?.defaultItemElement ?? 'li';
   const resolvedClassName = context?.defaultItemClassName
@@ -54,9 +51,9 @@ function ListItemImpl<T extends ListItemElement = 'li'>(
   );
 }
 
-export const ListItem = forwardRef(ListItemImpl) as <T extends ListItemElement = 'li'>(
-  props: ListItemProps<T> & { ref?: ForwardedRef<HTMLElement> },
-) => ReturnType<typeof ListItemImpl>;
+export const ListItem = ListItemImpl as <T extends ListItemElement = 'li'>(
+  props: ListItemProps<T>,
+) => React.JSX.Element;
 
 export namespace ListItem {
   export type Props<T extends ListItemElement = 'li'> = ListItemProps<T>;

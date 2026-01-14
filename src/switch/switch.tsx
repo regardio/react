@@ -71,7 +71,11 @@ export interface SwitchThumbProps
   size?: SwitchSize;
 }
 
-export const SwitchRoot = ({ className, size = 'md', ...props }: SwitchRootProps) => {
+export const SwitchRoot = ({
+  className,
+  size = 'md',
+  ...props
+}: SwitchRootProps): React.JSX.Element => {
   return (
     <BaseUISwitch.Root
       className={switchRoot({
@@ -83,7 +87,11 @@ export const SwitchRoot = ({ className, size = 'md', ...props }: SwitchRootProps
   );
 };
 
-export const SwitchThumb = ({ className, size = 'md', ...props }: SwitchThumbProps) => {
+export const SwitchThumb = ({
+  className,
+  size = 'md',
+  ...props
+}: SwitchThumbProps): React.JSX.Element => {
   return (
     <BaseUISwitch.Thumb
       className={switchThumb({
@@ -95,7 +103,10 @@ export const SwitchThumb = ({ className, size = 'md', ...props }: SwitchThumbPro
   );
 };
 
-export const Switch = {
+export const Switch: {
+  Root: typeof SwitchRoot;
+  Thumb: typeof SwitchThumb;
+} = {
   Root: SwitchRoot,
   Thumb: SwitchThumb,
 };

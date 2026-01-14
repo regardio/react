@@ -60,7 +60,7 @@ export const PasswordInput = ({
   inputVariant = 'default',
   showToggle = true,
   ...props
-}: PasswordInputProps) => {
+}: PasswordInputProps): React.JSX.Element => {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {

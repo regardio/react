@@ -106,7 +106,11 @@ export interface SliderValueProps
   className?: string;
 }
 
-export const SliderRoot = ({ className, size = 'md', ...props }: SliderRootProps) => {
+export const SliderRoot = ({
+  className,
+  size = 'md',
+  ...props
+}: SliderRootProps): React.JSX.Element => {
   return (
     <BaseUISlider.Root
       className={sliderRoot({
@@ -118,7 +122,7 @@ export const SliderRoot = ({ className, size = 'md', ...props }: SliderRootProps
   );
 };
 
-export const SliderControl = ({ className, ...props }: SliderControlProps) => {
+export const SliderControl = ({ className, ...props }: SliderControlProps): React.JSX.Element => {
   return (
     <BaseUISlider.Control
       className={sliderControl({ className })}
@@ -127,7 +131,11 @@ export const SliderControl = ({ className, ...props }: SliderControlProps) => {
   );
 };
 
-export const SliderTrack = ({ className, size = 'md', ...props }: SliderTrackProps) => {
+export const SliderTrack = ({
+  className,
+  size = 'md',
+  ...props
+}: SliderTrackProps): React.JSX.Element => {
   return (
     <BaseUISlider.Track
       className={sliderTrack({
@@ -139,7 +147,10 @@ export const SliderTrack = ({ className, size = 'md', ...props }: SliderTrackPro
   );
 };
 
-export const SliderIndicator = ({ className, ...props }: SliderIndicatorProps) => {
+export const SliderIndicator = ({
+  className,
+  ...props
+}: SliderIndicatorProps): React.JSX.Element => {
   return (
     <BaseUISlider.Indicator
       className={sliderIndicator({ className })}
@@ -148,7 +159,11 @@ export const SliderIndicator = ({ className, ...props }: SliderIndicatorProps) =
   );
 };
 
-export const SliderThumb = ({ className, size = 'md', ...props }: SliderThumbProps) => {
+export const SliderThumb = ({
+  className,
+  size = 'md',
+  ...props
+}: SliderThumbProps): React.JSX.Element => {
   return (
     <BaseUISlider.Thumb
       className={sliderThumb({
@@ -160,7 +175,7 @@ export const SliderThumb = ({ className, size = 'md', ...props }: SliderThumbPro
   );
 };
 
-export const SliderValue = ({ className, ...props }: SliderValueProps) => {
+export const SliderValue = ({ className, ...props }: SliderValueProps): React.JSX.Element => {
   return (
     <BaseUISlider.Value
       className={sliderValue({ className })}
@@ -169,7 +184,14 @@ export const SliderValue = ({ className, ...props }: SliderValueProps) => {
   );
 };
 
-export const Slider = {
+export const Slider: {
+  Control: typeof SliderControl;
+  Indicator: typeof SliderIndicator;
+  Root: typeof SliderRoot;
+  Thumb: typeof SliderThumb;
+  Track: typeof SliderTrack;
+  Value: typeof SliderValue;
+} = {
   Control: SliderControl,
   Indicator: SliderIndicator,
   Root: SliderRoot,

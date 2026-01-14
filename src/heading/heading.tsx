@@ -30,7 +30,13 @@ export interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
   locale?: string;
 }
 
-export const Heading = ({ as, children, className, level = 2, ...props }: HeadingProps) => {
+export const Heading = function Heading({
+  as,
+  children,
+  className,
+  level = 2,
+  ...props
+}: HeadingProps): React.JSX.Element {
   const word = lowerCaseSzett(shy(children));
   const Component: ElementType = as || `h${level}`;
 
@@ -48,5 +54,3 @@ export const Heading = ({ as, children, className, level = 2, ...props }: Headin
     </Component>
   );
 };
-
-Heading.displayName = 'Heading';

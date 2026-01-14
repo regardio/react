@@ -1,3 +1,5 @@
+'use client';
+
 import { useMemo } from 'react';
 
 type Condition<Value = unknown> = Value | false | null | undefined | 0 | '';
@@ -10,7 +12,7 @@ export function If<Value = unknown>({
   condition: Condition<Value>;
   children: React.ReactNode | ((value: Value) => React.ReactNode);
   fallback?: React.ReactNode;
-}>) {
+}>): React.JSX.Element | null {
   return useMemo(() => {
     if (condition) {
       if (typeof children === 'function') {
