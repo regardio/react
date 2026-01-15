@@ -11,21 +11,18 @@ importers:
       '@base-ui/react':
         specifier: 1.0.0
         version: 1.0.0(@types/react@19.2.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@maptiler/leaflet-maptilersdk':
-        specifier: 4.1.1
-        version: 4.1.1
       '@maptiler/sdk':
-        specifier: 3.10.0
-        version: 3.10.0
+        specifier: 3.10.1
+        version: 3.10.1
       '@mdx-js/react':
         specifier: 3.1.1
         version: 3.1.1(@types/react@19.2.8)(react@19.2.3)
       '@regardio/js':
-        specifier: 0.7.0
-        version: 0.7.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: 0.7.1
+        version: 0.7.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@regardio/tailwind':
-        specifier: 0.3.0
-        version: 0.3.0(tailwindcss@4.1.18)
+        specifier: 0.3.1
+        version: 0.3.1(tailwindcss@4.1.18)
       '@supabase/supabase-js':
         specifier: 2.90.1
         version: 2.90.1
@@ -82,8 +79,8 @@ importers:
         version: 4.3.5
     devDependencies:
       '@regardio/dev':
-        specifier: 1.12.0
-        version: 1.12.0(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.8))(@types/react@19.2.8)(@vitest/browser-playwright@4.0.17)(@vitest/browser@4.0.17(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0))(vitest@4.0.17))(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: 1.12.1
+        version: 1.12.1(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.8))(@types/react@19.2.8)(@vitest/browser-playwright@4.0.17)(@vitest/browser@4.0.17(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0))(vitest@4.0.17))(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@storybook/addon-a11y':
         specifier: 10.1.11
         version: 10.1.11(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@2.8.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))
@@ -795,11 +792,8 @@ packages:
   '@maptiler/client@2.6.0':
     resolution: {integrity: sha512-ZLDUIC6PLQdahJqHX1AICiPnM+dm4h9JVvn+Qm2to1DFmEfg3vs2UhB+5k0EgFJCg5Sqpu7+8T5ieJeCZLiisQ==}
 
-  '@maptiler/leaflet-maptilersdk@4.1.1':
-    resolution: {integrity: sha512-vCE0K9mlVRyAJkWYOngiA1ZEI42eoWvZd21HLYZE/IU1T+OQc4K1bPoap/z0myAXDLxIJ4wlz+vchr5tKgo0uA==}
-
-  '@maptiler/sdk@3.10.0':
-    resolution: {integrity: sha512-2tzN9PwewFdr58iVqJy1orDY/XPOVx2CJOArE8ibQdiN7mZr4gpIGYmx2HWvEm4LwwEFZvRclc6P5sR/HbyHZA==}
+  '@maptiler/sdk@3.10.1':
+    resolution: {integrity: sha512-7rRBnC0FbYi77KiW5/tyiKQo41lgP++61v+2M7mkaeNccyb5btzLjnlp77UsJW7Nk6wYNc47W/e89ZSidSRq4Q==}
 
   '@mdx-js/react@3.1.1':
     resolution: {integrity: sha512-f++rKLQgUVYDAtECQ6fn/is15GkEH9+nZPM3MS0RcxVqoTfawHvDlSCH7JbMhAM6uJ32v3eXLvLmLvjGu7PTQw==}
@@ -1029,8 +1023,8 @@ packages:
       '@types/react':
         optional: true
 
-  '@regardio/dev@1.12.0':
-    resolution: {integrity: sha512-7bw9sYmQyn7ngN3FFsAGzTlYztYtbrege2NgKQa028ZNYbBT7KQ3UW2rGg0fHXuQ3L9NYNKbq6RRm1iPNPA/xA==}
+  '@regardio/dev@1.12.1':
+    resolution: {integrity: sha512-DaHgufhjcL13J5suHkbH6JFbTkDmnPlAS7MINJu/wVM84hPqxqMe8DXykFQiHnJI3lcXFTnu7lPOvpwDVFiVMQ==}
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
@@ -1039,11 +1033,11 @@ packages:
       postcss:
         optional: true
 
-  '@regardio/js@0.7.0':
-    resolution: {integrity: sha512-4ZMHLtNiEKXLxMKY28YA2fEfxsJ6zLG0yk0E+Ccl1W2I4FiR13n9caJ6xR9e6HZZAaM+MVo4xU7JYiZn5A4pRw==}
+  '@regardio/js@0.7.1':
+    resolution: {integrity: sha512-nwUdrcueQ1vHITyqPnwCiYPcbuIcq2cyA7+Tal9vKoEM4od+HYI2p0AcFU2n2vSByxyQvAfdRLaAmsYXjHdHFA==}
 
-  '@regardio/tailwind@0.3.0':
-    resolution: {integrity: sha512-165w+3TF7MGDEOHQwyW//jxZiGEkulX97ENiMCH0L5uiBzx/TsIqFFk8fYat07UBIokrmrMhJ12MIuJbStlyig==}
+  '@regardio/tailwind@0.3.1':
+    resolution: {integrity: sha512-4FE5QBlsxyFgTHWG6TtwfI+9pGedYrHd2sUPR4x+gzUW1h627+DbkfxaxGRxT3xexLQPmNZ+fBcNwxZ82LGiSw==}
     engines: {node: '>=18'}
     peerDependencies:
       tailwindcss: '>=4.0.0'
@@ -2745,9 +2739,6 @@ packages:
 
   kdbush@4.0.2:
     resolution: {integrity: sha512-WbCVYJ27Sz8zi9Q7Q0xHC+05iwkm3Znipc2XTlrnJbsHMYktW4hPhXUE8Ys1engBrvffoSCqbil1JQAa7clRpA==}
-
-  leaflet@1.9.4:
-    resolution: {integrity: sha512-nxS1ynzJOmOlHp+iL3FyWqK89GtNL8U8rvlMOsQdTTssxZwCXh8N2NB3GDQOL+YR3XnWyZAxwQixURb+FA74PA==}
 
   leaflet@2.0.0-alpha.1:
     resolution: {integrity: sha512-2EJU27z/wljOgQCyybRkfrm5Xc3uy6huKehh0UAPsrAdwnSMxaplsqCl9cXPAuDm6D7uL6PCznYMDVIsaAdSdA==}
@@ -4883,13 +4874,7 @@ snapshots:
     dependencies:
       quick-lru: 7.3.0
 
-  '@maptiler/leaflet-maptilersdk@4.1.1':
-    dependencies:
-      '@maptiler/sdk': 3.10.0
-      '@types/leaflet': 1.9.21
-      leaflet: 1.9.4
-
-  '@maptiler/sdk@3.10.0':
+  '@maptiler/sdk@3.10.1':
     dependencies:
       '@maplibre/maplibre-gl-style-spec': 24.3.1
       '@maptiler/client': 2.6.0
@@ -5095,7 +5080,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.2.8
 
-  '@regardio/dev@1.12.0(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.8))(@types/react@19.2.8)(@vitest/browser-playwright@4.0.17)(@vitest/browser@4.0.17(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0))(vitest@4.0.17))(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@regardio/dev@1.12.1(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.8))(@types/react@19.2.8)(@vitest/browser-playwright@4.0.17)(@vitest/browser@4.0.17(vite@7.3.1(@types/node@25.0.8)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0))(vitest@4.0.17))(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
       '@biomejs/biome': 2.3.11
       '@changesets/changelog-github': 0.5.2
@@ -5149,7 +5134,7 @@ snapshots:
       - utf-8-validate
       - yaml
 
-  '@regardio/js@0.7.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@regardio/js@0.7.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
       intl-parse-accept-language: 1.0.0
       react-router: 7.12.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -5157,7 +5142,7 @@ snapshots:
       - react
       - react-dom
 
-  '@regardio/tailwind@0.3.0(tailwindcss@4.1.18)':
+  '@regardio/tailwind@0.3.1(tailwindcss@4.1.18)':
     dependencies:
       clsx: 2.1.1
       fluid-tailwindcss: 1.0.5(tailwindcss@4.1.18)
@@ -6863,8 +6848,6 @@ snapshots:
       commander: 8.3.0
 
   kdbush@4.0.2: {}
-
-  leaflet@1.9.4: {}
 
   leaflet@2.0.0-alpha.1: {}
 

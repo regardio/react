@@ -1,5 +1,25 @@
 # @regardio/react
 
+## 0.7.3
+
+### Patch Changes
+
+- fix: remove lock file
+
+## 0.7.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @regardio/tailwind@0.3.1
+
+## 0.7.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @regardio/js@0.7.1
+
 ## 0.7.0
 
 ### Minor Changes
