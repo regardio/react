@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { createMemoryRouter, RouterProvider } from 'react-router';
 import { GenericError, getErrorDescriptor } from './generic-error';
 
 const meta: Meta<typeof GenericError> = {
@@ -15,21 +14,9 @@ export default meta;
 type Story = StoryObj<typeof GenericError>;
 
 const ErrorWrapper = ({ status }: { status: number }) => {
-  const router = createMemoryRouter(
-    [
-      {
-        element: <GenericError />,
-        errorElement: <GenericError />,
-        loader: () => {
-          throw new Response('Not Found', { status, statusText: 'Not Found' });
-        },
-        path: '/',
-      },
-    ],
-    { initialEntries: ['/'] },
-  );
+  const error = new Response('Not Found', { status, statusText: 'Not Found' });
 
-  return <RouterProvider router={router} />;
+  return <GenericError error={error} />;
 };
 
 export const Error404: Story = {

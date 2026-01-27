@@ -1,6 +1,4 @@
-'use client';
-
-import { isRouteErrorResponse, useRouteError } from 'react-router';
+import { isRouteErrorResponse } from 'react-router';
 
 /**
  * Descriptor returned from getErrorDescriptor to help apps localize messages.
@@ -64,17 +62,19 @@ export function getErrorDescriptor(error: unknown): ErrorDescriptor {
  * A reusable error boundary component for React Router apps.
  * - Displays status-based messages for route responses
  * - Shows stack traces in development for non-response errors
+ * - SSR-safe: accepts optional error prop for server-side rendering
  *
  * For localization, apps may either:
- * - Wrap this component and use `getErrorDescriptor(useRouteError())` to map to i18n keys
+ * - Wrap this component and use `getErrorDescriptor(error)` to map to i18n keys
  * - Or provide a custom `renderMessage` to override the displayed details
  */
 export function GenericError({
+  error,
   renderMessage,
 }: {
+  error: unknown;
   renderMessage?: (descriptor: ErrorDescriptor) => React.JSX.Element;
-} = {}): React.JSX.Element {
-  const error = useRouteError();
+}): React.JSX.Element {
   const descriptor = getErrorDescriptor(error);
 
   const title = descriptor.type === 'http' ? `Error ${descriptor.status}` : 'Error';

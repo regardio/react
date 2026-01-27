@@ -1,5 +1,11 @@
 # @regardio/react
 
+## 0.7.4
+
+### Patch Changes
+
+- fix: generic error in ssr
+
 ## 0.7.3
 
 ### Patch Changes
