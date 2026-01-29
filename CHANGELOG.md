@@ -1,5 +1,18 @@
 # @regardio/react
 
+## 0.7.6
+
+### Patch Changes
+
+- dependencies updates
+
+## 0.7.5
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @regardio/js@0.7.2
+
 ## 0.7.4
 
 ### Patch Changes
