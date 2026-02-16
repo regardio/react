@@ -1,7 +1,7 @@
 {
   "$schema": "https://www.schemastore.org/package.json",
   "name": "@regardio/react",
-  "version": "0.7.6",
+  "version": "0.7.9",
   "private": false,
   "description": "Regardio React UI components",
   "keywords": [
@@ -218,8 +218,8 @@
     "@base-ui/react": "1.2.0",
     "@maptiler/sdk": "3.11.1",
     "@mdx-js/react": "3.1.1",
-    "@regardio/js": "0.7.2",
-    "@regardio/tailwind": "0.3.2",
+    "@regardio/js": "0.7.3",
+    "@regardio/tailwind": "0.3.3",
     "@supabase/supabase-js": "2.95.3",
     "cmdk": "1.1.1",
     "embla-carousel": "8.6.0",

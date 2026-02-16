@@ -1,5 +1,25 @@
 # @regardio/react
 
+## 0.7.9
+
+### Patch Changes
+
+- chore: dependencies and formatting
+
+## 0.7.8
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @regardio/tailwind@0.3.3
+
+## 0.7.7
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @regardio/js@0.7.3
+
 ## 0.7.6
 
 ### Patch Changes
