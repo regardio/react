@@ -16,10 +16,10 @@ export type CarouselApi = EmblaCarouselType;
 
 interface CarouselContextValue {
   api: CarouselApi | undefined;
-  scrollPrev: () => void;
-  scrollNext: () => void;
-  canScrollPrev: boolean;
   canScrollNext: boolean;
+  canScrollPrev: boolean;
+  scrollNext: () => void;
+  scrollPrev: () => void;
 }
 
 const CarouselContext = createContext<CarouselContextValue | null>(null);
@@ -34,9 +34,9 @@ export function useCarousel(): CarouselContextValue {
 
 export interface CarouselRootProps extends HTMLAttributes<HTMLDivElement> {
   opts?: EmblaOptionsType;
-  setApi?: (api: CarouselApi) => void;
   orientation?: 'horizontal' | 'vertical';
   ref?: React.Ref<HTMLDivElement>;
+  setApi?: (api: CarouselApi) => void;
 }
 
 export const CarouselRoot = function CarouselRoot({

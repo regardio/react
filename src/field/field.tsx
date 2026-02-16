@@ -88,9 +88,9 @@ export interface FieldErrorProps
 }
 
 export interface FieldItemProps extends ComponentProps<'div'> {
+  children: ReactNode;
   className?: string;
   layout?: FieldItemLayout;
-  children: ReactNode;
 }
 
 export const FieldRoot = ({ className, variant, ...props }: FieldRootProps): React.JSX.Element => {

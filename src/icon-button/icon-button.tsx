@@ -22,11 +22,11 @@ const iconButton = tv({
 export type IconButtonSize = keyof typeof iconButtonVariants;
 
 export interface IconButtonProps extends Omit<ComponentProps<typeof Button>, 'size'> {
+  'aria-label'?: string;
+  children?: never; // Prevent children, only icon allowed
   icon: ReactNode;
   size?: IconButtonSize;
   title?: string;
-  'aria-label'?: string;
-  children?: never; // Prevent children, only icon allowed
 }
 
 export const IconButton = ({

@@ -57,11 +57,11 @@ export type ToggleVariant = keyof typeof toggle.variants.variant;
 export type ToggleSize = keyof typeof toggle.variants.size;
 
 export interface ToggleProps extends Omit<ComponentProps<typeof BaseUIToggle>, 'className'> {
-  className?: string;
-  variant?: ToggleVariant;
-  size?: ToggleSize;
   children?: ReactNode;
+  className?: string;
+  size?: ToggleSize;
   title?: string;
+  variant?: ToggleVariant;
 }
 
 export const Toggle = ({

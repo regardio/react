@@ -1,14 +1,14 @@
 import type { SVGProps } from 'react';
 
 export interface BlurryGradientProps extends SVGProps<SVGSVGElement> {
-  primaryColor: string;
-  secondaryColor: string;
-  neutralColor: string;
   /**
    * Accessible description for the gradient (for screen readers)
    * @default 'Decorative blurry gradient'
    */
   description?: string;
+  neutralColor: string;
+  primaryColor: string;
+  secondaryColor: string;
 }
 
 export const BlurryGradient = (props: BlurryGradientProps): React.JSX.Element => {

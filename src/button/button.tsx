@@ -90,10 +90,10 @@ export type ButtonVariant = keyof typeof buttonVariants;
 export type ButtonSize = keyof typeof buttonSizes;
 
 export interface ButtonProps extends Omit<ComponentProps<typeof BaseUIButton>, 'className'> {
-  variant?: ButtonVariant;
-  size?: ButtonSize;
   className?: string;
+  size?: ButtonSize;
   type?: 'button' | 'submit' | 'reset';
+  variant?: ButtonVariant;
 }
 
 export const Button = ({

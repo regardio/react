@@ -6,13 +6,13 @@ import { createContext, type ReactNode, useContext } from 'react';
  */
 export interface UserContextType {
   /**
-   * The current authenticated user, or null if not authenticated
-   */
-  user: User | null;
-  /**
    * Whether the user data is currently loading
    */
   isLoading: boolean;
+  /**
+   * The current authenticated user, or null if not authenticated
+   */
+  user: User | null;
 }
 
 /**
@@ -34,17 +34,17 @@ export const UserContext: React.Context<UserContextType> =
  */
 export interface UserContextProviderProps {
   /**
-   * The current authenticated user, or null if not authenticated
+   * Child components that will have access to the user context
    */
-  user: User | null;
+  children: ReactNode;
   /**
    * Whether the user data is currently loading
    */
   isLoading?: boolean;
   /**
-   * Child components that will have access to the user context
+   * The current authenticated user, or null if not authenticated
    */
-  children: ReactNode;
+  user: User | null;
 }
 
 /**

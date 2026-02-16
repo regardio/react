@@ -49,9 +49,9 @@ export type PasswordInputVariant = keyof typeof passwordInputVariants;
 export interface PasswordInputProps
   extends Omit<React.ComponentProps<typeof Input>, 'type' | 'variant'> {
   className?: string;
-  variant?: PasswordInputVariant;
   inputVariant?: 'default' | 'error' | 'success';
   showToggle?: boolean;
+  variant?: PasswordInputVariant;
 }
 
 export const PasswordInput = ({

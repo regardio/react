@@ -85,9 +85,9 @@ const truncateText = (
 
       if (part !== undefined) {
         if (
-          (maxSentences === undefined || sentenceCount < maxSentences) &&
-          (maxCharacters === undefined ||
-            charCount + part.length + delimiter.length <= maxCharacters)
+          (maxSentences === undefined || sentenceCount < maxSentences)
+          && (maxCharacters === undefined
+            || charCount + part.length + delimiter.length <= maxCharacters)
         ) {
           truncatedText += part + delimiter;
           charCount += part.length + delimiter.length;
@@ -104,8 +104,8 @@ const truncateText = (
     paragraphCount++;
 
     if (
-      (maxSentences !== undefined && sentenceCount >= maxSentences) ||
-      (maxCharacters !== undefined && charCount >= maxCharacters)
+      (maxSentences !== undefined && sentenceCount >= maxSentences)
+      || (maxCharacters !== undefined && charCount >= maxCharacters)
     ) {
       break;
     }
@@ -124,9 +124,9 @@ export const MarkdownContainer: React.FC<MarkdownContainerProps> = (props) => {
   let processedText = processTextOutsideMDXComponents(rawText, props.locale);
 
   const shouldTruncate =
-    Number.isInteger(props.sentences) ||
-    Number.isInteger(props.characters) ||
-    Number.isInteger(props.paragraphs);
+    Number.isInteger(props.sentences)
+    || Number.isInteger(props.characters)
+    || Number.isInteger(props.paragraphs);
 
   if (shouldTruncate) {
     processedText = truncateText(

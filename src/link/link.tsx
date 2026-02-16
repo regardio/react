@@ -22,8 +22,8 @@ export function usePathResolver(): PathResolver | null {
 }
 
 export interface LinkBaseProps extends Omit<NavLinkProps, 'to'> {
-  to?: string | Partial<{ pathname?: string; search?: string; hash?: string }> | undefined;
   routeKey?: string;
+  to?: string | Partial<{ pathname?: string; search?: string; hash?: string }> | undefined;
   viewTransition?: boolean;
 }
 
@@ -51,10 +51,10 @@ export const LinkBase = ({
   }
 
   const isExternal =
-    path.startsWith('tel:') ||
-    path.startsWith('mailto:') ||
-    path.startsWith('#') ||
-    path.startsWith('http');
+    path.startsWith('tel:')
+    || path.startsWith('mailto:')
+    || path.startsWith('#')
+    || path.startsWith('http');
 
   const handleClick = useCallback(
     (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -165,8 +165,8 @@ export type LinkVariant = keyof typeof linkVariants;
 
 export interface LinkProps extends Omit<NavLinkProps, 'to'> {
   arrow?: LinkArrow;
-  to?: string | Partial<{ pathname?: string; search?: string; hash?: string }>;
   routeKey?: string;
+  to?: string | Partial<{ pathname?: string; search?: string; hash?: string }>;
   variant?: LinkVariant;
   viewTransition?: boolean;
 }

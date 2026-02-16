@@ -3,10 +3,10 @@
 import { useEffect, useState } from 'react';
 
 export interface ProtectedEmailProps {
-  username: string;
+  className?: string;
   domain: string;
   text?: string;
-  className?: string;
+  username: string;
 }
 
 /**

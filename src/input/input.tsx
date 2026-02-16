@@ -95,8 +95,8 @@ export type InputSize = keyof typeof inputSizes;
 
 export interface InputProps extends Omit<ComponentProps<typeof BaseUIInput>, 'className' | 'size'> {
   className?: string;
-  variant?: InputVariant;
   size?: InputSize;
+  variant?: InputVariant;
 }
 
 export const Input = ({ className, variant, size, ...props }: InputProps): React.JSX.Element => {

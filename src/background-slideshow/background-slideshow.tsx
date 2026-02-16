@@ -14,11 +14,11 @@ export type ImageData = {
 export interface BackgroundSlideshowProps {
   baseUrl: string; // URL template with {id} and {format} placeholders
   className?: string; // CSS class for the container
+  filter?: (image: ImageData) => boolean; // Optional filter function
+  images: ImageData[]; // Array of images
   imgClassName?: string; // CSS class for the image
   locale: string; // Locale for the alt text
   pictureClassName?: string; // CSS class for the picture component
-  images: ImageData[]; // Array of images
-  filter?: (image: ImageData) => boolean; // Optional filter function
   slideshow?: boolean; // Whether to enable the slideshow
   slideshowInterval?: number; // Time in ms between transitions
   transitionDuration?: number; // Time in ms for the fade transition
