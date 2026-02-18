@@ -144,8 +144,12 @@ export const MarkdownContainer: React.FC<MarkdownContainerProps> = (props) => {
         options={{
           disableParsingRawHTML: false,
           forceWrapper: true,
+          overrides: {
+            br: { component: () => <br /> },
+            hr: { component: () => <hr /> },
+            ...props.markdownOverrides,
+          },
           tagfilter: false,
-          ...(props.markdownOverrides ? { overrides: props.markdownOverrides } : {}),
         }}
       >
         {processedText}

@@ -1,5 +1,11 @@
 # @regardio/react
 
+## 0.7.10
+
+### Patch Changes
+
+- fix: br and hr overrides
+
 ## 0.7.9
 
 ### Patch Changes
