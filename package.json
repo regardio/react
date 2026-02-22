@@ -1,16 +1,10 @@
 {
   "$schema": "https://www.schemastore.org/package.json",
   "name": "@regardio/react",
-  "version": "0.7.10",
+  "version": "0.7.14",
   "private": false,
   "description": "Regardio React UI components",
-  "keywords": [
-    "react",
-    "components",
-    "ui",
-    "regardio",
-    "tailwindcss"
-  ],
+  "keywords": ["react", "components", "ui", "regardio", "tailwindcss"],
   "homepage": "https://github.com/regardio/react/blob/main/README.md",
   "bugs": {
     "url": "https://github.com/regardio/react/issues"
@@ -21,186 +15,181 @@
   },
   "license": "MIT",
   "author": "Bernd Matzner <bernd.matzner@regard.io>",
-  "sideEffects": [
-    "./src/tailwind.css"
-  ],
+  "sideEffects": ["./src/tailwind.css"],
   "type": "module",
   "exports": {
-    "./tailwind.css": "./src/tailwind.css",
     "./background-slideshow": {
-      "types": "./dist/background-slideshow/index.d.mts",
-      "import": "./dist/background-slideshow/index.mjs"
+      "import": "./dist/background-slideshow/index.mjs",
+      "types": "./dist/background-slideshow/index.d.mts"
     },
     "./blurry-gradient": {
-      "types": "./dist/blurry-gradient/index.d.mts",
-      "import": "./dist/blurry-gradient/index.mjs"
+      "import": "./dist/blurry-gradient/index.mjs",
+      "types": "./dist/blurry-gradient/index.d.mts"
     },
     "./button": {
-      "types": "./dist/button/index.d.mts",
-      "import": "./dist/button/index.mjs"
+      "import": "./dist/button/index.mjs",
+      "types": "./dist/button/index.d.mts"
     },
     "./carousel": {
-      "types": "./dist/carousel/index.d.mts",
-      "import": "./dist/carousel/index.mjs"
+      "import": "./dist/carousel/index.mjs",
+      "types": "./dist/carousel/index.d.mts"
     },
     "./checkbox": {
-      "types": "./dist/checkbox/index.d.mts",
-      "import": "./dist/checkbox/index.mjs"
+      "import": "./dist/checkbox/index.mjs",
+      "types": "./dist/checkbox/index.d.mts"
     },
     "./checkbox-group": {
-      "types": "./dist/checkbox-group/index.d.mts",
-      "import": "./dist/checkbox-group/index.mjs"
+      "import": "./dist/checkbox-group/index.mjs",
+      "types": "./dist/checkbox-group/index.d.mts"
     },
     "./countdown": {
-      "types": "./dist/countdown/index.d.mts",
-      "import": "./dist/countdown/index.mjs"
+      "import": "./dist/countdown/index.mjs",
+      "types": "./dist/countdown/index.d.mts"
     },
     "./field": {
-      "types": "./dist/field/index.d.mts",
-      "import": "./dist/field/index.mjs"
+      "import": "./dist/field/index.mjs",
+      "types": "./dist/field/index.d.mts"
     },
     "./fieldset": {
-      "types": "./dist/fieldset/index.d.mts",
-      "import": "./dist/fieldset/index.mjs"
+      "import": "./dist/fieldset/index.mjs",
+      "types": "./dist/fieldset/index.d.mts"
     },
     "./form": {
-      "types": "./dist/form/index.d.mts",
-      "import": "./dist/form/index.mjs"
+      "import": "./dist/form/index.mjs",
+      "types": "./dist/form/index.d.mts"
     },
     "./generic-error": {
-      "types": "./dist/generic-error/index.d.mts",
-      "import": "./dist/generic-error/index.mjs"
+      "import": "./dist/generic-error/index.mjs",
+      "types": "./dist/generic-error/index.d.mts"
     },
     "./grid": {
-      "types": "./dist/grid/index.d.mts",
-      "import": "./dist/grid/index.mjs"
+      "import": "./dist/grid/index.mjs",
+      "types": "./dist/grid/index.d.mts"
     },
     "./heading": {
-      "types": "./dist/heading/index.d.mts",
-      "import": "./dist/heading/index.mjs"
+      "import": "./dist/heading/index.mjs",
+      "types": "./dist/heading/index.d.mts"
     },
     "./highlight": {
-      "types": "./dist/highlight/index.d.mts",
-      "import": "./dist/highlight/index.mjs"
-    },
-    "./icon-button": {
-      "types": "./dist/icon-button/index.d.mts",
-      "import": "./dist/icon-button/index.mjs"
-    },
-    "./if": {
-      "types": "./dist/if/index.d.mts",
-      "import": "./dist/if/index.mjs"
-    },
-    "./iframe": {
-      "types": "./dist/iframe/index.d.mts",
-      "import": "./dist/iframe/index.mjs"
-    },
-    "./input": {
-      "types": "./dist/input/index.d.mts",
-      "import": "./dist/input/index.mjs"
-    },
-    "./link": {
-      "types": "./dist/link/index.d.mts",
-      "import": "./dist/link/index.mjs"
-    },
-    "./list": {
-      "types": "./dist/list/index.d.mts",
-      "import": "./dist/list/index.mjs"
-    },
-    "./markdown-container": {
-      "types": "./dist/markdown-container/index.d.mts",
-      "import": "./dist/markdown-container/index.mjs"
-    },
-    "./password-input": {
-      "types": "./dist/password-input/index.d.mts",
-      "import": "./dist/password-input/index.mjs"
-    },
-    "./picture": {
-      "types": "./dist/picture/index.d.mts",
-      "import": "./dist/picture/index.mjs"
-    },
-    "./protected-email": {
-      "types": "./dist/protected-email/index.d.mts",
-      "import": "./dist/protected-email/index.mjs"
-    },
-    "./radio": {
-      "types": "./dist/radio/index.d.mts",
-      "import": "./dist/radio/index.mjs"
-    },
-    "./radio-group": {
-      "types": "./dist/radio-group/index.d.mts",
-      "import": "./dist/radio-group/index.mjs"
-    },
-    "./slider": {
-      "types": "./dist/slider/index.d.mts",
-      "import": "./dist/slider/index.mjs"
-    },
-    "./switch": {
-      "types": "./dist/switch/index.d.mts",
-      "import": "./dist/switch/index.mjs"
-    },
-    "./text": {
-      "types": "./dist/text/index.d.mts",
-      "import": "./dist/text/index.mjs"
-    },
-    "./toggle": {
-      "types": "./dist/toggle/index.d.mts",
-      "import": "./dist/toggle/index.mjs"
+      "import": "./dist/highlight/index.mjs",
+      "types": "./dist/highlight/index.d.mts"
     },
     "./hooks/use-current-route-data": {
-      "types": "./dist/hooks/use-current-route-data.d.mts",
-      "import": "./dist/hooks/use-current-route-data.mjs"
+      "import": "./dist/hooks/use-current-route-data.mjs",
+      "types": "./dist/hooks/use-current-route-data.d.mts"
     },
     "./hooks/use-focus-search": {
-      "types": "./dist/hooks/use-focus-search.d.mts",
-      "import": "./dist/hooks/use-focus-search.mjs"
+      "import": "./dist/hooks/use-focus-search.mjs",
+      "types": "./dist/hooks/use-focus-search.d.mts"
     },
     "./hooks/use-matches-data": {
-      "types": "./dist/hooks/use-matches-data.d.mts",
-      "import": "./dist/hooks/use-matches-data.mjs"
+      "import": "./dist/hooks/use-matches-data.mjs",
+      "types": "./dist/hooks/use-matches-data.d.mts"
     },
     "./hooks/use-media-query": {
-      "types": "./dist/hooks/use-media-query.d.mts",
-      "import": "./dist/hooks/use-media-query.mjs"
+      "import": "./dist/hooks/use-media-query.mjs",
+      "types": "./dist/hooks/use-media-query.d.mts"
     },
     "./hooks/use-mobile": {
-      "types": "./dist/hooks/use-mobile.d.mts",
-      "import": "./dist/hooks/use-mobile.mjs"
+      "import": "./dist/hooks/use-mobile.mjs",
+      "types": "./dist/hooks/use-mobile.d.mts"
     },
     "./hooks/use-nonce": {
-      "types": "./dist/hooks/use-nonce.d.mts",
-      "import": "./dist/hooks/use-nonce.mjs"
+      "import": "./dist/hooks/use-nonce.mjs",
+      "types": "./dist/hooks/use-nonce.d.mts"
     },
     "./hooks/use-orientation": {
-      "types": "./dist/hooks/use-orientation.d.mts",
-      "import": "./dist/hooks/use-orientation.mjs"
+      "import": "./dist/hooks/use-orientation.mjs",
+      "types": "./dist/hooks/use-orientation.d.mts"
     },
     "./hooks/use-user": {
-      "types": "./dist/hooks/use-user.d.mts",
-      "import": "./dist/hooks/use-user.mjs"
+      "import": "./dist/hooks/use-user.mjs",
+      "types": "./dist/hooks/use-user.d.mts"
+    },
+    "./icon-button": {
+      "import": "./dist/icon-button/index.mjs",
+      "types": "./dist/icon-button/index.d.mts"
+    },
+    "./if": {
+      "import": "./dist/if/index.mjs",
+      "types": "./dist/if/index.d.mts"
+    },
+    "./iframe": {
+      "import": "./dist/iframe/index.mjs",
+      "types": "./dist/iframe/index.d.mts"
+    },
+    "./input": {
+      "import": "./dist/input/index.mjs",
+      "types": "./dist/input/index.d.mts"
+    },
+    "./link": {
+      "import": "./dist/link/index.mjs",
+      "types": "./dist/link/index.d.mts"
+    },
+    "./list": {
+      "import": "./dist/list/index.mjs",
+      "types": "./dist/list/index.d.mts"
+    },
+    "./markdown-container": {
+      "import": "./dist/markdown-container/index.mjs",
+      "types": "./dist/markdown-container/index.d.mts"
+    },
+    "./password-input": {
+      "import": "./dist/password-input/index.mjs",
+      "types": "./dist/password-input/index.d.mts"
+    },
+    "./picture": {
+      "import": "./dist/picture/index.mjs",
+      "types": "./dist/picture/index.d.mts"
+    },
+    "./protected-email": {
+      "import": "./dist/protected-email/index.mjs",
+      "types": "./dist/protected-email/index.d.mts"
+    },
+    "./radio": {
+      "import": "./dist/radio/index.mjs",
+      "types": "./dist/radio/index.d.mts"
+    },
+    "./radio-group": {
+      "import": "./dist/radio-group/index.mjs",
+      "types": "./dist/radio-group/index.d.mts"
+    },
+    "./slider": {
+      "import": "./dist/slider/index.mjs",
+      "types": "./dist/slider/index.d.mts"
+    },
+    "./switch": {
+      "import": "./dist/switch/index.mjs",
+      "types": "./dist/switch/index.d.mts"
+    },
+    "./tailwind.css": "./src/tailwind.css",
+    "./text": {
+      "import": "./dist/text/index.mjs",
+      "types": "./dist/text/index.d.mts"
+    },
+    "./toggle": {
+      "import": "./dist/toggle/index.mjs",
+      "types": "./dist/toggle/index.d.mts"
     },
     "./utils/author": {
-      "types": "./dist/utils/author/index.d.mts",
-      "import": "./dist/utils/author/index.mjs"
+      "import": "./dist/utils/author/index.mjs",
+      "types": "./dist/utils/author/index.d.mts"
     },
     "./utils/text": {
-      "types": "./dist/utils/text/index.d.mts",
-      "import": "./dist/utils/text/index.mjs"
+      "import": "./dist/utils/text/index.mjs",
+      "types": "./dist/utils/text/index.d.mts"
     }
   },
-  "files": [
-    "dist",
-    "src"
-  ],
+  "files": ["dist", "src"],
   "scripts": {
-    "build": "tsdown && pnpm fix",
+    "build": "exec-s tsdown fix",
     "clean": "exec-clean .turbo dist",
     "dev": "tsdown --watch",
-    "fix": "exec-p fix:*",
+    "fix": "exec-s fix:pkg fix:md fix:biome",
     "fix:biome": "lint-biome check --write --unsafe .",
     "fix:md": "lint-md --fix",
     "fix:pkg": "lint-package --fix",
-    "lint": "exec-p lint:*",
+    "lint": "exec-s lint:md lint:biome",
     "lint:biome": "lint-biome check .",
     "lint:md": "lint-md",
     "lint:pkg": "lint-package",
@@ -211,6 +200,7 @@
     "storybook:build": "storybook build -o storybook-static",
     "test": "exec-s test:*",
     "test:unit": "vitest run",
+    "tsdown": "tsdown",
     "typecheck": "exec-tsc --noEmit",
     "version": "flow-changeset version"
   },
@@ -218,8 +208,8 @@
     "@base-ui/react": "1.2.0",
     "@maptiler/sdk": "3.11.1",
     "@mdx-js/react": "3.1.1",
-    "@regardio/js": "0.7.3",
-    "@regardio/tailwind": "0.3.3",
+    "@regardio/js": "0.7.5",
+    "@regardio/tailwind": "0.3.4",
     "@supabase/supabase-js": "2.97.0",
     "cmdk": "1.1.1",
     "embla-carousel": "8.6.0",
@@ -240,7 +230,7 @@
     "zod": "4.3.6"
   },
   "devDependencies": {
-    "@regardio/dev": "1.13.6",
+    "@regardio/dev": "1.13.8",
     "@storybook/addon-a11y": "10.2.10",
     "@storybook/addon-docs": "10.2.10",
     "@storybook/addon-vitest": "10.2.10",

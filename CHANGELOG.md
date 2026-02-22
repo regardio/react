@@ -1,5 +1,32 @@
 # @regardio/react
 
+## 0.7.14
+
+### Patch Changes
+
+- fix: formatting and linting
+
+## 0.7.13
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @regardio/js@0.7.5
+
+## 0.7.12
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @regardio/js@0.7.4
+
+## 0.7.11
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @regardio/tailwind@0.3.4
+
 ## 0.7.10
 
 ### Patch Changes
