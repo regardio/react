@@ -1,5 +1,11 @@
 # @regardio/react
 
+## 0.7.15
+
+### Patch Changes
+
+- fix: update @regardio/tailwind to 0.3.5
+
 ## 0.7.14
 
 ### Patch Changes
