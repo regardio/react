@@ -1,5 +1,18 @@
 # @regardio/react
 
+## 0.7.19
+
+### Patch Changes
+
+- chore: dependencies
+
+## 0.7.18
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @regardio/tailwind@0.3.6
+
 ## 0.7.17
 
 ### Patch Changes
@@ -169,6 +182,7 @@
   - 87.5% code coverage maintained
 
   Files changed:
+
   - src/field/field.stories.tsx
   - src/field/field.test.tsx
   - src/form/form.stories.tsx

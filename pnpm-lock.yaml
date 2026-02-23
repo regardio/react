@@ -21,8 +21,8 @@ importers:
         specifier: 0.7.6
         version: 0.7.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@regardio/tailwind':
-        specifier: 0.3.5
-        version: 0.3.5(tailwindcss@4.2.1)
+        specifier: 0.3.6
+        version: 0.3.6(tailwindcss@4.2.1)
       '@supabase/supabase-js':
         specifier: 2.97.0
         version: 2.97.0
@@ -1116,8 +1116,8 @@ packages:
   '@regardio/js@0.7.6':
     resolution: {integrity: sha512-CPoS3ub3zAyHVbwrTpoAgVmnpDh0MU1lnm54uzNQE8AbkhYkLS+FFD3cP87JP1jB/MfASh9EeSwWlHSjuc9u7w==}
 
-  '@regardio/tailwind@0.3.5':
-    resolution: {integrity: sha512-pcOeK2EMYPipJiEYiuoCJ0aZw1c2g0Ll9tn5HgkKu+vnES6M38XNu0r6iQ7rHXip569zpDJY67b+ldqUr5KMZw==}
+  '@regardio/tailwind@0.3.6':
+    resolution: {integrity: sha512-UnTiy55rSEAMd8Z4pbEvdTrSJZn/R07QNC9aEx+HeOs9o4kYGsWlwWlQ2h+l7aUXCv925CqjSH0OupyxAr70Fw==}
     engines: {node: '>=18'}
     peerDependencies:
       tailwindcss: '>=4.0.0'
@@ -5400,7 +5400,7 @@ snapshots:
       - react
       - react-dom
 
-  '@regardio/tailwind@0.3.5(tailwindcss@4.2.1)':
+  '@regardio/tailwind@0.3.6(tailwindcss@4.2.1)':
     dependencies:
       clsx: 2.1.1
       fluid-tailwindcss: 1.0.5(tailwindcss@4.2.1)
