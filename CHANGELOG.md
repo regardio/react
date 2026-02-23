@@ -1,5 +1,18 @@
 # @regardio/react
 
+## 0.7.17
+
+### Patch Changes
+
+- chore: dependencies
+
+## 0.7.16
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @regardio/js@0.7.6
+
 ## 0.7.15
 
 ### Patch Changes
