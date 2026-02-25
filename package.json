@@ -4,13 +4,7 @@
   "version": "0.7.19",
   "private": false,
   "description": "Regardio React UI components",
-  "keywords": [
-    "react",
-    "components",
-    "ui",
-    "regardio",
-    "tailwindcss"
-  ],
+  "keywords": ["react", "components", "ui", "regardio", "tailwindcss"],
   "homepage": "https://github.com/regardio/react/blob/main/README.md",
   "bugs": {
     "url": "https://github.com/regardio/react/issues"
@@ -21,9 +15,7 @@
   },
   "license": "MIT",
   "author": "Bernd Matzner <bernd.matzner@regard.io>",
-  "sideEffects": [
-    "./src/tailwind.css"
-  ],
+  "sideEffects": ["./src/tailwind.css"],
   "type": "module",
   "exports": {
     "./background-slideshow": {
@@ -188,10 +180,7 @@
       "types": "./dist/utils/text/index.d.mts"
     }
   },
-  "files": [
-    "dist",
-    "src"
-  ],
+  "files": ["dist", "src"],
   "scripts": {
     "build": "tsdown",
     "clean": "exec-clean .turbo dist",
