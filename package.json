@@ -4,7 +4,13 @@
   "version": "0.7.19",
   "private": false,
   "description": "Regardio React UI components",
-  "keywords": ["react", "components", "ui", "regardio", "tailwindcss"],
+  "keywords": [
+    "react",
+    "components",
+    "ui",
+    "regardio",
+    "tailwindcss"
+  ],
   "homepage": "https://github.com/regardio/react/blob/main/README.md",
   "bugs": {
     "url": "https://github.com/regardio/react/issues"
@@ -15,7 +21,9 @@
   },
   "license": "MIT",
   "author": "Bernd Matzner <bernd.matzner@regard.io>",
-  "sideEffects": ["./src/tailwind.css"],
+  "sideEffects": [
+    "./src/tailwind.css"
+  ],
   "type": "module",
   "exports": {
     "./background-slideshow": {
@@ -180,29 +188,33 @@
       "types": "./dist/utils/text/index.d.mts"
     }
   },
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
-    "build": "exec-s tsdown fix",
+    "build": "tsdown",
     "clean": "exec-clean .turbo dist",
     "dev": "tsdown --watch",
     "fix": "exec-s fix:pkg fix:md fix:biome",
     "fix:biome": "lint-biome check --write --unsafe .",
     "fix:md": "lint-md --fix",
     "fix:pkg": "lint-package --fix",
+    "flow:hotfix": "flow-hotfix",
+    "flow:release": "flow-release",
+    "flow:ship": "flow-ship",
     "lint": "exec-s lint:md lint:biome",
     "lint:biome": "lint-biome check .",
     "lint:md": "lint-md",
     "lint:pkg": "lint-package",
     "prepare": "exec-husky",
-    "release": "flow-release",
     "report": "vitest run --coverage",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build -o storybook-static",
     "test": "exec-s test:*",
     "test:unit": "vitest run",
     "tsdown": "tsdown",
-    "typecheck": "exec-tsc --noEmit",
-    "version": "flow-changeset version"
+    "typecheck": "exec-tsc --noEmit"
   },
   "dependencies": {
     "@base-ui/react": "1.2.0",
@@ -230,11 +242,11 @@
     "zod": "4.3.6"
   },
   "devDependencies": {
-    "@regardio/dev": "1.13.8",
-    "@storybook/addon-a11y": "10.2.11",
-    "@storybook/addon-docs": "10.2.11",
-    "@storybook/addon-vitest": "10.2.11",
-    "@storybook/react-vite": "10.2.11",
+    "@regardio/dev": "1.14.3",
+    "@storybook/addon-a11y": "10.2.12",
+    "@storybook/addon-docs": "10.2.12",
+    "@storybook/addon-vitest": "10.2.12",
+    "@storybook/react-vite": "10.2.12",
     "@tailwindcss/vite": "4.2.1",
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "16.3.2",
@@ -249,7 +261,7 @@
     "@vitest/ui": "4.0.18",
     "jsdom": "28.1.0",
     "playwright": "1.58.2",
-    "storybook": "10.2.11",
+    "storybook": "10.2.12",
     "tailwindcss": "4.2.1",
     "tsdown": "0.20.3",
     "typescript": "5.9.3",
