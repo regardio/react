@@ -209,8 +209,8 @@
     "@base-ui/react": "1.2.0",
     "@maptiler/sdk": "3.11.1",
     "@mdx-js/react": "3.1.1",
-    "@regardio/js": "0.7.6",
-    "@regardio/tailwind": "0.3.6",
+    "@regardio/js": "0.7.7",
+    "@regardio/tailwind": "0.3.7",
     "@supabase/supabase-js": "2.98.0",
     "cmdk": "1.1.1",
     "embla-carousel": "8.6.0",
@@ -231,7 +231,7 @@
     "zod": "4.3.6"
   },
   "devDependencies": {
-    "@regardio/dev": "1.14.3",
+    "@regardio/dev": "1.15.1",
     "@storybook/addon-a11y": "10.2.13",
     "@storybook/addon-docs": "10.2.13",
     "@storybook/addon-vitest": "10.2.13",
@@ -259,8 +259,5 @@
   },
   "engines": {
     "node": ">=18"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }
