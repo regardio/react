@@ -1,5 +1,15 @@
 # @regardio/react
 
+## [0.7.20] - 2026-02-26
+
+- chore: deps
+- refactor: use flow tasks, remove changeset, update dependencies
+- chore: add private package guard to release.yml
+- chore: deps
+- chore: deps
+- fix: lint
+- chore: flow
+
 ## 0.7.19
 
 ### Patch Changes
