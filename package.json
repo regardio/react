@@ -1,7 +1,7 @@
 {
   "$schema": "https://www.schemastore.org/package.json",
   "name": "@regardio/react",
-  "version": "0.7.20",
+  "version": "0.7.21",
   "private": false,
   "description": "Regardio React UI components",
   "keywords": ["react", "components", "ui", "regardio", "tailwindcss"],
