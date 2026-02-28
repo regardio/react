@@ -231,7 +231,7 @@
     "zod": "4.3.6"
   },
   "devDependencies": {
-    "@regardio/dev": "1.16.0",
+    "@regardio/dev": "1.16.1",
     "@storybook/addon-a11y": "10.2.13",
     "@storybook/addon-docs": "10.2.13",
     "@storybook/addon-vitest": "10.2.13",
