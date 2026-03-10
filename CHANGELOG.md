@@ -1,5 +1,13 @@
 # @regardio/react
 
+## [0.7.22] - 2026-03-10
+
+- chore: deps
+- fix: add manual typings – soon to be replaced
+- chore: deps
+- chore: deps
+- chore: deps
+
 ## [0.7.21] - 2026-02-28
 
 - chore: deps
