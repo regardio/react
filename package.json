@@ -252,7 +252,7 @@
     "playwright": "1.58.2",
     "storybook": "10.2.19",
     "tailwindcss": "4.2.1",
-    "tsdown": "0.21.3",
+    "tsdown": "0.21.4",
     "typescript": "5.9.3",
     "vite": "8.0.0",
     "vitest": "4.1.0"
