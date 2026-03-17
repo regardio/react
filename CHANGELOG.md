@@ -1,5 +1,12 @@
 # @regardio/react
 
+## [0.7.24] - 2026-03-17
+
+- chore: deps
+- chore: deps
+- chore: deps
+- chore: deps
+
 ## [0.7.23] - 2026-03-10
 
 - chore: deps
