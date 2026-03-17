@@ -210,7 +210,7 @@
     "@maptiler/sdk": "3.11.1",
     "@mdx-js/react": "3.1.1",
     "@regardio/js": "0.8.2",
-    "@regardio/tailwind": "0.3.10",
+    "@regardio/tailwind": "0.3.11",
     "@supabase/supabase-js": "2.99.2",
     "cmdk": "1.1.1",
     "embla-carousel": "8.6.0",
@@ -231,7 +231,7 @@
     "zod": "4.3.6"
   },
   "devDependencies": {
-    "@regardio/dev": "1.16.2",
+    "@regardio/dev": "1.17.1",
     "@storybook/addon-a11y": "10.2.19",
     "@storybook/addon-docs": "10.2.19",
     "@storybook/addon-vitest": "10.2.19",
