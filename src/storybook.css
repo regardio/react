@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "@regardio/tailwind/styles";
+@import "@regardio/tailwind/styles/index.css";
 
 /* Sample semantic color tokens for Storybook testing */
 /* Applications should define their own tokens or use @regardio/brand */
