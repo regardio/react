@@ -1,5 +1,9 @@
 # @regardio/react
 
+## [0.8.0] - 2026-03-18
+
+- refactor: styling via semantic tokens
+
 ## [0.7.24] - 2026-03-17
 
 - chore: deps
