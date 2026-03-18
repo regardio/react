@@ -1,5 +1,9 @@
 # @regardio/react
 
+## [0.8.1] - 2026-03-18
+
+- fix: style imports
+
 ## [0.8.0] - 2026-03-18
 
 - refactor: styling via semantic tokens
