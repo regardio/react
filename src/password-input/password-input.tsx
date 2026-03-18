@@ -32,11 +32,11 @@ const toggleButton = tv({
     'cursor-pointer',
     'items-center',
     'justify-center',
-    'text-gray-500',
-    'hover:text-gray-700',
+    'text-muted-foreground',
+    'hover:text-foreground',
     'focus:outline-none',
     'focus:ring-2',
-    'focus:ring-blue-500',
+    'focus:ring-ring',
     'focus:ring-offset-2',
     'rounded',
     'transition-colors',
@@ -49,7 +49,7 @@ export type PasswordInputVariant = keyof typeof passwordInputVariants;
 export interface PasswordInputProps
   extends Omit<React.ComponentProps<typeof Input>, 'type' | 'variant'> {
   className?: string;
-  inputVariant?: 'default' | 'error' | 'success';
+  inputVariant?: 'default' | 'error';
   showToggle?: boolean;
   variant?: PasswordInputVariant;
 }
@@ -81,7 +81,6 @@ export const PasswordInput = ({
           aria-label={showPassword ? 'Hide password' : 'Show password'}
           className={toggleButton()}
           onClick={togglePasswordVisibility}
-          size="sm"
           variant="ghost"
         >
           {showPassword ? (

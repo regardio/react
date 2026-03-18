@@ -46,13 +46,6 @@ export const ErrorState: Story = {
   },
 };
 
-export const Success: Story = {
-  args: {
-    placeholder: 'Success state',
-    variant: 'success',
-  },
-};
-
 export const Small: Story = {
   args: {
     placeholder: 'Small input',
@@ -115,10 +108,6 @@ export const AllVariants: Story = {
       <Input
         placeholder="Error input"
         variant="error"
-      />
-      <Input
-        placeholder="Success input"
-        variant="success"
       />
     </div>
   ),

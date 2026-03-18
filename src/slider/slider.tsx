@@ -21,7 +21,7 @@ const sliderControl = tv({
 });
 
 const sliderTrack = tv({
-  base: ['relative', 'w-full', 'rounded-full', 'bg-gray-200', 'overflow-hidden'],
+  base: ['relative', 'w-full', 'rounded-full', 'bg-muted', 'overflow-hidden'],
   defaultVariants: {
     size: 'md',
   },
@@ -35,23 +35,21 @@ const sliderTrack = tv({
 });
 
 const sliderIndicator = tv({
-  base: ['absolute', 'h-full', 'bg-blue-600', 'rounded-full'],
+  base: ['absolute', 'h-full', 'bg-primary', 'rounded-full'],
 });
 
 const sliderThumb = tv({
   base: [
     'block',
     'rounded-full',
-    'bg-white',
+    'bg-background-muted',
     'border-2',
-    'border-blue-600',
-    'shadow-lg',
+    'border-primary',
     'focus:outline-none',
     'focus:ring-2',
-    'focus:ring-blue-500',
+    'focus:ring-ring',
     'focus:ring-offset-2',
     'disabled:cursor-not-allowed',
-    'disabled:opacity-50',
     'cursor-grab',
     'active:cursor-grabbing',
   ],
@@ -68,7 +66,7 @@ const sliderThumb = tv({
 });
 
 const sliderValue = tv({
-  base: ['text-sm', 'font-medium', 'text-gray-700', 'mb-2'],
+  base: ['text-foreground', 'mb-2'],
 });
 
 export type SliderSize = 'sm' | 'md' | 'lg';

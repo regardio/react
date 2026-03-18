@@ -4,22 +4,19 @@ import type { ComponentProps } from 'react';
 
 const radioRoot = tv({
   base: [
-    'h-4',
-    'w-4',
+    'flex',
+    'items-center',
+    'justify-center',
     'rounded-full',
-    'border',
-    'border-gray-300',
-    'bg-white',
-    'focus:outline-none',
-    'focus:ring-2',
-    'focus:ring-blue-500',
-    'focus:ring-offset-2',
+    'focus-visible:outline-2',
+    'focus-visible:outline-offset-2',
+    'focus-visible:outline-ring',
     'disabled:cursor-not-allowed',
-    'disabled:opacity-50',
-    'data-[checked]:bg-blue-600',
-    'data-[checked]:border-blue-600',
+    'data-[checked]:bg-primary',
+    'data-[unchecked]:border',
+    'data-[unchecked]:border-current',
+    'data-[unchecked]:bg-background-muted',
     'transition-colors',
-    'duration-200',
     'cursor-pointer',
   ],
   defaultVariants: {
@@ -35,7 +32,7 @@ const radioRoot = tv({
 });
 
 const radioIndicator = tv({
-  base: ['flex', 'items-center', 'justify-center', 'text-white', 'data-[unchecked]:invisible'],
+  base: ['flex', 'text-primary-foreground', 'data-[unchecked]:hidden'],
 });
 
 export type RadioSize = 'sm' | 'md' | 'lg';

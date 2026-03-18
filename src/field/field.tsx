@@ -3,12 +3,12 @@ import { tv } from '@regardio/tailwind/utils';
 import type { ComponentProps, ReactNode } from 'react';
 
 const fieldRootVariants = {
-  default: [],
-  required: ['after:content-["*"]', 'after:ml-1', 'after:text-red-500'],
+  default: ['space-y-1'],
+  required: ['space-y-1', 'after:content-["*"]', 'after:ml-1', 'after:text-destructive'],
 } as const;
 
 const fieldRoot = tv({
-  base: ['space-y-1'],
+  base: [],
   defaultVariants: {
     variant: 'default',
   },
@@ -18,44 +18,52 @@ const fieldRoot = tv({
 });
 
 const fieldLabel = tv({
-  base: ['block', 'text-sm', 'font-medium', 'text-gray-700', 'mb-1'],
+  base: [],
   defaultVariants: {
     variant: 'default',
   },
   variants: {
     variant: {
-      default: [],
-      error: ['text-red-600'],
+      default: ['block', 'text-foreground', 'mb-1'],
+      error: ['block', 'text-destructive', 'mb-1'],
     },
   },
 });
 
 const fieldDescription = tv({
-  base: ['text-sm', 'text-gray-500', 'mt-1'],
+  base: [],
   defaultVariants: {
     variant: 'default',
   },
   variants: {
     variant: {
-      default: [],
-      error: ['text-red-600'],
+      default: ['text-muted-foreground', 'mt-1'],
+      error: ['text-destructive', 'mt-1'],
     },
   },
 });
 
 const fieldError = tv({
-  base: ['text-sm', 'text-red-600', 'mt-1'],
+  base: [],
+  defaultVariants: {
+    variant: 'default',
+  },
+  variants: {
+    variant: {
+      default: ['text-destructive', 'mt-1'],
+    },
+  },
 });
 
 const fieldItem = tv({
-  base: ['flex', 'flex-col'],
+  base: [],
   defaultVariants: {
     layout: 'default',
   },
   variants: {
     layout: {
-      default: [],
-      horizontal: ['flex-row', 'items-center', 'gap-2'],
+      default: ['flex', 'flex-col'],
+      horizontal: ['flex', 'flex-row', 'items-center', 'gap-2'],
     },
   },
 });

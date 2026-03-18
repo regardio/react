@@ -56,6 +56,6 @@ describe('Field', () => {
         <Field.Label variant="error">Error Label</Field.Label>
       </Field.Root>,
     );
-    expect(screen.getByText('Error Label')).toHaveClass('text-red-600');
+    expect(screen.getByText('Error Label')).toHaveClass('text-destructive');
   });
 });

@@ -37,7 +37,7 @@ describe('Toggle', () => {
       </Toggle>,
     );
     const toggle = screen.getByTestId('variant-toggle');
-    expect(toggle).toHaveClass('bg-transparent', 'text-gray-700');
+    expect(toggle).toHaveClass('bg-transparent', 'text-foreground');
   });
 
   it('applies size styles', () => {
@@ -90,7 +90,6 @@ describe('Toggle', () => {
     );
     const toggle = screen.getByTestId('disabled-toggle');
     expect(toggle).toBeDisabled();
-    expect(toggle).toHaveClass('disabled:opacity-50');
   });
 
   it('applies custom className', () => {

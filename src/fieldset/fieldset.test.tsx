@@ -29,7 +29,7 @@ describe('Fieldset', () => {
         <Fieldset.Legend size="small">Small Legend</Fieldset.Legend>
       </Fieldset.Root>,
     );
-    expect(screen.getByText('Small Legend')).toHaveClass('text-base', 'font-medium');
+    expect(screen.getByText('Small Legend')).toHaveClass('mb-1');
   });
 
   it('applies custom className to FieldsetRoot', () => {

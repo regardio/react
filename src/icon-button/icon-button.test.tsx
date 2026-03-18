@@ -51,7 +51,7 @@ describe('IconButton', () => {
       />,
     );
     const button = screen.getByTestId('variant-button');
-    expect(button).toHaveClass('bg-gray-100');
+    expect(button).toHaveClass('bg-secondary', 'text-secondary-foreground');
   });
 
   it('uses title as aria-label when provided', () => {

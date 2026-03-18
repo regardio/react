@@ -1,1 +1,28 @@
 @import "tailwindcss";
+@import "@regardio/tailwind/styles";
+
+/* Sample semantic color tokens for Storybook testing */
+/* Applications should define their own tokens or use @regardio/brand */
+@theme {
+  --color-foreground: oklch(25.3% 0.015 254.6);
+  --color-muted-foreground: oklch(53.4% 0.013 254.6);
+  --color-background: oklch(97.3% 0.003 254.6);
+  --color-background-muted: oklch(100% 0 0);
+  --color-background-subtle: oklch(95.5% 0.006 254.6);
+  --color-border: oklch(85.5% 0.006 254.6);
+  --color-border-muted: oklch(91.9% 0.004 254.6);
+  --color-ring: oklch(69.8% 0.088 192.3);
+  --color-primary: oklch(63.2% 0.096 192.3);
+  --color-primary-foreground: oklch(100% 0 0);
+  --color-primary-hover: oklch(56.6% 0.089 192.3);
+  --color-secondary: oklch(64.8% 0.142 154.5);
+  --color-secondary-foreground: oklch(100% 0 0);
+  --color-secondary-hover: oklch(58.1% 0.132 154.5);
+  --color-accent: oklch(85.2% 0.151 130.4);
+  --color-accent-foreground: oklch(25.3% 0.015 254.6);
+  --color-accent-hover: oklch(78.9% 0.148 130.4);
+  --color-muted: oklch(95.5% 0.006 254.6);
+  --color-destructive: oklch(62.8% 0.258 27.3);
+  --color-destructive-foreground: oklch(100% 0 0);
+  --color-destructive-hover: oklch(55.5% 0.24 27.3);
+}

@@ -8,22 +8,27 @@ describe('Button', () => {
     expect(screen.getByRole('button', { name: 'Click me' })).toBeInTheDocument();
   });
 
-  it('applies default variant and size classes', () => {
+  it('applies default variant classes', () => {
     render(<Button>Default button</Button>);
     const button = screen.getByRole('button', { name: 'Default button' });
-    expect(button).toHaveClass('bg-blue-600', 'text-white', 'px-4', 'py-2');
+    expect(button).toHaveClass('bg-primary', 'text-primary-foreground');
   });
 
   it('applies variant classes correctly', () => {
     render(<Button variant="secondary">Secondary button</Button>);
     const button = screen.getByRole('button', { name: 'Secondary button' });
-    expect(button).toHaveClass('bg-gray-100', 'text-gray-900');
+    expect(button).toHaveClass('bg-secondary', 'text-secondary-foreground');
   });
 
-  it('applies size classes correctly', () => {
-    render(<Button size="lg">Large button</Button>);
-    const button = screen.getByRole('button', { name: 'Large button' });
-    expect(button).toHaveClass('px-6', 'py-3', 'text-lg');
+  it('applies base structural classes', () => {
+    render(<Button>Button</Button>);
+    const button = screen.getByRole('button', { name: 'Button' });
+    expect(button).toHaveClass(
+      'inline-flex',
+      'items-center',
+      'justify-center',
+      'transition-colors',
+    );
   });
 
   it('applies custom className', () => {
@@ -36,7 +41,6 @@ describe('Button', () => {
     render(<Button disabled>Disabled button</Button>);
     const button = screen.getByRole('button', { name: 'Disabled button' });
     expect(button).toBeDisabled();
-    expect(button).toHaveClass('disabled:opacity-50', 'disabled:cursor-not-allowed');
   });
 
   it('passes through other props', () => {

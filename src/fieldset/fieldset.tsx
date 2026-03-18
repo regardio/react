@@ -3,12 +3,12 @@ import { tv } from '@regardio/tailwind/utils';
 import type { ComponentProps } from 'react';
 
 const fieldsetRootVariants = {
-  compact: ['space-y-2'],
-  default: ['space-y-4'],
+  compact: ['border', 'border-current', 'rounded-lg', 'p-4', 'space-y-2'],
+  default: ['border', 'border-current', 'rounded-lg', 'p-4', 'space-y-4'],
 } as const;
 
 const fieldsetRoot = tv({
-  base: ['border', 'border-gray-200', 'rounded-lg', 'p-4'],
+  base: [],
   defaultVariants: {
     variant: 'default',
   },
@@ -18,14 +18,14 @@ const fieldsetRoot = tv({
 });
 
 const fieldsetLegend = tv({
-  base: ['text-lg', 'font-semibold', 'text-gray-900', 'mb-2'],
+  base: [],
   defaultVariants: {
     size: 'default',
   },
   variants: {
     size: {
-      default: [],
-      small: ['text-base', 'font-medium', 'text-gray-900', 'mb-1'],
+      default: ['text-foreground', 'mb-2'],
+      small: ['text-foreground', 'mb-1'],
     },
   },
 });

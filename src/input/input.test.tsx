@@ -15,7 +15,10 @@ describe('Input', () => {
         variant="error"
       />,
     );
-    expect(screen.getByPlaceholderText('Error input')).toHaveClass('border-red-300');
+    expect(screen.getByPlaceholderText('Error input')).toHaveClass(
+      'border-destructive',
+      'text-destructive',
+    );
   });
 
   it('applies size styles', () => {
@@ -25,7 +28,7 @@ describe('Input', () => {
         size="lg"
       />,
     );
-    expect(screen.getByPlaceholderText('Large input')).toHaveClass('px-4', 'py-3', 'text-lg');
+    expect(screen.getByPlaceholderText('Large input')).toHaveClass('px-4', 'py-3');
   });
 
   it('applies custom className', () => {

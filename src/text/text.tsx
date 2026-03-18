@@ -6,9 +6,12 @@ const themeColorVariants = {
 } as const;
 
 const textVariants = {
-  code: ['font-light', 'font-monospace'],
-  primary: [],
-  subtitle: ['text-lg'],
+  code: ['font-mono', 'text-sm'],
+  muted: ['text-muted-foreground'],
+  primary: ['text-foreground'],
+  secondary: ['text-muted-foreground'],
+  subtitle: ['text-muted-foreground'],
+  supertitle: ['text-foreground', 'font-semibold'],
 } as const;
 
 const text = tv({
