@@ -1,11 +1,8 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "declaration": true,
     "isolatedDeclarations": true,
-    "paths": {
-      "~/*": ["src/*"]
-    }
+    "rootDir": "./src"
   },
   "extends": "@regardio/dev/typescript/react.json",
   "include": ["src/**/*.ts", "src/**/*.tsx", "vite-env.d.ts", "vitest.shims.d.ts"]
