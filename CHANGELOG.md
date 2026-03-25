@@ -1,5 +1,15 @@
 # @regardio/react
 
+## [0.8.2] - 2026-03-25
+
+- chore: deps
+- chore: deps
+- chore: deps
+- chore: deps
+- chore: deps
+- chore: deps
+- chore: deps
+
 ## [0.8.1] - 2026-03-18
 
 - fix: style imports
