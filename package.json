@@ -255,7 +255,7 @@
     "tailwindcss": "4.2.2",
     "tsdown": "0.21.5",
     "typescript": "6.0.2",
-    "vite": "8.0.2",
+    "vite": "8.0.3",
     "vitest": "4.1.1"
   },
   "engines": {
