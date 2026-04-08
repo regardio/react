@@ -1,5 +1,20 @@
 # @regardio/react
 
+## [0.9.0] - 2026-04-08
+
+- chore(@regardio/react): upgrade dependencies
+- chore(@regardio/react): upgrade dependencies
+- chore(@regardio/react): upgrade dependencies
+- chore: update workflow packages
+- chore: deps
+- chore(@regardio/react): upgrade dependencies
+- chore: deps
+- chore: deps
+- chore: deps
+- chore: deps
+- chore: deps
+- fix: husky
+
 ## [0.8.2] - 2026-03-25
 
 - chore: deps
