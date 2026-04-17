@@ -111,7 +111,7 @@ export const CustomElements: Story = {
       <List.Item className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
         TypeScript
       </List.Item>
-      <List.Item className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">
+      <List.Item className="px-3 py-1 bg-violet-100 text-violet-800 rounded-full text-sm">
         Tailwind
       </List.Item>
     </List.Root>

@@ -218,15 +218,15 @@ export const AlignVariants: Story = {
 export const StyleOverrides: Story = {
   name: 'Style Overrides (tailwind-variants)',
   render: () => (
-    <Grid.Root className="bg-linear-to-r from-purple-50 to-pink-50 p-4 rounded-lg">
+    <Grid.Root className="bg-linear-to-r from-violet-50 to-plum-50 p-4 rounded-lg">
       <Grid.Item
-        className="bg-purple-200 rounded-lg p-6"
+        className="bg-violet-200 rounded-lg p-6"
         span={6}
       >
         Custom styled item
       </Grid.Item>
       <Grid.Item
-        className="bg-pink-200 rounded-lg p-6"
+        className="bg-plum-200 rounded-lg p-6"
         span={6}
       >
         Custom styled item
